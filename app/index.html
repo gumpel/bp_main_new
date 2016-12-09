@@ -15,6 +15,7 @@
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="/bower_components/sanitize-css/sanitize.css" />
+  <link rel="stylesheet" href="/bower_components/bxslider-4/dist/jquery.bxslider.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css styles/main.css -->
@@ -29,6 +30,93 @@
   <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+  <div class="navigator">
+    <div class="container">
+    <div class="button_container" id="toggle">
+      <span class="top"></span>
+      <span class="middle"></span>
+      <span class="bottom"></span>
+    </div>
+
+    <div class="overlay" id="overlay">
+      <nav class="overlay-menu">
+        <ul>
+          <li><a href="#">Strona Główna</a></li>
+          <li><a href="#">Usługi</a></li>
+          <li><a href="#">O nas</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  </div>
+  <section>
+    <div class="main_banner" id="main_banner" style="background-image:url('images/bg-main.png')">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-1">
+            <span id="mb-slider-count" class="mb-slider-count">
+                <span id="mb-slider-nr" class="mb-slider-nr">1</span><span id="mb-slider-of" class="mb-slider-of">/05</span>
+            </span>
+          </div>
+          <div class="col-md-8">
+            <div class="mb-tittle">
+              <ul>
+                <li><strong>UZBROJENI</strong><br> W KREATYWNE<br> UMYSŁY
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="bp_what_we_do" id="bp_what_we_do">
+      <div class="container">
+        <h2>Czym się <strong>zajmujemy?</strong></h2>
+        <div class="row">
+          <ul class="wwd_slide" id="wwd_slide">
+            <li>
+              <div>
+                <a href="#">
+                  <img src="images/whatwedo/aplikacje.png" />
+                  <h4>Aplikacje mobilne</h4>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <a href="#">
+                  <img src="images/whatwedo/crm.png" />
+                  <h4>crm</h4>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <a href="#">
+                  <img src="images/whatwedo/sklepy.png" />
+                  <h4>sklepy</h4>
+                </a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <a href="#">
+                  <img src="images/whatwedo/strony.png" />
+                  <h4>strony</h4>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a class="button button-right">czytaj więcej</a>
+      </div>
+    </div>
+  </section>
   <section>
     <div id="g-slider" class="g-slider">
       <div class="container">
@@ -384,6 +472,7 @@
   <!-- bower:js -->
   <script src="/bower_components/jquery/dist/jquery.js"></script>
   <script src="/bower_components/modernizr/modernizr.js"></script>
+  <script src="/bower_components/bxslider-4/dist/jquery.bxslider.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:js scripts/plugins.js -->

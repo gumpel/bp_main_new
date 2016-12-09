@@ -1,4 +1,14 @@
 
+
+
+$(document).ready(function() {
+  $('#toggle').click(function() {
+   $(this).toggleClass('active');
+   $('#overlay').toggleClass('open');
+  });
+});
+
+
 // gslider
 $(document).ready(function() {
     gSlider();
@@ -123,88 +133,88 @@ $(document).ready(function() {
 $(document).ready(function() {
   var bp_numbObj = {
     bp_dot_1: {
-      "bp_num_box_1": {
-        title: "Web Development",
+      'bp_num_box_1': {
+        title: 'Web Development',
         num: 122,
-        symbol: "%"
+        symbol: '%'
       },
-      "bp_num_box_2": {
-        title: "Graphic Design",
+      'bp_num_box_2': {
+        title: 'Graphic Design',
         num: 144,
-        symbol: "h"
+        symbol: 'h'
       },
-      "bp_num_box_3": {
-        title: "JavaSript",
+      'bp_num_box_3': {
+        title: 'JavaSript',
         num: 34,
-        symbol: "kmm"
+        symbol: 'kmm'
       }
     },
     bp_dot_2: {
-      "bp_num_box_1": {
-        title: "PHP",
+      'bp_num_box_1': {
+        title: 'PHP',
         num: 89,
-        symbol: "%"
+        symbol: '%'
       },
-      "bp_num_box_2": {
-        title: "CSS",
+      'bp_num_box_2': {
+        title: 'CSS',
         num: 19,
-        symbol: "h"
+        symbol: 'h'
       },
-      "bp_num_box_3": {
-        title: "HTML",
+      'bp_num_box_3': {
+        title: 'HTML',
         num: 44,
-        symbol: "km"
+        symbol: 'km'
       }
     },
     bp_dot_3: {
-      "bp_num_box_1": {
-        title: "Gulp",
+      'bp_num_box_1': {
+        title: 'Gulp',
         num: 77,
-        symbol: "%"
+        symbol: '%'
       },
-      "bp_num_box_2": {
-        title: "Bower",
+      'bp_num_box_2': {
+        title: 'Bower',
         num: 37,
-        symbol: "h"
+        symbol: 'h'
       },
-      "bp_num_box_3": {
-        title: "Json",
+      'bp_num_box_3': {
+        title: 'Json',
         num: 44,
-        symbol: "km"
+        symbol: 'km'
       }
     },
     bp_dot_4: {
-      "bp_num_box_1": {
-        title: "Sass",
+      'bp_num_box_1': {
+        title: 'Sass',
         num: 65,
-        symbol: "%"
+        symbol: '%'
       },
-      "bp_num_box_2": {
-        title: "Node.js",
+      'bp_num_box_2': {
+        title: 'Node.js',
         num: 23,
-        symbol: "h"
+        symbol: 'h'
       },
-      "bp_num_box_3": {
-        title: "Angular",
+      'bp_num_box_3': {
+        title: 'Angular',
         num: 78,
-        symbol: "km"
+        symbol: 'km'
       }
     },
     bp_dot_5: {
-      "bp_num_box_1": {
-        title: "Flux",
+      'bp_num_box_1': {
+        title: 'Flux',
         num: 77,
-        symbol: "%"
+        symbol: '%'
       },
-      "bp_num_box_2": {
-        title: "React",
+      'bp_num_box_2': {
+        title: 'React',
         num: 67,
-        symbol: "h"
+        symbol: 'h'
       },
-      "bp_num_box_3": {
-        title: "Android",
+      'bp_num_box_3': {
+        title: 'Android',
         num: 44,
-        symbol: "km"
+        symbol: 'km'
       }
     }
   }

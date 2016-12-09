@@ -1,0 +1,36 @@
+h2 {
+  font-size: 5em;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 1em;
+  font-family: 'bebas_neuelight';
+  text-transform: uppercase;
+  strong {
+      font-family: 'bebas_neuebook'
+  }
+}
+section > div {
+   padding-top: 10vh;
+}
+.button-right {
+  float: right;
+}
+
+.button {
+  color:#cda54b;
+  font-family: 'BebasNeueRegular';
+  font-size:19px;
+  border:2px solid #cda54b;
+  display: inline-block;
+  padding:20px 30px;
+  border-radius:5px;
+  margin-top:100px;
+  &:hover {
+    color:#cda54b;
+    text-decoration: none;
+  }
+}
+
+.button-right {
+  float: right;
+}
