@@ -1,0 +1,203 @@
+
+.jack-v {
+    background: #ceceef;
+    min-height: 100vh;
+    width: 100%;
+    font-family: 'Source Code Pro', monospace;
+    //font-family: Courier, Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
+    color: #2e3040;
+    overflow: hidden;
+    h3 {
+        strong {
+            font-weight: 400;
+        }
+        span {
+            font-weight: 300;
+        }
+    }
+    .uppercase {
+        text-transform: uppercase;
+    }
+    .j-chosen-section {
+        display: none;
+    }
+    .jform {
+        padding-top: calc(50vh - 180px);
+        transition: margin-top 0.43s ease-in-out;
+        .field {
+            margin-top: 20px;
+            transition: opacity 0.4s ease-in;
+            &:not(:last-child){
+              cursor: pointer;
+              opacity: 0.1;
+              &:hover {
+                opacity: 0.3;
+              }
+            }
+            .jlabel {
+                position: relative;
+                font-size: 16px;
+                font-weight: 300;
+                color: #2e3040;
+                margin-bottom: 20px;
+                &:before {
+                    font-family: "FontAwesome";
+                    content: "\f105";
+                    position: absolute;
+                    font-size: 35px;
+                    left: -40px;
+                    top: -10px;
+                    color: #333;
+                }
+            }
+            .jinput {
+                position: relative;
+                display: inline-block;
+                &:before {
+                    font-family: "FontAwesome";
+                    content: "\f105";
+                    position: absolute;
+                    font-size: 35px;
+                    left: -40px;
+                    top: 0px;
+                    color: #333;
+                }
+                input {
+                    font-size: 20px;
+                    background: none;
+                    border: solid 2px #33333C;
+                    color: #70707e;
+                    padding: 10px 5px 5px 0px;
+                    width: 390px;
+                    font-size: 18px;
+                    display: inline-block;
+                    position: relative;
+                    &:focus,
+                    &:active {
+                        outline: none;
+                    }
+                    &[type="text"],
+                    &[type="email"] {
+                        border: none;
+                        border-bottom: solid 2px #33333C;
+                        position: relative;
+                    }
+                }
+            }
+            .jinput-radio {
+                display: inline-block;
+                text-align: center;
+                input {
+                    display: none;
+                }
+                label {
+                    cursor: pointer;
+                    position: relative;
+                   // font-family: Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
+                    font-weight: 300;
+                    display: inline-block;
+                    margin: 10px 20px;
+                    font-size: 14px;
+                    transition: margin 0.23s ease-in, opacity 0.2s ease-out;
+                    &:before {
+                        content: "[ ";
+                        position: absolute;
+                        left: -15px;
+                        color: #333;
+                        font-size: 1.4em;
+                        top: -5px;
+                        transition: all 0.17s ease-in-out;
+                    }
+                    &:after {
+                        content: " ]";
+                        position: absolute;
+                        right: -15px;
+                        color: #333;
+                        font-size: 1.4em;
+                        top: -5px;
+                        transition: all 0.17s ease-in-out;
+                    }
+                }
+                input:checked ~ label {
+                    font-weight: 600;
+                    margin: 10px 14px;
+                    &:after {
+                        right: -20px;
+                    }
+                    &:before {
+                        left: -20px;
+                    }
+                }
+            }
+            .jinput-textarea {
+                //background: red;
+                textarea {
+                    resize: none;
+                    overflow: hidden;
+                    outline: none;
+                    background: transparent;
+                    border: solid 2px #33333C
+                }
+            }
+            .jbutton-centred {
+                text-align: center;
+                >.jbutton {
+                    clear: both;
+                    float: none;
+                    display: inline-block;
+                    text-align: center;
+                }
+            }
+            .jbutton {
+                display: inline-block;
+                font-size: 20px;
+                padding: 5px 10px;
+                position: relative;
+                color: transparent;
+                visibility: hidden;
+                transition: opacity 0.3s ease-in-out 0.4s;
+                float: right;
+                margin-top: 6px;
+                cursor: pointer;
+                > span {
+                    opacity: 0;
+                }
+                &:before {
+                    content: "[ ";
+                    position: absolute;
+                    left: calc(40% - 10px);
+                    color: #333;
+                    font-size: 1.3em;
+                    top: -1px;
+                }
+                &:after {
+                    content: " ]";
+                    position: absolute;
+                    right: calc(40% - 10px);
+                    color: #333;
+                    font-size: 1.3em;
+                    top: -1px;
+                }
+                &.activate {
+                    visibility: visible;
+                    color: #333;
+                    opacity: 1;
+                    > span {
+                        opacity: 1;
+                        transition: opacity 0.3s ease-in-out 0.2s;
+                    }
+                    &:before {
+                        opacity: 1;
+                        left: -10px;
+                        transition: left 0.27s ease-in-out;
+                    }
+                    &:after {
+                        opacity: 1;
+                        right: -10px;
+                        transition: right 0.27s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+}

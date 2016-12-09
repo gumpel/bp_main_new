@@ -1,0 +1,16 @@
+$icon-font-path: '../fonts/';
+@import "/bower_components/sanitize-css/sanitize.css";
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/font-awesome/scss/font-awesome.scss";
+// endbower
+
+
+@import "mixin.scss";
+@import "font.scss";
+@import "anhorstyle.scss";
+@import "bpslider.scss";
+@import "bpclient.scss";
+@import "bpnums.scss";
+@import "jack.scss";
+@import "footer.scss";
