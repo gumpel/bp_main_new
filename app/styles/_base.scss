@@ -34,3 +34,13 @@ section > div {
 .button-right {
   float: right;
 }
+
+section {
+  position: relative;
+}
+
+section > canvas {
+  position: absolute;
+  top: 2px;
+  z-index: 10;
+}

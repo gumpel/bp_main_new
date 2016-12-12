@@ -1,0 +1,38 @@
+#bp_what_we_do {
+  background: #09090b;
+}
+.bp_what_we_do {
+  background: #09090b;
+  min-height: 100vh;
+  overflow: hidden;
+  .wwd_slide {
+    font-family: 'BebasNeueBook';
+    color:white;
+    list-style: none;
+    padding-left: 0;
+    width: 100%;
+    li {
+
+      img {
+        transform: scale(0.8);
+        @include transition(transform 0.17s ease-in);
+      }
+      a {
+        text-decoration: none;
+      }
+      &:hover img {
+        transform: scale(1);
+      }
+      width: 25%;
+      display: inline-block;
+      float: left;
+      h4 {
+        margin-left: 10%;
+        color: #fff;
+      }
+      &:hover h4 {
+
+      }
+    }
+  }
+}

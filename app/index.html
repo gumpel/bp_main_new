@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>bp_main</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Source+Code+Pro:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->
@@ -16,6 +15,7 @@
   <!-- bower:css -->
   <link rel="stylesheet" href="/bower_components/sanitize-css/sanitize.css" />
   <link rel="stylesheet" href="/bower_components/bxslider-4/dist/jquery.bxslider.css" />
+  <link rel="stylesheet" href="/bower_components/aos/dist/aos.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css styles/main.css -->
@@ -61,7 +61,7 @@
             </span>
           </div>
           <div class="col-md-8">
-            <div class="mb-tittle">
+            <div class="mb-tittle" data-aos="fade-down">
               <ul>
                 <li><strong>UZBROJENI</strong><br> W KREATYWNE<br> UMYSŁY
                 </li>
@@ -73,14 +73,15 @@
       </div>
     </div>
   </section>
-  <section>
+  <section id="bp_what_we_do">
+    <canvas id="canvas_next" height="0" data-color="#09090B"></canvas>
     <div class="bp_what_we_do" id="bp_what_we_do">
       <div class="container">
-        <h2>Czym się <strong>zajmujemy?</strong></h2>
+        <h2 data-aos="zoom-in-up">Czym się <strong>zajmujemy?</strong></h2>
         <div class="row">
           <ul class="wwd_slide" id="wwd_slide">
             <li>
-              <div>
+              <div  data-aos="flip-up" data-aos-duration="1000">
                 <a href="#">
                   <img src="images/whatwedo/aplikacje.png" />
                   <h4>Aplikacje mobilne</h4>
@@ -88,24 +89,24 @@
               </div>
             </li>
             <li>
-              <div>
-                <a href="#">
+              <div data-aos="flip-up" data-aos-duration="1000">
+                <a href="#" >
                   <img src="images/whatwedo/crm.png" />
                   <h4>crm</h4>
                 </a>
               </div>
             </li>
             <li>
-              <div>
-                <a href="#">
+              <div data-aos="flip-up"  data-aos-duration="1000">
+                <a href="#" >
                   <img src="images/whatwedo/sklepy.png" />
                   <h4>sklepy</h4>
                 </a>
               </div>
             </li>
             <li>
-              <div>
-                <a href="#">
+              <div data-aos="flip-up" data-aos-duration="1000">
+                <a href="#" >
                   <img src="images/whatwedo/strony.png" />
                   <h4>strony</h4>
                 </a>
@@ -117,7 +118,8 @@
       </div>
     </div>
   </section>
-  <section>
+  <section id="canvas2">
+    <canvas id="canvas_next" height="0" data-color="#CDCDEF"></canvas>
     <div id="g-slider" class="g-slider">
       <div class="container">
         <div class="row">
@@ -129,7 +131,7 @@
           <div class="col-md-4">
             <div class="g-slider-desriptions" id="g-slider-desriptions">
               <ul>
-                <li class="g-description-active">
+                <li class="g-description-active" data-aos="zoom-in-up">
                   <div>
                     <div class="g-description-logo"><img src="images/slider/logo.png"></div>
                     <h3><span>Website</span> Indygo Children</h3>
@@ -213,25 +215,26 @@
       </div>
     </div>
   </section>
-  <section>
+  <section id="canvas3">
+    <canvas id="canvas_next" height="0" data-color="#0C0E11"></canvas>
     <div class="bp_num" id="bp_num">
       <div class="container">
-        <h2>Nasze działanie w <strong>liczbach</strong></h2>
+        <h2  data-aos="fade-down">Nasze działanie w <strong>liczbach</strong></h2>
         <div class="row">
           <div class="col-sm-4">
-            <div class="bp_num_box" id="bp_num_box_1">
+            <div class="bp_num_box" id="bp_num_box_1" data-aos="flip-left"  data-aos-duration="1200">
               <h4 class="bp_num_title">Web Development</h4>
               <span class="bp_num_percente">60%</span>
             </div>
           </div>
           <div class="col-sm-4">
-            <div class="bp_num_box" id="bp_num_box_2">
+            <div class="bp_num_box" id="bp_num_box_2" data-aos="flip-up"  data-aos-duration="1300">
               <h4 class="bp_num_title">GRAPHIC DESIGN</h4>
               <span class="bp_num_percente">18%</span>
             </div>
           </div>
           <div class="col-sm-4">
-            <div class="bp_num_box" id="bp_num_box_3">
+            <div class="bp_num_box" id="bp_num_box_3" data-aos="flip-right"  data-aos-duration="1400">
               <h4 class="bp_num_title">JAVA SCRIPT</h4>
               <span class="bp_num_percente">12%</span>
             </div>
@@ -251,7 +254,8 @@
       </div>
     </div>
   </section>
-  <section>
+  <section id="canvas4">
+    <canvas id="canvas_next" height="0" data-color="#CDCDEF"></canvas>
     <div class="bp_clients" id="bp_clients">
       <div class="container">
         <div class="bp_client_circle" id="bp_client_circle">
@@ -473,6 +477,7 @@
   <script src="/bower_components/jquery/dist/jquery.js"></script>
   <script src="/bower_components/modernizr/modernizr.js"></script>
   <script src="/bower_components/bxslider-4/dist/jquery.bxslider.js"></script>
+  <script src="/bower_components/aos/dist/aos.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:js scripts/plugins.js -->
