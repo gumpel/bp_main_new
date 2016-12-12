@@ -25,9 +25,13 @@ section > div {
   padding:20px 30px;
   border-radius:5px;
   margin-top:100px;
+  cursor:pointer;
+  font-weight: 400;
+
   &:hover {
-    color:#cda54b;
+    color:#09090B;
     text-decoration: none;
+    background: #cda54b;
   }
 }
 
@@ -43,4 +47,10 @@ section > canvas {
   position: absolute;
   top: 2px;
   z-index: 10;
+
+}
+
+section#canvas2  > canvas, section#canvas4  > canvas {
+     transform: rotateY(180deg);
+
 }

@@ -1,5 +1,5 @@
 .g-slider {
-  padding: 50px 0;
+  padding: 250px 0;
   background: #cdcdef;
   font-family: BebasNeueRegular;
   overflow: hidden;
@@ -20,7 +20,7 @@
     }
   }
   .g-slider-desriptions {
-    > ul {
+      > ul {
       list-style: none;
       li {
         position: absolute;

@@ -1,3 +1,5 @@
+
+
 'use strict';
 jQuery(document).ready(function(t) {
   function i(i, e) {
@@ -29,10 +31,22 @@ jQuery(document).ready(function(t) {
     if (t('#' + e).has('canvas') === !1) return !1;
     var o = t('#' + e + ' canvas:first'),
       a = o.get(0).getContext('2d');
-    if (i(o, n), a.clearRect(0, 0, o.width(), o.height()), a.beginPath(), a.moveTo(0, o.height()), a.lineTo(o.width(), o.height()), a.lineTo(o.width(), 0), a.lineTo(o.width(), t(window).height - .5 * n), a.bezierCurveTo(.5 * (t(window).height() - o.height()), 0, t(window).height() - o.height(), n, .5 * -n, o.height()), a.closePath(), 'undefined' != typeof o.data('image')) {
+
+    if (i(o, n),
+     a.clearRect(0, 0, o.width(), o.height()),
+     //a.bezierCurveTo(.5 * (t(window).height() - o.height()),  0, t(window).height() - o.height(), n, .5 * -n, o.height())
+     a.beginPath(),
+     a.moveTo(0, o.height()),
+     a.lineTo(o.width(),
+     o.height()),
+     a.lineTo(o.width(), 0),
+     a.lineTo(o.width(),
+     t(window).height - .5 * n),
+     a.bezierCurveTo(.5 * (t(window).height() - o.height()),  0, t(window).height() - o.height(), n, .5 * -n, o.height()),
+     a.closePath(), 'undefined' != typeof o.data('image')) {
       var h = new Image;
       h.src = o.data('image');
-      var r = a.createPattern(h, 'no-repeat');
+      var r = a.createPattern(h, 'no-repeat');0
       a.fillStyle = r, a.fill()
     } else 'undefined' != typeof o.data('color') && (a.fillStyle = o.data('color'), a.fill())
   }
