@@ -7,7 +7,7 @@
 	z-index: 1;
 }
 
-/* General button style (reset) */
+/* General <i class="fa fa-angle-down"></i> style (reset) */
 .cbtn {
 	border: none;
 	font-family: inherit;
@@ -94,4 +94,20 @@
 .cbtn-1e:active:after {
 	height: 400%;
 	opacity: 1;
+}
+
+.button {
+    border: 2px solid #cda54b;
+    border-radius: 5px;
+    color: #cda54b;
+    cursor: pointer;
+    display: inline-block;
+    font-family: BebasNeueRegular;
+    font-size: 19px;
+    font-weight: 400;
+    margin-top: 100px;
+    padding: 20px 30px;
+		&:hover {
+			color:#09090b;
+		}
 }

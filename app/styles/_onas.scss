@@ -1,0 +1,45 @@
+.about_banner {
+  min-height:90vh;
+  background-color: #09090b;
+  background-position: center center;
+  background-size: cover;
+  background-size: 100% auto;
+  font-family: 'BebasNeueRegular';
+  font-size: 20px;
+
+  h1 {
+    font-family: 'BebasNeueBook';
+    font-size: 7.75em;
+    color: #fff;
+    margin-top:4rem;
+  }
+}
+.about_2 {
+  font-size:20px;
+  background: #09090b;
+  font-family: "Roboto Condensed", sans-serif;
+  color:#8f8f8f;
+  h2 {
+    font-size:5em;
+    text-align:left;
+      font-family: 'bebas_neuebook';
+      color:#fff;
+      span {
+        font-family: 'bebas_neuelight';
+        color:#30303a;
+      }
+      p {
+        font-family: "Roboto Condensed", sans-serif;
+        color:#8f8f8f;
+        margin-bottom:2em;
+        font-weight: 400;
+      }
+      .button:hover {
+        color:#09090b !important;
+      }
+  }
+}
+
+.about_3 {
+  background: #ceceef;
+}

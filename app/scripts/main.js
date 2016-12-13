@@ -1,6 +1,5 @@
-
-
 'use strict';
+
 jQuery(document).ready(function(t) {
   function i(i, e) {
     i.attr({
@@ -34,7 +33,6 @@ jQuery(document).ready(function(t) {
 
     if (i(o, n),
      a.clearRect(0, 0, o.width(), o.height()),
-     //a.bezierCurveTo(.5 * (t(window).height() - o.height()),  0, t(window).height() - o.height(), n, .5 * -n, o.height())
      a.beginPath(),
      a.moveTo(0, o.height()),
      a.lineTo(o.width(),
@@ -46,7 +44,7 @@ jQuery(document).ready(function(t) {
      a.closePath(), 'undefined' != typeof o.data('image')) {
       var h = new Image;
       h.src = o.data('image');
-      var r = a.createPattern(h, 'no-repeat');0
+      var r = a.createPattern(h, 'no-repeat');
       a.fillStyle = r, a.fill()
     } else 'undefined' != typeof o.data('color') && (a.fillStyle = o.data('color'), a.fill())
   }
@@ -59,12 +57,13 @@ jQuery(document).ready(function(t) {
   })
 });
 
-
-
 $(document).ready(function() {
 
   //css Animation scroll
-  AOS.init();
+  AOS.init({
+     disable: 'mobile',
+     once: true
+  });
   $('#toggle').click(function() {
     $(this).toggleClass('active');
     $('#overlay').toggleClass('open');
@@ -439,7 +438,8 @@ $(document).ready(function() {
 // jack-20
 $(document).ready(function() {
       var n = !1;
-      var t = $('#jack-v');
+      var t = $('#jack-v').length ? $('#jack-v') : !1;
+      if (t)
       $(window).on('scroll load', function(i) {
           console.log(s, e);
           if (n) $(this).unbind(i);
@@ -451,8 +451,7 @@ $(document).ready(function() {
               jack20();
             }
             }
-
-          })
+          });
         //;
       });
 
@@ -646,7 +645,6 @@ $(document).ready(function() {
           });
         }
       }
-
       function showNext(e) {
         var i;
         console.log(current)
@@ -662,5 +660,5 @@ $(document).ready(function() {
 
         $('#jform').css('margin-top', -$('#jform').height() + $('#jform .field:last-child').height());
       }
-
     };
+// Zasob wiedzy;

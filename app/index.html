@@ -6,12 +6,12 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>bp_main</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Source+Code+Pro:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dosis|Roboto+Condensed|Source+Code+Pro:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->
-  <!-- build:css styles/vendor.css -->
+  <!-- build:css /styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="/bower_components/sanitize-css/sanitize.css" />
   <link rel="stylesheet" href="/bower_components/bxslider-4/dist/jquery.bxslider.css" />
@@ -19,9 +19,9 @@
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="/styles/main.css">
   <!-- endbuild -->
-  <!-- build:js scripts/vendor/modernizr.js -->
+  <!-- build:js /scripts/vendor/modernizr.js -->
   <script src="/bower_components/modernizr/modernizr.js"></script>
   <!-- endbuild -->
 </head>
@@ -36,24 +36,24 @@
       <div id="logo_top">
         <a href="/"><img src="images/logo_top.png"></a>
       </div>
-    <div class="button_container" id="toggle">
-      <span class="top"></span>
-      <span class="middle"></span>
-      <span class="bottom"></span>
-    </div>
+      <div class="button_container" id="toggle">
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="bottom"></span>
+      </div>
 
-    <div class="overlay" id="overlay">
-      <nav class="overlay-menu">
-        <ul>
-          <li><a href="#">Strona Główna</a></li>
-          <li><a href="#">Usługi</a></li>
-          <li><a href="#">O nas</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Kontakt</a></li>
-        </ul>
-      </nav>
+      <div class="overlay" id="overlay">
+        <nav class="overlay-menu">
+          <ul>
+            <li><a href="#">Strona Główna</a></li>
+            <li><a href="#">Usługi</a></li>
+            <li><a href="#">O nas</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
-  </div>
   </div>
   <section>
     <div class="main_banner" id="main_banner" style="background-image:url('images/bg-main.png')">
@@ -61,7 +61,7 @@
         <div class="row">
           <div class="col-md-1">
             <span id="mb-slider-count" class="mb-slider-count">
-                <span id="mb-slider-nr" class="mb-slider-nr">1</span><span id="mb-slider-of" class="mb-slider-of">/05</span>
+              <span id="mb-slider-nr" class="mb-slider-nr">1</span><span id="mb-slider-of" class="mb-slider-of">/05</span>
             </span>
           </div>
           <div class="col-md-8">
@@ -71,7 +71,6 @@
                 </li>
               </ul>
             </div>
-
           </div>
         </div>
       </div>
@@ -85,7 +84,7 @@
         <div class="row">
           <ul class="wwd_slide" id="wwd_slide">
             <li>
-              <div  data-aos="flip-up" data-aos-duration="1000">
+              <div data-aos="flip-up" data-aos-duration="1000">
                 <a href="#">
                   <img src="images/whatwedo/aplikacje.png" />
                   <h4>Aplikacje mobilne</h4>
@@ -94,15 +93,15 @@
             </li>
             <li>
               <div data-aos="flip-up" data-aos-duration="1000">
-                <a href="#" >
+                <a href="#">
                   <img src="images/whatwedo/crm.png" />
                   <h4>crm</h4>
                 </a>
               </div>
             </li>
             <li>
-              <div data-aos="flip-up"  data-aos-duration="1000">
-                <a href="#" >
+              <div data-aos="flip-up" data-aos-duration="1000">
+                <a href="#">
                   <img src="images/whatwedo/sklepy.png" />
                   <h4>sklepy</h4>
                 </a>
@@ -110,7 +109,7 @@
             </li>
             <li>
               <div data-aos="flip-up" data-aos-duration="1000">
-                <a href="#" >
+                <a href="#">
                   <img src="images/whatwedo/strony.png" />
                   <h4>strony</h4>
                 </a>
@@ -224,22 +223,22 @@
     <canvas id="canvas_next" height="0" data-color="#0C0E11"></canvas>
     <div class="bp_num" id="bp_num">
       <div class="container">
-        <h2  data-aos="fade-down">Nasze działanie w <strong>liczbach</strong></h2>
+        <h2 data-aos="fade-down">Nasze działanie w <strong>liczbach</strong></h2>
         <div class="row">
           <div class="col-sm-4">
-            <div class="bp_num_box" id="bp_num_box_1" data-aos="flip-left"  data-aos-duration="1200">
+            <div class="bp_num_box" id="bp_num_box_1" data-aos="flip-left" data-aos-duration="1200">
               <h4 class="bp_num_title">Web Development</h4>
               <span class="bp_num_percente">60%</span>
             </div>
           </div>
           <div class="col-sm-4">
-            <div class="bp_num_box" id="bp_num_box_2" data-aos="flip-up"  data-aos-duration="1300">
+            <div class="bp_num_box" id="bp_num_box_2" data-aos="flip-up" data-aos-duration="1300">
               <h4 class="bp_num_title">GRAPHIC DESIGN</h4>
               <span class="bp_num_percente">18%</span>
             </div>
           </div>
           <div class="col-sm-4">
-            <div class="bp_num_box" id="bp_num_box_3" data-aos="flip-right"  data-aos-duration="1400">
+            <div class="bp_num_box" id="bp_num_box_3" data-aos="flip-right" data-aos-duration="1400">
               <h4 class="bp_num_title">JAVA SCRIPT</h4>
               <span class="bp_num_percente">12%</span>
             </div>
@@ -386,7 +385,7 @@
           <span id="bp_client_count" class="bp_client_count">
                   <span id="bp_client_nr" class="bp_client_nr"></span><span id="bp_client_of" class="bp_client_of"></span>
           </span>
-          <div class="bp_client_circle_inner"  data-aos="zoom-in">
+          <div class="bp_client_circle_inner" data-aos="zoom-in">
             <div class="bp_client_title" id="bp_client_title"></div>
             <a class="bp_client_link" id="bp_client_link" href="#"></a>
             <div class="bp_client_coment" id="bp_client_coment"></div>
@@ -408,7 +407,7 @@
     <div class="jack-v" id="jack-v">
       <div class="container">
         <div class="row">
-          <div class="col-md-12"  data-aos="zoom-in">
+          <div class="col-md-12" data-aos="zoom-in">
             <h3>
                   <strong>JACK V 2.0</strong><br/>
                   <span class="jsession">SESSION: 534580</span><br/>
@@ -483,6 +482,7 @@
   <script src="/bower_components/modernizr/modernizr.js"></script>
   <script src="/bower_components/bxslider-4/dist/jquery.bxslider.js"></script>
   <script src="/bower_components/aos/dist/aos.js"></script>
+  <script src="/bower_components/parallax.js/parallax.min.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:js scripts/plugins.js -->
@@ -500,7 +500,7 @@
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
   <!-- endbuild -->
   <!-- build:js scripts/main.js -->
-  <script src="scripts/main.js"></script>
+  <script src="/scripts/main.js"></script>
   <!-- endbuild -->
 </body>
 

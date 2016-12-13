@@ -50,7 +50,7 @@ section > canvas {
 
 }
 
-section#canvas2  > canvas, section#canvas4  > canvas {
-     transform: rotateY(180deg);
-
+section#canvas2  > canvas, section#canvas4  > canvas, section#knowlage_details  > canvas {
+  -webkit-transform: rotateY(180deg);
+       transform: rotateY(180deg);
 }
