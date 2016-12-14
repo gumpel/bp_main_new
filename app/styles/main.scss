@@ -4,8 +4,6 @@ $icon-font-path: '../fonts/';
  @import "bower_components/font-awesome/scss/font-awesome.scss";
  // endbower
 @import "mixin.scss";
-
-
 @import "base.scss";
 @import "font.scss";
 @import "nav.scss";
@@ -13,7 +11,6 @@ $icon-font-path: '../fonts/';
 @import "footer.scss";
 @import "whatwedo.scss";
 @import "main_banner.scss";
-
 @import "anhorstyle.scss";
 @import "bpslider.scss";
 @import "bpclient.scss";
@@ -21,3 +18,4 @@ $icon-font-path: '../fonts/';
 @import "jack.scss";
 @import "zasobwiedzy.scss";
 @import "onas.scss";
+@import "services.scss";

@@ -1,5 +1,4 @@
 'use strict';
-
 jQuery(document).ready(function(t) {
   function i(i, e) {
     i.attr({
@@ -177,7 +176,7 @@ $(document).ready(function() {
       gDescription.eq(gActiveSlide).removeClass('g-description-active');
       gActiveSlide = gActiveSlide - 1 > 0 ? (gActiveSlide - 1) % gSliderNumber : (gActiveSlide + gSliderNumber - 1) % gSliderNumber;
       gSliderCount(gActiveSlide, gSliderNumber);
-      console.log(gActiveSlide)
+      //console.log(gActiveSlide)
     }
 
     function gNext() {
@@ -600,7 +599,7 @@ $(document).ready(function() {
           $(current + ' .jinput-radio label').on('click', function() {
             $(this).siblings().prop('checked', true);
             dataNext = jformObj.field[current].next[$(this).siblings().prop('checked', true).val()];
-            console.log(dataNext);
+            //console.log(dataNext);
             showNext(dataNext);
           })
         }
@@ -664,17 +663,3 @@ $(document).ready(function() {
 // Zasob wiedzy;
 
 // O nas;
-
-$(document).ready(function() {
-    if ($('#aboutpath').length){
-    $('#pathline').height($('#aboutpath').height() - $('#aboutpath .row:last-child').height());
-    $('#pathline').css('top',$('#aboutpath .row:first-child').height()/2-11);
-    var pathTop = -6;
-    $('.pathdot').each(function(){
-      $(this).css('top' ,pathTop);
-      var hStart = $('#aboutpath .row:first-child').height()/2-11;
-      pathTop += $('#abouthpath_inner .row').eq($(this).index()).height()+1;
-      console.log(pathTop);
-    })
-    }
-});

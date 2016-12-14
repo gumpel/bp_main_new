@@ -1,0 +1,57 @@
+.servies_banner {
+  min-height: 100vh;
+  background-color: #09090b;
+  background-image: url("images/bg-main.png");
+  background-position: center center;
+  background-size: 100% auto;
+  font-family: 'BebasNeueRegular';
+
+  .mb-slider-count {
+    color: white;
+    display: block;
+    padding-top: 50vh;
+    font-size: 5em;
+
+    .mb-slider-nr {
+      font-family: 'BebasNeueBold';
+    }
+
+    .mb-slider-of {
+      color: white;
+      line-height: 3.6em;
+      font-size: 0.26em;
+      vertical-align: top;
+    }
+  }
+
+  .mb-tittle {
+    font-family: 'bebas_neuebook';
+    font-size: 10em;
+    line-height: 1em;
+    color: #ffffff;
+
+    ul {
+      list-style: none;
+      margin-top: 20vh;
+
+      li {
+        strong {
+          color: #d0a73b;
+          font-family: 'BebasNeueLight';
+          font-weight: 200;
+        }
+      }
+    }
+  }
+}
+
+.servies1 {
+  background: #09090b;
+  min-height: 100vh;
+  overflow: hidden;
+  font-size:21px;
+  .servies_chosen {
+    font-family: 'BebasNeueRegular';
+
+   }
+}

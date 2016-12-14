@@ -6,7 +6,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>bp_main</title>
-  <link href="https://fonts.googleapis.com/css?family=Dosis|Roboto+Condensed:300,400,500,700|Source+Code+Pro:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dosis|Roboto+Condensed:300,400,500,700;subset=latin-ext|Source+Code+Pro:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -15,10 +15,11 @@
   <!-- bower:css -->
   <link rel="stylesheet" href="/bower_components/bxslider-4/dist/jquery.bxslider.css" />
   <link rel="stylesheet" href="/bower_components/aos/dist/aos.css" />
+  <link rel="stylesheet" href="/bower_components/hover/css/hover.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="/styles/main.css">
   <!-- endbuild -->
   <!-- build:js scripts/vendor/modernizr.js -->
   <script src="/bower_components/modernizr/modernizr.js"></script>
@@ -42,11 +43,13 @@
       <div class="overlay" id="overlay">
         <nav class="overlay-menu">
           <ul>
-            <li><a href="#">Strona Główna</a></li>
-            <li><a href="#">Usługi</a></li>
-            <li><a href="#">O nas</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Kontakt</a></li>
+            <li><a href="\">Strona Główna</a></li>
+            <li><a href="uslugi-2.html">Usługi</a></li>
+            <li><a href="onas.html">O nas</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="zasob-wiedzy.html">zasob wiedzy</a></li>
+            <li><a href="blog.html">blog</a></li>
+            <li><a href="kontakt.html">kontakt</a></li>
           </ul>
         </nav>
       </div>
@@ -64,6 +67,7 @@
     </div>
   </section>
   <section id="about_2">
+    <canvas id="canvas_next" height="0" data-color="#09090B"></canvas>
     <div class="about_2">
       <div class="container">
         <div class="row">
@@ -84,9 +88,11 @@
     </div>
   </section>
   <section id="about_3">
+    <canvas id="canvas_next" height="0" data-color="#CECEEF"></canvas>
     <div class="about_3">
       <div class="container">
         <div class="row">
+
           <div class="col-md-12">
             <h2>Sprawdzona <strong>ścieżka</strong></h2>
             <p>Zdobyty zasób wiedzy, a także praktyka, umożliwiają nam stosowanie zarówno mniejszych, jak i rozbudowanych rozwiązań:</p>
@@ -94,24 +100,27 @@
         </div>
         <div class="aboutpath" id="aboutpath">
           <div class="pathline" id="pathline">
-            <div class="pathdot" id="pathdot_1" ></div>
+
+            <div class="pathdot " id="pathdot_1"></div>
             <div class="pathdot" id="pathdot_2"></div>
             <div class="pathdot" id="pathdot_3"></div>
             <div class="pathdot" id="pathdot_4"></div>
             <div class="pathdot" id="pathdot_5"></div>
             <div class="pathdot" id="pathdot_6"></div>
             <div class="pathdot" id="pathdot_7"></div>
+            <div class="progress" id="progress"></div>
           </div>
+
           <div id="abouthpath_inner">
             <div class="row first">
               <div class="col-md-6 col-lg-4 col-lg-offset-2" data-aos="fade-right">
                 <h3>Brief</h3>
                 <p>Wstępne rozmowy lub spotkanie w celu zapoznania się z koncepcją; omówienia i analizy oczekiwań oraz Państwa potrzeb.</p>
               </div>
-              <div class="col-md-6 col-lg-4 " data-aos="fade-left"><img src="images/onas/path_01.png" alt="Brief"></div>
+              <div class="col-md-6 col-lg-4 " data-aos="fade-left"><img src="images/onas/path_01.png" alt="Brief" id="trigger1"></div>
             </div>
             <div class="row">
-              <div class="col-md-6 col-lg-4 col-lg-offset-2" data-aos="fade-right"><img src="images/onas/path_02.png" alt="Oferta"></div>
+              <div class="col-md-6 col-lg-4 col-lg-offset-2" data-aos="fade-right"><img src="images/onas/path_02.png" alt="Oferta" id="trigger2"></div>
               <div class="col-md-6 col-lg-4 " data-aos="fade-left">
                 <h3>Oferta</h3>
                 <p>Zawarliśmy w niej główne informacje dotyczące projektu: wycenę, technologie wykonania oraz opis modułów, które będzie zawierał.</p>
@@ -124,10 +133,10 @@
                   finalny.
                 </p>
               </div>
-              <div class="col-md-6 col-lg-4" data-aos="fade-left"><img src="images/onas/path_03.png" alt="Umowa i dokumentacja"></div>
+              <div class="col-md-6 col-lg-4" data-aos="fade-left"><img src="images/onas/path_03.png" alt="Umowa i dokumentacja" id="trigger3"></div>
             </div>
             <div class="row">
-              <div class="col-md-6  col-lg-4 col-lg-offset-2" data-aos="fade-right"><img src="images/onas/path_04.png" alt="Projektowanie grafiki"></div>
+              <div class="col-md-6  col-lg-4 col-lg-offset-2" data-aos="fade-right"><img src="images/onas/path_04.png" alt="Projektowanie grafiki" id="trigger4"></div>
               <div class="col-md-6 col-lg-4" data-aos="fade-left">
                 <h3>PROJEKTOWANIE GRAFIKI</h3>
                 <p>Po oficjalnym podpisaniu umowy nasz grafik przygotowuje dla Państwa wizualizacje poszczególnych podstron serwisu, do których zbierze uwagi i uwzględni je tak, aby produkt finalny odpowiadał Państwu w 100%. Kształtujemy go do momentu, aż
@@ -141,10 +150,10 @@
                   projektowej.
                 </p>
               </div>
-              <div class="col-md-6 col-lg-4" data-aos="fade-left"><img src="images/onas/path_05.png" alt="Wykonanie"></div>
+              <div class="col-md-6 col-lg-4" data-aos="fade-left"><img src="images/onas/path_05.png" alt="Wykonanie" id="trigger5"></div>
             </div>
             <div class="row">
-              <div class="col-md-6 col-lg-4 col-lg-offset-2" data-aos="fade-right"><img src="images/onas/path_06.png" alt="Wykonanie"></div>
+              <div class="col-md-6 col-lg-4 col-lg-offset-2" data-aos="fade-right"><img src="images/onas/path_06.png" alt="Wykonanie" id="trigger6"></div>
               <div class="col-md-6 col-lg-4" data-aos="fade-left">
                 <h3>TESTY I INSTALACJA</h3>
                 <p>W miarę oddawania kolejnych modułów, każdy z nich jest osobno testowany. W chwili, kiedy wszystkie moduły są wprowadzone, przeprowadzamy testy całościowe.</p>
@@ -157,7 +166,7 @@ PRACY NAD PROJEKTEM</h3>
                 <p>Oddajemy gotowy produkt w Państwa ręce – instalacja i wdrożenie na podstawie indywidualnych ustaleń. Oddanie projektu nie jest równoznaczne z pozostawieniem Państwa od tego momentu samych sobie, więc proszę się nie obawiać. Prowadzimy
                   opiekę i wsparcie techniczne stworzonych projektów, a w okresie trwania gwarancji, jesteśmy do Państwa dyspozycji w razie problemów technicznych.</p>
               </div>
-              <div class="col-md-6 col-lg-4 " data-aos="fade-left"><img src="images/onas/path_07.png" alt="Wykonanie"></div>
+              <div class="col-md-6 col-lg-4 " data-aos="fade-left"><img src="images/onas/path_07.png" alt="Wykonanie" id="trigger7"></div>
             </div>
           </div>
         </div>
@@ -165,13 +174,14 @@ PRACY NAD PROJEKTEM</h3>
     </div>
   </section>
   <section id="about_4">
+    <canvas id="canvas_next" height="0" data-color="#2B2C43"></canvas>
     <div class="about_4">
       <div class="container">
         <h2>Rozwiązania w <strong>zakresie</strong></h2>
         <p>Zdobyty zasób wiedzy, a także praktyka, umożliwiają nam stosowanie zarówno mniejszych, jak i rozbudowanych rozwiązań:</p>
 
         <div class="row solution_1">
-          <div class="col-md-4" data-aos="zoom-in-up" data-aos-delay="50"><img src="images/onas/solution_01.png" alt="Projektow multimedialnych">
+          <div class="col-md-4" data-aos="zoom-in-up" data-aos-delay="50"><img src="images/onas/solution_01.png"  alt="Projektow multimedialnych">
             <div>Projektów multimedialnych</div>
           </div>
           <div class="col-md-4"  data-aos="zoom-in-up" data-aos-delay="150"><img src="images/onas/solution_02.png" alt="Relacji biznesowych b2b i b2c">
@@ -269,8 +279,11 @@ PRACY NAD PROJEKTEM</h3>
   <script src="/bower_components/bxslider-4/dist/jquery.bxslider.js"></script>
   <script src="/bower_components/aos/dist/aos.js"></script>
   <script src="/bower_components/parallax.js/parallax.min.js"></script>
+  <script src="/bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
   <!-- build:js scripts/plugins.js -->
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
@@ -286,7 +299,8 @@ PRACY NAD PROJEKTEM</h3>
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
   <!-- endbuild -->
   <!-- build:js scripts/main.js -->
-  <script src="scripts/main.js"></script>
+  <script src="/scripts/main.js"></script>
+  <script src="/scripts/scrollmagic.js"></script>
   <!-- endbuild -->
 </body>
 

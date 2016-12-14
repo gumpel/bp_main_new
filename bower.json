@@ -7,7 +7,9 @@
     "font-awesome": "fontawesome#^4.7.0",
     "bxslider-4": "^4.2.5",
     "aos": "^2.1.1",
-    "parallax.js": "^1.4.2"
+    "parallax.js": "^1.4.2",
+    "scrollmagic": "^2.0.5",
+    "hover": "Hover#^2.1.0"
   },
   "overrides": {
     "bootstrap-sass": {

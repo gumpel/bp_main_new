@@ -22,6 +22,18 @@
   color: #8f8f8f;
   padding-top: 5em;
   padding-bottom: 5em;
+  position: relative;
+
+  &:after {
+    content: "";
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
 
   h2 {
     font-size: 5em;
@@ -51,6 +63,7 @@
   background: #ceceef;
   font-size: 20px;
   color: #30303a;
+  padding-bottom: 6em;
 
   .pathline {
     width: 2px;
@@ -58,12 +71,19 @@
     position: absolute;
     left: 50%;
     background: white;
+
   }
+  .progress {
+      background: #6584ff;
+      position: absolute;
+      width: 2px;
+      height: 1%;
+      }
 
   h2 {
     color: #30303a;
     text-align: left;
-    margin-bottom:20px;
+    margin-bottom: 20px;
   }
 
   .aboutpath {
@@ -71,24 +91,17 @@
     margin-bottom: 5em;
     color: #3d3d49;
     position: relative;
+
     .pathdot {
-        width: 13px;
-        height: 13px;
-        left: -5px;
-        border-radius: 50%;
-        background: #6584ff;
-        position: absolute;
-        &:hover::before {
-            border: 2px solid #fff;
-            border-radius: 50%;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            top: -2px;
-            animation-duration: 0.5s;
-            cursor: pointer;
-        }
-      }
+      width: 13px;
+      height: 13px;
+      left: -5px;
+      border-radius: 50%;
+      background: #6584ff;
+      position: absolute;
+
+      &.hvr-ripple-out-path::before {}
+    }
 
     .row {
       h3 {
@@ -99,8 +112,9 @@
       > div:first-child {
         text-align: right;
         padding-right: 2em;
+
         img {
-          position:relative;
+          position: relative;
         }
 
         h3,
@@ -125,35 +139,105 @@
 }
 
 .about_4 {
-  font-size:20px;
+  font-size: 20px;
   background: #2b2c43;
   color: #fff;
+
   h2 {
     color: #fff;
     text-align: left;
-    margin-bottom:20px;
+    margin-bottom: 20px;
   }
+
   .solution_1 {
     font-family: 'bebas_neuebook';
-    font-size:1.45em;
+    font-size: 1.45em;
     text-align: center;
-    margin-bottom:50px;
+    margin-bottom: 50px;
   }
 
   .solution_2 .row > div:first-child {
     font-family: 'bebas_neuebook';
-    font-size:1.45em;
+    font-size: 1.45em;
     text-align: center;
   }
 
   .solution_2 {
-    margin-top:50px;
+    margin-top: 150px;
+
     strong {
       font-weight: 400;
     }
+
     .row {
-      margin-bottom:150px;
+      margin-bottom: 150px;
     }
   }
+}
+/* Ripple Out */
+@-webkit-keyframes hvr-ripple-out-path {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+@keyframes hvr-ripple-out-path {
+  100% {
+    top: -25px;
+    right: -25px;
+    bottom: -25px;
+    left: -25px;
+    opacity: 0;
+  }
+}
 
+.hvr-ripple-out-path {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+}
+
+.hvr-ripple-out-path:before {
+  content: '';
+  position: absolute;
+  border: 2px solid rgb(101,132,255);
+  opacity: 0.3;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  animation-name: hvr-ripple-out-path;
+  animation-duration: 1s;
+}
+
+.hvr-ripple-out-path:after {
+  content: '';
+  position: absolute;
+  border: 2px solid rgb(101,132,255);
+  opacity: 0.3;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  animation-name: hvr-ripple-out-path;
+  animation-duration: 1s;
+  animation-delay: 0.2s;
+}
+
+.hvr-ripple-out-path:active:after,
+.hvr-ripple-out-path:active:before,
+.hvr-ripple-out-path:focus:after,
+.hvr-ripple-out-path:focus:before,
+.hvr-ripple-out-path:hover:after,
+.hvr-ripple-out-path:hover:before {
+  -webkit-animation-name: hvr-ripple-out-path;
+  animation-name: hvr-ripple-out-path;
 }
