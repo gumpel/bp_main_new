@@ -58,12 +58,13 @@ jQuery(document).ready(function(t) {
 });
 
 $(document).ready(function() {
-
   //css Animation scroll
   AOS.init({
      disable: 'mobile',
-     once: true
+     once: true,
+     ease:'ease-in-out'
   });
+
   $('#toggle').click(function() {
     $(this).toggleClass('active');
     $('#overlay').toggleClass('open');
@@ -604,7 +605,6 @@ $(document).ready(function() {
           })
         }
 
-
         $('#jform .jname').html(jformObj.name);
 
         button = $(current).find('div.jbutton').length > 0 ? $(current).find('div.jbutton') : $(current).find('div.jbutton');
@@ -662,3 +662,19 @@ $(document).ready(function() {
       }
     };
 // Zasob wiedzy;
+
+// O nas;
+
+$(document).ready(function() {
+    if ($('#aboutpath').length){
+    $('#pathline').height($('#aboutpath').height() - $('#aboutpath .row:last-child').height());
+    $('#pathline').css('top',$('#aboutpath .row:first-child').height()/2-11);
+    var pathTop = -6;
+    $('.pathdot').each(function(){
+      $(this).css('top' ,pathTop);
+      var hStart = $('#aboutpath .row:first-child').height()/2-11;
+      pathTop += $('#abouthpath_inner .row').eq($(this).index()).height()+1;
+      console.log(pathTop);
+    })
+    }
+});
