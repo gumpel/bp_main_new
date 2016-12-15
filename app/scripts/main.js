@@ -47,7 +47,7 @@ jQuery(document).ready(function(t) {
       a.lineTo(o.width(),
        t(window).height - .5 * n),
 
-      a.bezierCurveTo(.5 * (t(window).height() - o.height()), 0, t(window).height() - o.height(), n, .2 * -n, o.height()),
+      a.bezierCurveTo(.5 * (t(window).height() - o.height()), 0, t(window).height() - o.height(), n, .1 * -n, o.height()),
       a.closePath(), 'undefined' != typeof o.data('image')) {
       var h = new Image;
       h.src = o.data('image');
@@ -76,11 +76,21 @@ $(document).ready(function() {
     $(this).toggleClass('active');
     $('#overlay').toggleClass('open');
   });
+  if ($('#main_banner').length){
+  var bradio = $('#main_banner').attr('data-height')/$('#main_banner').attr('data-width');
+  $('#main_banner').height($(window).width()*bradio)
+  }
+
+
 });
 
 
 // gslider
 $(document).ready(function() {
+
+
+
+
   gSlider();
 
   function gSlider() {
