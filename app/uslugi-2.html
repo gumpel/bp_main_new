@@ -56,8 +56,8 @@
       </div>
     </div>
   </div>
-  <section>
-    <div class="servies_banner" id="servies_banner" style="background-image:url('images/bg-main.png')">
+  <section  id="servies_banner">
+    <div class="servies_banner" style="background-image:url('images/bg-main.png')">
       <div class="container">
         <div class="row">
 
@@ -75,31 +75,31 @@
       </div>
     </div>
   </section>
-  <section id="servies1">
-    <canvas id="canvas_next" height="0" data-color="#09090B"></canvas>
+  <section id="servies1" class="hascanvas">
+     <canvas id="canvas_next" height="0" data-color="#09090B"></canvas>
     <div class="servies1">
       <div class="container">
         <div class="row servies_chose">
           <div class="col-md-3-trick">
-            <div class="servies_chosen" id="s_chosen_1">Wszystkie</div>
+            <div class="servies_chosen" id="all">Wszystkie</div>
           </div>
           <div class="col-md-3-trick">
-            <div class="servies_chosen" id="s_chosen_2">Marketing</div>
+            <div class="servies_chosen" id="mark">Marketing</div>
           </div>
           <div class="col-md-3-trick">
-            <div class="servies_chosen" id="s_chosen_3">Systemy informatyczne</div>
+            <div class="servies_chosen" id="sys">Systemy informatyczne</div>
           </div>
           <div class="col-md-3-trick">
-            <div class="servies_chosen" id="s_chosen_4">inne</div>
+            <div class="servies_chosen" id="other">inne</div>
           </div>
         </div>
         <div class="servises-detail">
           <div class="row">
             <div class="col-md-6 col-sm-12">
-              <div class="s_details s_chosen_3">
+              <div class="s_details" data-type="sys">
                 <div class="row">
-                  <div class="col-md-5"><img src="images/uslugi/services_1.png" alt="APLIKACJE DEDYKOWANE"></div>
-                  <div class="col-md-7">
+                  <div class="col-sm-5"><img src="images/uslugi/services_1.png" alt="APLIKACJE DEDYKOWANE"></div>
+                  <div class="col-sm-7">
                     <h3>APLIKACJE DEDYKOWANE</h3>
                     <p>Terminu strona internetowa w
 dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć. </p>
@@ -108,10 +108,10 @@ dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć. </p>
               </div>
             </div>
             <div class="col-md-6 col-sm-12">
-              <div class="s_details s_chosen_3">
+              <div class="s_details" data-type="mark">
                 <div class="row">
-                  <div class="col-md-5"><img src="images/uslugi/services_2.png" alt="Aplikacje mobilne"></div>
-                  <div class="col-md-7">
+                  <div class="col-sm-5"><img src="images/uslugi/services_2.png" alt="Aplikacje mobilne"></div>
+                  <div class="col-sm-7">
                     <h3>Aplikacje mobilne</h3>
                     <p>Terminu strona internetowa w
 dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć.</p>
@@ -121,10 +121,10 @@ dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć.</p>
             </div>
 
             <div class="col-md-6 col-sm-12">
-              <div class="s_details s_chosen_3">
+              <div class="s_details s_chosen_3" data-type="mark">
                 <div class="row">
-                  <div class="col-md-5"><img src="images/uslugi/services_3.png" alt="Strony www i portale"></div>
-                  <div class="col-md-7">
+                  <div class="col-sm-5"><img src="images/uslugi/services_3.png" alt="Strony www i portale"></div>
+                  <div class="col-sm-7">
                     <h3>Strony www i portale</h3>
                     <p>Terminu strona internetowa w
 dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć. </p>
@@ -133,10 +133,10 @@ dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć. </p>
               </div>
             </div>
             <div class="col-md-6 col-sm-12">
-              <div class="s_details s_chosen_3">
+              <div class="s_details s_chosen_3" data-type="sys">
                 <div class="row">
-                  <div class="col-md-5"><img src="images/uslugi/services_4.png" alt="Hosting z administracja"></div>
-                  <div class="col-md-7">
+                  <div class="col-sm-5"><img src="images/uslugi/services_4.png" alt="Hosting z administracja"></div>
+                  <div class="col-sm-7">
                     <h3>Hosting z administracja</h3>
                     <p>Terminu strona internetowa w
 dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć.</p>
@@ -146,10 +146,10 @@ dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć.</p>
             </div>
 
             <div class="col-md-6 col-sm-12">
-              <div class="s_details ">
+              <div class="s_details" data-type="sys">
                 <div class="row">
-                  <div class="col-md-5"><img src="images/uslugi/services_5.png" alt="Multimedia mozliwości"></div>
-                  <div class="col-md-7">
+                  <div class="col-sm-5"><img src="images/uslugi/services_5.png" alt="Multimedia mozliwości"></div>
+                  <div class="col-sm-7">
                     <h3>Multimedia mozliwosci</h3>
                     <p>Terminu strona internetowa w
 dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć. </p>
@@ -158,10 +158,10 @@ dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć. </p>
               </div>
             </div>
             <div class="col-md-6 col-sm-12">
-              <div class="s_details">
+              <div class="s_details" data-type="other">
                 <div class="row">
-                  <div class="col-md-5"><img src="images/uslugi/services_6.png" alt="Pozycjonowanie"></div>
-                  <div class="col-md-7">
+                  <div class="col-sm-5"><img src="images/uslugi/services_6.png" alt="Pozycjonowanie"></div>
+                  <div class="col-sm-7">
                     <h3>Pozycjonowanie</h3>
                     <p>Terminu strona internetowa w
 dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć.</p>
@@ -171,10 +171,10 @@ dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć.</p>
             </div>
 
             <div class="col-md-6 col-sm-12">
-              <div class="s_details s_chosen_3">
+              <div class="s_details" data-type="other">
                 <div class="row">
-                  <div class="col-md-5"><img src="images/uslugi/services_7.png" alt="Systemy CRM"></div>
-                  <div class="col-md-7">
+                  <div class="col-sm-5"><img src="images/uslugi/services_7.png" alt="Systemy CRM"></div>
+                  <div class="col-sm-7">
                     <h3>Systemy CRM</h3>
                     <p>Terminu strona internetowa w
 dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć. </p>
@@ -183,10 +183,10 @@ dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć. </p>
               </div>
             </div>
             <div class="col-md-6 col-sm-12">
-              <div class="s_details s_chosen_3">
+              <div class="s_details" data-type="sys">
                 <div class="row">
-                  <div class="col-md-5"><img src="images/uslugi/services_8.png" alt="Systemy ERP"></div>
-                  <div class="col-md-7">
+                  <div class="col-sm-5"><img src="images/uslugi/services_8.png" alt="Systemy ERP"></div>
+                  <div class="col-sm-7">
                     <h3>Systemy ERP</h3>
                     <p>Terminu strona internetowa w
 dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć.</p>
@@ -196,10 +196,10 @@ dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć.</p>
             </div>
 
             <div class="col-md-6 col-sm-12">
-              <div class="s_details s_chosen_3">
+              <div class="s_details" data-type="other">
                 <div class="row">
-                  <div class="col-md-5"><img src="images/uslugi/services_9.png" alt="Systemy Cms"></div>
-                  <div class="col-md-7">
+                  <div class="col-sm-5"><img src="images/uslugi/services_9.png" alt="Systemy Cms"></div>
+                  <div class="col-sm-7">
                     <h3>Systemy Cms</h3>
                     <p>Terminu strona internetowa w
 dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć. </p>
@@ -208,10 +208,10 @@ dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć. </p>
               </div>
             </div>
             <div class="col-md-6 col-sm-12">
-              <div class="s_details s_chosen_3">
+              <div class="s_details" data-type="sys">
                 <div class="row">
-                  <div class="col-md-5"><img src="images/uslugi/services_10.png" alt="Bazy danych"></div>
-                  <div class="col-md-7">
+                  <div class="col-sm-5"><img src="images/uslugi/services_10.png" alt="Bazy danych"></div>
+                  <div class="col-sm-7">
                     <h3>Bazy danych</h3>
                     <p>Terminu strona internetowa w
 dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć.</p>
@@ -221,10 +221,10 @@ dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć.</p>
             </div>
 
             <div class="col-md-6 col-sm-12">
-              <div class="s_details s_chosen_2">
+              <div class="s_details" data-type="other">
                 <div class="row">
-                  <div class="col-md-5"><img src="images/uslugi/services_11.png" alt="E-commerce"></div>
-                  <div class="col-md-7">
+                  <div class="col-sm-5"><img src="images/uslugi/services_11.png" alt="E-commerce"></div>
+                  <div class="col-sm-7">
                     <h3>E-commerce</h3>
                     <p>Terminu strona internetowa w
 dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć. </p>
@@ -233,10 +233,10 @@ dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć. </p>
               </div>
             </div>
             <div class="col-md-6 col-sm-12">
-              <div class="s_details s_chosen_2">
+              <div class="s_details" data-type="sys">
                 <div class="row">
-                  <div class="col-md-5"><img src="images/uslugi/services_12.png" alt="Marketing i reklama"></div>
-                  <div class="col-md-7">
+                  <div class="col-sm-5"><img src="images/uslugi/services_12.png" alt="Marketing i reklama"></div>
+                  <div class="col-sm-7">
                     <h3>Marketing i reklama</h3>
                     <p>Terminu strona internetowa w
 dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć.</p>
@@ -246,10 +246,10 @@ dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć.</p>
             </div>
 
             <div class="col-md-6 col-sm-12">
-              <div class="s_details s_chosen_3">
+              <div class="s_details" data-type="other">
                 <div class="row">
-                  <div class="col-md-5"><img src="images/uslugi/services_13.png" alt="Portale Społecznościowe"></div>
-                  <div class="col-md-7">
+                  <div class="col-sm-5"><img src="images/uslugi/services_13.png" alt="Portale Społecznościowe"></div>
+                  <div class="col-sm-7">
                     <h3>Portale Społecznościowe</h3>
                     <p>Terminu strona internetowa w
 dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć. </p>
@@ -258,10 +258,10 @@ dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć. </p>
               </div>
             </div>
             <div class="col-md-6 col-sm-12">
-              <div class="s_details s_chosen_3">
+              <div class="s_details" data-type="mark">
                 <div class="row">
-                  <div class="col-md-5"><img src="images/uslugi/services_14.png" alt="Usługi informatyczne"></div>
-                  <div class="col-md-7">
+                  <div class="col-sm-5"><img src="images/uslugi/services_14.png" alt="Usługi informatyczne"></div>
+                  <div class="col-sm-7">
                     <h3>Usługi informatyczne</h3>
                     <p>Terminu strona internetowa w
 dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć.</p>
@@ -273,9 +273,15 @@ dzisiejszych czasach chyba nie trzeba nikomu tłumaczyć.</p>
         </div>
       </div>
     </div>
+
   </section>
+    <!-- <section>
+      <div class="servies2empty">
+
+      </div>
+    </section> -->
   <section id="canvas4">
-    <canvas id="canvas_nexts" height="0" data-color="#CDCDEF"></canvas>
+    <!-- <canvas id="canvas_nexts" height="0" data-color="#CDCDEF"></canvas> -->
     <div class="bp_clients" id="bp_clients">
       <div class="container">
         <div class="bp_client_circle" id="bp_client_circle" data-aos="fade-right">

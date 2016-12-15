@@ -50,58 +50,83 @@
   min-height: 100vh;
   font-size: 21px;
   padding-bottom: 5em;
+  padding-top:5em;
+
+  &:after {
+    content: " ";
+    /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+  }
+
   .servies_chose {
-    padding-bottom:100px;
+    padding-bottom: 100px;
   }
-  @media (min-width: $screen-md-min) {
-  .col-md-3-trick {
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-     float: left;
-     width: 25%;
-     &.deactive {
-       width:24%;
-       > div {
-       background: darken(#1d1c24,3)
-       }
-     }
-
-     &.active {
-       width:28%;
-       > div {
-       background: lighten(#1d1c24,10)
-       }
-     }
-
-     @include transition(width 0.23s ease-in-out);
+  @media (max-width: $screen-md-min) {
+    .col-md-3-trick { display: none; }
   }
-}
+  @media (min-width: $screen-md) {
+    .col-md-3-trick {
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+      float: left;
+      width: 25%;
+
+      &.deactive {
+        width: 24%;
+
+        > div {
+          background: darken(#1d1c24,3);
+        }
+      }
+      &.active {
+        width: 28%;
+
+        > div {
+          background: lighten(#1d1c24,10);
+        }
+      }
+      @include transition(width 0.23s ease-in-out);
+    }
+  }
 
   .servies_chosen {
     font-family: 'BebasNeueRegular';
     height: 76px;
     line-height: 76px;
-    color:#fff;
+    color: #fff;
     background: #1d1c24;
-    text-align:center;
-    cursor:pointer;
+    text-align: center;
+    cursor: pointer;
+
     @include transition(background 0.23s ease-in-out)
   }
 
   .s_details {
     padding: 60px 0;
+    min-height: 325px;
+
     h3 {
       font-family: 'bebas_neuebook';
       font-size: 1.5em;
       color: #ffffff;
     }
+
     p {
-      font-size:0.87;
-      color:rgba(255,255,255,0.4);
-      font-family:"Roboto Condensed",sans-serif;
+      font-size: 0.87;
+      color: rgba(255,255,255,0.4);
+      font-family: "Roboto Condensed",sans-serif;
       font-weight: 300;
     }
   }
+}
+.servies2empty {
+  background: #09090b;
+  min-height: 30vh;
+  font-size: 21px;
+  padding-bottom: 5em;
 }

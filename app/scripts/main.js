@@ -1,18 +1,16 @@
 'use strict';
 jQuery(document).ready(function(t) {
-  function i(i, e) {
+  function i(i, e, s) {
     i.attr({
         width: t(window).width(),
         height: e
       }),
       i.css({
-        'margin-top': '-' + e + 'px'
+        'margin-top': '-' + s*e + 'px'
       })
   }
-
   function e(i) {
-
-    var e = t('#' + i),
+      var e = t('#' + i),
       o = e.height(),
       a = t(window).scrollTop(),
       h = e.prev();
@@ -20,26 +18,36 @@ jQuery(document).ready(function(t) {
       var r = h.offset().top;
       if (a >= r && r + o >= a) {
         var c = e.offset().top - a;
+        //console.log(t(window).height() - c);
         n(i.toString(), t(window).height() - c)
-      }
+      }1
     }
   }
+
+
 
   function n(e, n) {
     if (t('#' + e).has('canvas') === !1) return !1;
     var o = t('#' + e + ' canvas:first'),
       a = o.get(0).getContext('2d');
+    var p = t('#' + e + '> .canvas_help');
+    var spin = o.height() / t(window).height() < 1 ? o.height() / t(window).height() : 1;
 
-    if (i(o, n),
+    if(p.length){
+      console.log(spin,o.height() / t(window).height());
+    }
+    if (i(o, n,Math.pow(spin,5)),
+      p.height((1-Math.pow(spin,5))*n),
       a.clearRect(0, 0, o.width(), o.height()),
       a.beginPath(),
       a.moveTo(0, o.height()),
       a.lineTo(o.width(),
         o.height()),
-      a.lineTo(o.width(), 0),
+      a.lineTo(o.width() , 0),
       a.lineTo(o.width(),
-        t(window).height - .5 * n),
-      a.bezierCurveTo(.5 * (t(window).height() - o.height()), 0, t(window).height() - o.height(), n, .5 * -n, o.height()),
+       t(window).height - .5 * n),
+
+      a.bezierCurveTo(.5 * (t(window).height() - o.height()), 0, t(window).height() - o.height(), n, .2 * -n, o.height()),
       a.closePath(), 'undefined' != typeof o.data('image')) {
       var h = new Image;
       h.src = o.data('image');
@@ -49,8 +57,8 @@ jQuery(document).ready(function(t) {
   }
   t(function() {
     t(window).on('scroll', function() {
-      t.each(t('section'), function() {
-        e(t(this).attr('id'))
+      t.each(t('section.hascanvas'), function() {
+        e(t(this).attr('id'));
       })
     })
   })
@@ -158,7 +166,7 @@ $(document).ready(function() {
     }
 
     function pouseButtonAnimation() {
-      console.log(haveBeenPoused)
+    //  console.log(haveBeenPoused)
       if (!haveBeenPoused) {
         $('#g-slider-control-pouse').addClass('slider-poused')
         sliderPoused = setInterval(function() {
@@ -442,7 +450,7 @@ $(document).ready(function() {
   var t = $('#jack-v').length ? $('#jack-v') : !1;
   if (t)
     $(window).on('scroll load', function(i) {
-      console.log(s, e);
+      //console.log(s, e);
       if (n) $(this).unbind(i);
       else {
         var s = $(this).height() + $(this).scrollTop(),
@@ -580,7 +588,7 @@ function jack20() {
   mapCurrent(current);
 
   function mapCurrent(current) {
-    console.log(pathArr);
+    //console.log(pathArr);
     var dataNext = dataNext(current);
     $('#jform').append(jformObj.field[current].html);
     if (jformObj.field[current].html.indexOf('jname') !== -1) {
@@ -593,7 +601,7 @@ function jack20() {
         $(this).siblings().prop('checked', true);
         $(current + ' .jbutton').addClass('activate');
         dataNext = jformObj.field[current].next[$(this).siblings().prop('checked', true).val()];
-        console.log(dataNext)
+      //  console.log(dataNext)
       })
     }
     if ($(current).find('.jinput-radio').length === 2) {
@@ -610,7 +618,7 @@ function jack20() {
     button = $(current).find('div.jbutton').length > 0 ? $(current).find('div.jbutton') : $(current).find('div.jbutton');
 
     $(button).on('click', function() {
-      console.log(dataNext);
+      //console.log(dataNext);
       if (dataNext === '#jform-end') {
         //$('#jform').submit();
       }
@@ -648,7 +656,7 @@ function jack20() {
 
   function showNext(e) {
     var i;
-    console.log(current)
+    //console.log(current)
     $(current).addClass('stop')
     setTimeout(function() {
 
@@ -748,11 +756,51 @@ $(document).ready(function() {
 
 // uslugi
 
+var sObj = [];
+var hObj = {};
+$('.s_details').each(function() {
+  hObj.type = $(this).attr('data-type');
+  hObj.html = $(this).parent().html();
+  sObj.push(hObj)
+  hObj = {};
+})
+
 $(document).ready(function() {
-  if ($('#servies1').length) {
+  if ($('#servies1').length && $('.s_details').length) {
+
     $('.servies_chosen').on('click', function() {
-        $(this).attr('id')
-      
+      hObj = [];
+      var type = $(this).attr('id');
+      //console.log(type);
+      if (type !== 'all')
+        hObj = sObj.filter(function(e) {
+          if (e.type === type) {
+            return e.type;
+          }
+        }).map(function(e) {
+          if (e.type === type) {
+            return e.html;
+          }
+        });
+      else hObj = sObj.map(function(e) {
+        return e.html
+      });
+      $('.servises-detail').html('<div class="row">');
+      for (var i = 0; i < hObj.length; i++) {
+        printServies(i)
+      }
+
+
+      function printServies(ind) {
+        setTimeout(function() {
+          //console.log(hObj[ind]);
+          $('.servises-detail  > .row').append('<div class="col-md-6 col-sm-12">'+hObj[ind]+'</div>')
+          if (ind === hObj.length) {
+
+            //$('.servises-detail').append('</div>');
+          }
+        }, ind * 110)
+      }
     });
 
     if ($(window).width() >= 992) {
