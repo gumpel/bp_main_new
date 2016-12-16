@@ -7,7 +7,7 @@ h2 {
   text-transform: uppercase;
 
   strong {
-    font-family: 'bebas_neue_regularregular';
+    font-family: 'BebasNeueBook';
   }
 }
 
@@ -62,4 +62,17 @@ section#knowlage_details > canvas,
 #about_3 > canvas {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
+}
+
+section.hascanvas > canvas {
+ // transition: margin-top 0.01s ease-in-out;
+}
+
+section.hascanvas > div.canvas_help {
+   //transition:height 0.01s ease-in-out;
+} 
+
+.canvas_help2 {
+  height:35vh;
+  //border: 1px solid red;
 }

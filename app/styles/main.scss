@@ -12,9 +12,36 @@ $icon-font-path: '../fonts/';
 @import "main_banner.scss";
 @import "anhorstyle.scss";
 @import "bpslider.scss";
+@import "technology.scss";
 @import "bpclient.scss";
 @import "bpnums.scss";
 @import "jack.scss";
 @import "zasobwiedzy.scss";
 @import "onas.scss";
 @import "services.scss";
+
+
+
+
+#log {
+	position: fixed;
+	border:1px solid black;
+	background:rgba(0,0,0,1);
+	font-size:9px;
+	min-width: 200px;
+	height: auto;
+	color:green;
+	padding:10px;
+	bottom:5px;
+	right: 5px;
+	z-index: 10000;
+	font-family: 'Roboto Mono', monospace;
+    font-weight: 100; 
+	#log3 {
+		color:pink;
+	}
+	#log4 {
+		color:white;
+		font-size:12;
+	}
+}
