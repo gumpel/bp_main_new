@@ -827,19 +827,34 @@ $(document).ready(function() {
   }
 });
 if (window.location.href.indexOf('localhost') !== -1) {
-$('body').append('<div id="log"><div id="log1"></div><div id="log2"></div><div id="log3"></div></div>')
+$('body').append('<div id="log"><div id="log1"></div><div id="log2"></div><div id="log3"></div><div id="log4"></div></div>')
 
-$( document ).on( "mousemove scroll", function( event ) {
+$( document ).on( "mousemove scroll load", function( event ) {
+  var ws = $(window).scrollTop(),
+      wh = $(window).height(),
+      sot,sh,sid,cSection ='dupa';
+   
+    
 
   $( "#log1" ).text( "pageX: " + event.pageX + ", pageY: " + event.pageY );
   $('#log2').text('');
   $('section').each(function(){
-   $('#log2').append('<span id=o' + $(this).
-    attr('id') + '>' + $(this).attr('id').substring(0,7) + ' offset().top: ' + $(this).offset().top.toFixed(2) + '<br>');
-   $('#log2').append('<span id=h' + $(this).attr('id') + '>' + $(this).attr('id').substring(0,7) + ' height: ' + $(this).height() + '<br>');
+    sot = $(this).offset().top.toFixed(2);
+    sh =  $(this).height().toFixed(2);
+    sid =  $(this).attr('id');
+   
+  if ( sot > ws && sot < ws + wh && sot +  ) {
+      cSection = sid;
+  }  
+    
+
+   $('#log2').append('<span id=o' + sid + '>' + sid.substring(0,7) + ' offset().top: ' + sot + '<br>');
+   $('#log2').append('<span id=h' + sid + '>' + sid.substring(0,7) + ' height: ' + sh + '<br>');
+   $('#log3').text(cSection);
+
   });
-   $('#log3').text('');
-  $('#log3').append('$(window).scrollTop() : '+ $(window).scrollTop()  )
-  $('#log3').append('$(window).height() : '+ $(window).height()  )
+   $('#log4').text('');
+   $('#log4').append('$(window).scrollTop() : '+ ws +'<br>')
+   $('#log4').append('$(window).height() : '+ wh)
 });
 }  

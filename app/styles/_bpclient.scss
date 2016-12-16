@@ -1,0 +1,273 @@
+
+.bp_clients {
+    min-height: 100vh;
+    width: 100%;
+    background: #ceceef;
+    font-size: 20px;
+    @media (max-width: $screen-sm-min) {
+        font-size: 3.4vmin;
+    }
+    .bp_client_circle {
+        width: 25em;
+        height: 25em;
+        border: 1px solid white;
+        position: relative;
+        margin: 10em auto;
+        border-radius: 50%;
+        div.bp_client_list {
+            position: absolute;
+            width: calc(100% + 12em);
+            margin-left: -6em;
+            margin-top: -6em;
+            height: 80%;
+            overflow: hidden;
+            ul {
+                list-style: none;
+                padding: 0;
+                height: 100%;
+                overflow: hidden;
+
+                li {
+                    position: absolute;
+                    bottom: -35%;
+                    left: 50%;
+                    margin-left: - 2.5em;
+                    opacity: 0.1;
+                    transition: left 0.2s linear, bottom 0.2s linear,opacity 0.1s ease-in-out;
+                    &.fast {
+                    transition: left 0.1s linear, bottom 0.1s linear,opacity 0.05s ease-in-out;
+                    }
+                }
+                li:nth-child(1) {
+                    bottom: -35%;
+                    left: 2.5em;
+                    margin-left: - 2.5em;
+                    opacity: 1;
+                }
+                li:nth-child(2) {
+                    bottom: 15%;
+                    left: 2.5em;
+                    margin-left: - 2.5em;
+                    opacity: 1;
+                }
+                li:nth-child(3) {
+                    bottom: 58%;
+                    left: 20%;
+                    margin-left: - 2.5em;
+                    opacity: 1;
+                }
+                li:nth-child(4) {
+                    left: 50%;
+                    margin-left: -2.5em;
+                    bottom: calc(100% - 5em);
+                    opacity: 1;
+                }
+                li:nth-child(5) {
+                    bottom: 58%;
+                    left: 80%;
+                    margin-left: - 2.5em;
+                    opacity: 1;
+                }
+                li:nth-child(6) {
+                    left: calc(100% - 2.5em);
+                    margin-left: -2.5em;
+                    bottom: 15%;
+                    opacity: 1;
+                }
+                li:nth-child(7) {
+                    left: calc(100% - 2.5em);
+                    margin-left: -2.5em;
+                    bottom: -35%
+                }
+                li {
+                    > div {
+                        width: 5em;
+                        height: 5em;
+                        border-radius: 50%;
+                        .bp_client_title,
+                        .bp_client_link,
+                        .bp_client_coment {
+                            display: none;
+                        }
+                        div.bp_client_logo {
+                            border-radius: 50%;
+                            width: 5em;
+                            height: 5em;
+                            margin: 4.5em auto;
+                            text-align: center;
+                            white-space: nowrap;
+                            &:before {
+                                content: "";
+                                display: inline-block;
+                                height: 100%;
+                                vertical-align: middle;
+                            }
+                            img {
+                                vertical-align: middle;
+                                max-height: 70%;
+                                opacity: 0.5;
+                                max-width: 96%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .bp_client_count {
+            color: white;
+            display: block;
+            font-family: "bebas_neuebold", sans-serif;
+            font-size: 2.7em;
+            margin: 0 auto;
+            position: absolute;
+            text-align: center;
+            top: 0.4em;
+            width: 100%;
+            @media (max-width: $screen-sm-min) {
+                display: none;
+            }
+            .bp_client_nr {
+                font-family: 'bebas_neuebold';
+                font-weight: 700;
+            }
+            .bp_client_of {
+                color: white;
+                line-height: 3.3em;
+                font-size: 0.26em;
+                vertical-align: top;
+                margin-left: 3px;
+            }
+        }
+        .bp_client_circle_inner {
+            width: 15em;
+            height: 15em;
+            border: 1px solid white;
+            border-radius: 50%;
+            margin: 5em auto;
+            position: relative;
+            div.bp_client_title {
+                position: absolute;
+                width: 100%;
+                text-align: center;
+                font-family: "bebas_neue_regularregular", sans-serif;
+                text-transform: uppercase;
+                font-size: 1.2em;
+                margin-top: 1.2em;
+                letter-spacing: 0.03em;
+                color: #101112;
+                @media (max-width: $screen-sm-min) {
+                    margin-top: -2.6em;
+                    font-size: 1.6em;
+                }
+            }
+            a.bp_client_link {
+                position: absolute;
+                width: 100%;
+                text-align: center;
+                font-family: 'Roboto Condensed', sans-serif;
+                color: #2c57da;
+                font-size: 0.8em;
+                margin-top: 3.7em;
+                @media (max-width: $screen-sm-min) {
+                    margin-top: -2em;
+                    font-size: 1.2em;
+                }
+            }
+            div.bp_client_coment {
+                font-family: "bebas_neue_regularregular", sans-serif;
+                font-size: 1.9em;
+                line-height: 1.2em;
+                margin-top: 25rem;
+                position: absolute;
+                text-align: center;
+                @media (min-width: $screen-sm-min) {
+                    margin: 25rem -40% 0;
+                }
+                @media (max-width: $screen-sm-min) {
+                    margin-top: 11em;
+                    font-size:1.4em;
+                }
+
+                @media (min-width: $screen-md-min) {
+                    margin: 25rem -100% 0;
+                    width: 895px;
+                }
+                @media (min-width: $screen-lg-min) {
+                    margin: 25rem -100% 0;
+                }
+            }
+            div.bp_client_logo {
+                background: #fff;
+                border-radius: 50%;
+                width: 6em;
+                height: 6em;
+                margin: 4.5em auto;
+                text-align: center;
+                white-space: nowrap;
+                @media (max-width: $screen-sm-min) {
+                     width: 12em;
+                height: 12em;
+                margin: 1.5em auto;
+
+                }
+                &:before {
+                    content: "";
+                    display: inline-block;
+                    height: 100%;
+                    vertical-align: middle;
+                }
+                img {
+                    vertical-align: middle;
+                    max-height: 70%;
+                    max-width: 90%;
+                }
+            }
+        }
+    }
+}
+
+.bp_client_control_button {
+    z-index: 3;
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    font-size: 40px;
+    display: block;
+    transition: color 0.17s ease-in-out, background 0.17s ease-in-out, opacity 1s ease-in-out;
+    cursor: pointer;
+    top: 50%;
+    &.bp_client_control_left {
+        left: -100px;
+        @media (max-width: $screen-sm) {
+            left: 0.25em;
+            margin-top: -0.5em
+        }
+    }
+    &.bp_client_control_right {
+        right: -100px;
+        padding-left: 5px;
+        @media (max-width: $screen-sm) {
+            right: 0.25em;
+            margin-top: -0.5em
+        }
+    }
+    @media (max-width: $screen-sm) {
+        width: 1em;
+        height: 1em;
+        line-height: 0.7em;
+        font-weight: 300;
+        i {
+            font-size: 0.7em;
+        }
+    }
+    &:hover {
+        color: #cdcdef;
+        background: #fff;
+        opacity: 1;
+    }
+}
