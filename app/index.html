@@ -82,12 +82,12 @@
         <div class="canvas_help canvas_help22" style="background-image:url('images/bg-main2.jpg')"></div>
         <div class="bp_what_we_do" id="bp_what_we_do">
             <div class="container">
-                <div class="canvas_help2"></div>
-                <h2 data-aos="zoom-in-up">Czym się <strong>zajmujemy?</strong></h2>
+                <div class="canvas_help2"  id="wwd_trigger1"></div>
+                <h2 data-aos="zoom-in-up" id="wwdh2">Czym się <strong>zajmujemy?</strong></h2>
                 <div class="row">
                     <ul class="wwd_slide" id="wwd_slide">
                         <li>
-                            <div data-aos="flip-up" data-aos-duration="1000">
+                            <div data-aos-duration="1000">
                                 <a href="#">
                                     <img src="images/whatwedo/aplikacje.png" />
                                     <h4>Aplikacje mobilne</h4>
@@ -95,7 +95,7 @@
                             </div>
                         </li>
                         <li>
-                            <div data-aos="flip-up" data-aos-duration="1000">
+                            <div  data-aos-duration="1000">
                                 <a href="#">
                                     <img src="images/whatwedo/crm.png" />
                                     <h4>crm</h4>
@@ -103,7 +103,7 @@
                             </div>
                         </li>
                         <li>
-                            <div data-aos="flip-up" data-aos-duration="1000">
+                            <div  data-aos-duration="1000">
                                 <a href="#">
                                     <img src="images/whatwedo/sklepy.png" />
                                     <h4>sklepy</h4>
@@ -111,7 +111,7 @@
                             </div>
                         </li>
                         <li>
-                            <div data-aos="flip-up" data-aos-duration="1000">
+                            <div data-aos-duration="1000">
                                 <a href="#">
                                     <img src="images/whatwedo/strony.png" />
                                     <h4>strony</h4>
@@ -120,7 +120,7 @@
                         </li>
                     </ul>
                 </div>
-                <p class="button-wrap"><a class="cbtn cbtn-1 cbtn-1e button button-right">czytaj więcej</a></p>
+                <p  class="button-wrap" id="wwb_button"><a class="cbtn cbtn-1 cbtn-1e button button-right">czytaj więcej</a></p>
             </div>
         </div>
     </section>
@@ -529,6 +529,7 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
@@ -538,7 +539,10 @@
     <script src="/bower_components/parallax.js/parallax.min.js"></script>
     <script src="/bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
     <!-- endbower -->
-    <!-- endbuild -->
+    <!-- endbuild -->  
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+
+
     <!-- build:js scripts/plugins.js -->
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
