@@ -76,3 +76,17 @@ section.hascanvas > div.canvas_help {
   height:35vh;
   //border: 1px solid red;
 }
+
+.canvas_help {
+  min-height:35vh;
+  //border: 1px solid red;
+  position: relative;
+   > div {
+    height: 100px;
+    position:absolute;
+    width: 100%;
+    bottom: 0;
+    background: red;
+   }
+
+}

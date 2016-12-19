@@ -6,7 +6,7 @@ jQuery(document).ready(function(t) {
         height: e
       }),
       i.css({
-        'margin-top': '-' + (s*e).toFixed(2) + 'px'
+        'top': '-' + (s*e).toFixed(2) + 'px'
       })
   }
   function e(i) {
@@ -32,12 +32,18 @@ jQuery(document).ready(function(t) {
       a = o.get(0).getContext('2d');
     var p = t('#' + e + '> .canvas_help');
     var spin = o.height() / t(window).height() < 1 ? o.height() / t(window).height() : 1;
+   
+    if(!p.find('div').length){
+       p.append('<div></div>');
 
-    if(p.length){
-     
     }
-    if (i(o, n,Math.pow(spin,5)),
+     var p1 = p.find('div');
+     var p2 = p.next();
+     console.log(p2)
+     p1.css('background', o.attr('data-color') );
+    if (i(o, n,Math.pow(spin,5)),     
       p.height(((1-Math.pow(spin,5))*n).toFixed(2)),
+      p1.height(p2.offset().top - (o.offset().top + o.height())),
       a.clearRect(0, 0, o.width(), o.height()),
       a.beginPath(),
       a.moveTo(0, o.height()),
@@ -826,35 +832,35 @@ $(document).ready(function() {
 
   }
 });
-if (window.location.href.indexOf('localhost') !== -1) {
-$('body').append('<div id="log"><div id="log1"></div><div id="log2"></div><div id="log3"></div><div id="log4"></div></div>')
+// if (window.location.href.indexOf('localhost') !== -1) {
+// $('body').append('<div id="log"><div id="log1"></div><div id="log2"></div><div id="log3"></div><div id="log4"></div></div>')
 
-$( document ).on( "mousemove scroll load", function( event ) {
-  var ws = $(window).scrollTop(),
-      wh = $(window).height(),
-      sot,sh,sid,cSection ='dupa';
+// $( document ).on( "mousemove scroll load", function( event ) {
+//   var ws = $(window).scrollTop(),
+//       wh = $(window).height(),
+//       sot,sh,sid,cSection ='dupa';
    
     
 
-  $( "#log1" ).text( "pageX: " + event.pageX + ", pageY: " + event.pageY );
-  $('#log2').text('');
-  $('section').each(function(){
-    sot = $(this).offset().top.toFixed(2);
-    sh =  $(this).height().toFixed(2);
-    sid =  $(this).attr('id');
+//   $( "#log1" ).text( "pageX: " + event.pageX + ", pageY: " + event.pageY );
+//   $('#log2').text('');
+//   $('section').each(function(){
+//     sot = $(this).offset().top.toFixed(2);
+//     sh =  $(this).height().toFixed(2);
+//     sid =  $(this).attr('id');
    
-  if ( sot > ws && sot < ws + wh && sot +  ) {
-      cSection = sid;
-  }  
+//   if ( sot > ws && sot < ws + wh ) {
+//       cSection = sid;
+//   }  
     
 
-   $('#log2').append('<span id=o' + sid + '>' + sid.substring(0,7) + ' offset().top: ' + sot + '<br>');
-   $('#log2').append('<span id=h' + sid + '>' + sid.substring(0,7) + ' height: ' + sh + '<br>');
-   $('#log3').text(cSection);
+//    $('#log2').append('<span id=o' + sid + '>' + sid.substring(0,7) + ' offset().top: ' + sot + '<br>');
+//    $('#log2').append('<span id=h' + sid + '>' + sid.substring(0,7) + ' height: ' + sh + '<br>');
+//    $('#log3').text(cSection);
 
-  });
-   $('#log4').text('');
-   $('#log4').append('$(window).scrollTop() : '+ ws +'<br>')
-   $('#log4').append('$(window).height() : '+ wh)
-});
-}  
+//   });
+//    $('#log4').text('');
+//    $('#log4').append('$(window).scrollTop() : '+ ws +'<br>')
+//    $('#log4').append('$(window).height() : '+ wh)
+// });
+// }  
