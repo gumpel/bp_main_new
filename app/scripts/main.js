@@ -1,19 +1,21 @@
 'use strict';
 jQuery(document).ready(function(t) {
     function i(i, e, s) {
+        e = e ;
         i.attr({
                 width: t(window).width(),
-                height: e
+                height:  e
             }),
             i.css({
-                'top': '-' + (s * e).toFixed(2) + 'px'
+                // 'top': '-' + (s * e).toFixed(2) - 200 + 'px'
+                'top': '-' + e   + 'px'
             })
     }
 
     function e(i) {
         var e = t('#' + i),
             o = e.height(),
-            a = t(window).scrollTop(),
+            a = t(window).scrollTop() + 100,
             h = e.prev();
         if (h.is('section') && e.has('canvas')) {
             var r = h.offset().top;
@@ -36,16 +38,19 @@ jQuery(document).ready(function(t) {
         var spin = o.height() / t(window).height() < 1 ? o.height() / t(window).height() : 1;
 
         if (!p.find('div').length) {
-            p.append('<div></div>');
+            //p.append('<div></div>');
 
-        }
-        var p1 = p.find('div');
-        var p2 = p.next();
+        }  
+        n = n > 100 ? n :100;     
+        n = n < t(window).height() ? n : t(window).height();
+        //var p1 = p.find('div');
+        //var p2 = p.next();
         //console.log(p2)
-        p1.css('background', o.attr('data-color'));
+        //p1.css('background', o.attr('data-color'));
         if (i(o, n, Math.pow(spin, 5)),
-            p.height(((1 - Math.pow(spin, 5)) * n).toFixed(2)),
-            p1.height(p2.offset().top - (o.offset().top + o.height())),
+           // p.height(((1 - Math.pow(spin, 5)) * n).toFixed(2)),
+            //p.height(n.toFixed(2)),
+            //p1.height(p2.offset().top - (o.offset().top + o.height())),
             a.clearRect(0, 0, o.width(), o.height()),
             a.beginPath(),
             a.moveTo(0, o.height()),
@@ -54,7 +59,7 @@ jQuery(document).ready(function(t) {
             a.lineTo(o.width(), 0),
             a.lineTo(o.width(),
                 t(window).height - 0.8 * n),
-
+   
             a.bezierCurveTo(.9 * (t(window).height() - o.height()), 0, t(window).height() - o.height(), n, .1 * -n, o.height()),
             a.closePath(), 'undefined' != typeof o.data('image')) {
             var h = new Image;
@@ -63,8 +68,11 @@ jQuery(document).ready(function(t) {
             a.fillStyle = r, a.fill()
         } else 'undefined' != typeof o.data('color') && (a.fillStyle = o.data('color'), a.fill())
     }
-    t(function() {
-        t(window).on('scroll load', function() {
+    t(document).ready(function() {
+        t.each(t('section.hascanvas'), function() {
+            e(t(this).attr('id'));
+        })
+        t(window).on('scroll', function() {
             t.each(t('section.hascanvas'), function() {
                 e(t(this).attr('id'));
             })
@@ -703,20 +711,21 @@ $(document).ready(function() {
                 triggerElement: '#wwd_trigger1',
                 duration: 900,
                 offset: -100
-            })            
+            })
             //.setTween("#wwdh2",0.5,{scale:2.5})
             .addIndicators() // add indicators (requires plugin)           
             .on('progress', function(e) {
                 $('#wwdh2').css({ 'transform': 'translate3d(0px, ' + (-e.progress.toFixed(2) * 300) + 'px, 0px)' })
-                $('#wwd_slide').css({ 'transform': 'translate3d(0px, ' + (200 - e.progress.toFixed(2) * 500) + 'px, 0px)' })
-                $('#wwb_button').css({'transform': 'translate3d(0px, ' + (500 - e.progress.toFixed(2) * 900) + 'px, 0px)'})
+                $('#wwd_slide').css({ 'transform': 'translate3d(0px, ' + (200 - e.progress.toFixed(2) * 600) + 'px, 0px)' })
+                $('#wwb_button').css({ 'transform': 'translate3d(0px, ' + (400 - e.progress.toFixed(2) * 900) + 'px, 0px)' })
+                 $('#wwb_button > a').css({ 'transform': 'scale(' +  (0.5 + (e.progress.toFixed(2) * 0.5)) +  ')' })
             })
             .addTo(wcontroller);
 
-            var trigger2 = new ScrollMagic.Scene({
+        var trigger2 = new ScrollMagic.Scene({
                 triggerElement: '#baner_s',
-                duration: $('#baner_s').height() - $(window).height()*.5 + 1,
-                offset: $(window).height()*.5
+                duration: $('#baner_s').height() - $(window).height() * .5 + 1,
+                offset: $(window).height() * .5
             })
             .addIndicators()
             .setClassToggle('#mb-tittle', 'transition-reset')
@@ -726,18 +735,55 @@ $(document).ready(function() {
                 $('#mb-tittle, #mb-slider-count').css({ 'transform': 'translate3d(0px, ' + (-e.progress.toFixed(2) * 250) + 'px, 0px)' })
             });
 
-            var gsliderh = $('#g-slider').height();
-            var trigger3 = new ScrollMagic.Scene({
-              triggerElement: '#g-slider',
-              duration: gsliderh 
+        var gsliderh = $('#canvas2').height();
+        var trigger3 = new ScrollMagic.Scene({
+                triggerElement: '#canvas2',
+                duration: gsliderh
             })
-            .addIndicators()        
+            .addIndicators()
             .addTo(wcontroller)
             .on('progress', function(e) {
-              $('#g-slider-desriptions').css({ 'transform': 'translate3d('+ (e.progress.toFixed(2) *gsliderh ) + 'px,0px, 0px)' })
-
+                var prog = gsliderh * (-0.3) + (e.progress.toFixed(2) * (.5) * gsliderh);
+                prog = prog < 0 ? prog : 0;
+                $('#g-slider-desriptions').css({ 'transform': 'translate3d(' + prog + 'px,0px, 0px)' })
+                $('#g-slider-images').css({ 'transform': 'translate3d(' + -prog + 'px,0px, 0px)' })
             })
     }
+    var canvas3h = $('#canvas3').height();
+    var trigger4 = new ScrollMagic.Scene({
+            triggerElement: '#canvas3',
+            offset: -200,
+            duration: canvas3h - 400
+        })
+        .addIndicators()
+        .addTo(wcontroller)
+        .on('progress', function(e) {
+            var prog = -canvas3h * .15 + (e.progress.toFixed(2) * (.8) * canvas3h);
+            prog = prog < 0 ? prog : 0;
+            $('#phonewrap').css({ 'transform': 'translate3d(0px,' + prog + 'px, 0px)' })
+
+        })
+        .on('enter', function(e) {
+            $('#bp_technology').addClass('realative_mod');
+        })
+        .on('leave', function(e) {
+            $('#bp_technology').removeClass('realative_mod');
+        })
+
+    var jackTrigger = new ScrollMagic.Scene({
+            triggerElement: '#jack-v',
+            duration: $('#jack-v').height()
+        })
+        .addIndicators()
+        .addTo(wcontroller)
+        .on('enter', function(e) {
+            $('#jform').fadeIn(400);
+            $('input#jname').focus();
+        })
+        .on('leave', function(e) {
+            $('#jform').fadeOut(400)
+        })
+
 
 
 
@@ -770,7 +816,6 @@ $(document).ready(function() {
             .addTo(controller).on('progress', function(e) {
                 $('#progress').height((e.progress * 100).toFixed(1) + '%')
             })
-
 
         var trigger1 = new ScrollMagic.Scene({
                 triggerElement: '#trigger1',
@@ -891,22 +936,30 @@ $(document).ready(function() {
 $(document).ready(function() {
     if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
     window.onmousewheel = document.onmousewheel = wheel;
+    var scrollCanPass = true;
 
     function wheel(event) {
-        var delta = 0;
-         if (event.wheelDelta) delta = event.wheelDelta / Math.abs(event.wheelDelta);
-         else if (event.detail) delta = -event.detail / Math.abs(event.detail);
+        if (scrollCanPass) {
+            var delta = 0;
+            if (event.wheelDelta) delta = event.wheelDelta / Math.abs(event.wheelDelta);
+            else if (event.detail) delta = -event.detail / Math.abs(event.detail);
 
-        console.log('event.wheelDelta: ' + event.wheelDelta,'event.detail ' + event.detail)
-        handle(delta);
-        if (event.preventDefault) event.preventDefault();
+            console.log(scrollCanPass);
+
+            handle(delta);
+            scrollCanPass = false;
+            setTimeout(function() {
+                scrollCanPass = true;
+            }, 300)
+        }
+        event.preventDefault();
         event.returnValue = false;
     }
 
     function handle(delta) {
-        var time = 600;
-        var distance = 200;
-        console.log('')
+        var time = 500;
+        var distance = $(window).height() * .5;
+        //console.log(delta)
         $('html, body').stop().animate({
             scrollTop: $(window).scrollTop() - (distance * delta)
         }, time);

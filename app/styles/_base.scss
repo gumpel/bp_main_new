@@ -54,6 +54,7 @@ section > canvas {
   position: absolute;
   top: 2px;
   z-index: 10;
+  margin-top: 1px
 }
 
 section#canvas2 > canvas,
@@ -73,20 +74,34 @@ section.hascanvas > div.canvas_help {
 } 
 
 .canvas_help2 {
-  height:35vh;
+  height:15vh;
   //border: 1px solid red;
 }
 
+.canvas_help3 {
+  height:15vh;
+  //border: 1px solid red;
+}
+
+.canvas_help + div {
+  padding-bottom:20vh;
+  //border: 1px solid red;
+}
+
+.realative_mod {
+     z-index: 11;
+  position:relative;
+} 
+
 .canvas_help {
-  min-height:35vh;
+ // min-height:30vh;
   //border: 1px solid red;
   position: relative;
    > div {
     height: 100px;
     position:absolute;
     width: 100%;
-    bottom: 0;
-    background: red;
+    bottom: 0;   
    }
 
 }

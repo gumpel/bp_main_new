@@ -43,6 +43,17 @@
     z-index: 10;
     margin-top: -30px;
     position: relative;
+    overflow: hidden;
+    svg {
+        left: -555px;
+        position: absolute;
+        top: 0;
+            z-index: -1;
+         @media (max-width: $screen-lg) {
+           left: -653px;
+        }
+
+    }
     .bp_dot_area {
         min-height: 400px;
         position: relative;

@@ -1,5 +1,5 @@
 .g-slider {
-  padding: 50px 0  250px;
+  padding: 0 0  250px;
   background: #cdcdef;
   font-family: BebasNeueRegular;
   overflow: hidden;
@@ -135,6 +135,12 @@
           right: -485px;
           bottom: -70px;
           opacity: 0.3;
+          a {
+            img {
+              box-shadow: 3px 8px 4px rgba(30, 30, 30, 0.3);
+    max-width: 100%;
+            }
+          }
         }
         &.g-image-active {
           top: 25px;
@@ -146,6 +152,8 @@
         a {
           img {
             max-width: 100%;
+            box-shadow: 3px 8px 4px rgba(30, 30, 30, 0.3);
+    max-width: 100%;
           }
         }
       }
