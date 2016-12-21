@@ -692,7 +692,7 @@ function jack20() {
 // O nas;
 
 $(document).ready(function() {
-    if ($('#bp_what_we_do_section').length) {
+    if ($('#main_page').length) {
         var wcontroller = new ScrollMagic.Controller({
             globalSceneOptions: {
                 //duration: 200 wwd_trigger1
@@ -703,8 +703,7 @@ $(document).ready(function() {
                 triggerElement: '#wwd_trigger1',
                 duration: 900,
                 offset: -100
-            })
-            .setClassToggle('#wwdh2', 'ss')
+            })            
             //.setTween("#wwdh2",0.5,{scale:2.5})
             .addIndicators() // add indicators (requires plugin)           
             .on('progress', function(e) {
@@ -713,6 +712,31 @@ $(document).ready(function() {
                 $('#wwb_button').css({'transform': 'translate3d(0px, ' + (500 - e.progress.toFixed(2) * 900) + 'px, 0px)'})
             })
             .addTo(wcontroller);
+
+            var trigger2 = new ScrollMagic.Scene({
+                triggerElement: '#baner_s',
+                duration: $('#baner_s').height() - $(window).height()*.5 + 1,
+                offset: $(window).height()*.5
+            })
+            .addIndicators()
+            .setClassToggle('#mb-tittle', 'transition-reset')
+            .setClassToggle('#mb-slider-count', 'transition-reset')
+            .addTo(wcontroller)
+            .on('progress', function(e) {
+                $('#mb-tittle, #mb-slider-count').css({ 'transform': 'translate3d(0px, ' + (-e.progress.toFixed(2) * 250) + 'px, 0px)' })
+            });
+
+            var gsliderh = $('#g-slider').height();
+            var trigger3 = new ScrollMagic.Scene({
+              triggerElement: '#g-slider',
+              duration: gsliderh 
+            })
+            .addIndicators()        
+            .addTo(wcontroller)
+            .on('progress', function(e) {
+              $('#g-slider-desriptions').css({ 'transform': 'translate3d('+ (e.progress.toFixed(2) *gsliderh ) + 'px,0px, 0px)' })
+
+            })
     }
 
 
@@ -870,9 +894,10 @@ $(document).ready(function() {
 
     function wheel(event) {
         var delta = 0;
-        if (event.wheelDelta) delta = event.wheelDelta / 120;
-        else if (event.detail) delta = -event.detail / 3;
+         if (event.wheelDelta) delta = event.wheelDelta / Math.abs(event.wheelDelta);
+         else if (event.detail) delta = -event.detail / Math.abs(event.detail);
 
+        console.log('event.wheelDelta: ' + event.wheelDelta,'event.detail ' + event.detail)
         handle(delta);
         if (event.preventDefault) event.preventDefault();
         event.returnValue = false;
@@ -880,8 +905,8 @@ $(document).ready(function() {
 
     function handle(delta) {
         var time = 600;
-        var distance = 150;
-
+        var distance = 200;
+        console.log('')
         $('html, body').stop().animate({
             scrollTop: $(window).scrollTop() - (distance * delta)
         }, time);
