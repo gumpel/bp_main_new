@@ -6,12 +6,12 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>bp_main</title>
-  <link href="https://fonts.googleapis.com/css?family=Dosis|Roboto+Condensed:300,400,500|Source+Code+Pro:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dosis|Roboto+Condensed:300,400,500,700;subset=latin-ext|Source+Code+Pro:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->
-  <!-- build:css /styles/vendor.css -->
+  <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="/bower_components/bxslider-4/dist/jquery.bxslider.css" />
   <link rel="stylesheet" href="/bower_components/aos/dist/aos.css" />
@@ -21,7 +21,7 @@
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="/styles/main.css">
   <!-- endbuild -->
-  <!-- build:js /scripts/vendor/modernizr.js -->
+  <!-- build:js scripts/vendor/modernizr.js -->
   <script src="/bower_components/modernizr/modernizr.js"></script>
   <!-- endbuild -->
 </head>
@@ -40,14 +40,13 @@
         <span class="middle"></span>
         <span class="bottom"></span>
       </div>
-
       <div class="overlay" id="overlay">
         <nav class="overlay-menu">
           <ul>
             <li><a href="\">Strona Główna</a></li>
             <li><a href="uslugi-2.html">Usługi</a></li>
             <li><a href="onas.html">O nas</a></li>
-            <li><a href="portfolio.html">portfolio</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="zasob-wiedzy.html">zasob wiedzy</a></li>
             <li><a href="blog.html">blog</a></li>
             <li><a href="kontakt.html">kontakt</a></li>
@@ -56,6 +55,35 @@
       </div>
     </div>
   </div>
+  <section id="contact_banner">
+    <div class="contact_banner" style="background-image:url('images/contact/contact_bg.jpg')" data-parallax="scroll" data-image-src="images/onas/onas_bg.jpg">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-11 col-md-offset-1">
+            <h1><span  data-aos="zoom-in-up">Kontakt</h1><br>
+            <a href="mailto:info@biznesport.pl"><img src="images/contact/mail.png">info@biznesport.pl</a><br>
+            <a href="tel:+48888520888"><img src="images/contact/phone.png">+48 888 520 888</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact_2" class="hascanvas">
+    <canvas id="canvas_next" height="0" data-color="#09090B"></canvas>
+    <div class="canvas_help" ></div>
+    <div class="contact_2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-offset-6 col-md-6">
+              <div id="planet_wrap" class="planet_wrap">
+              <img src="images/contact/planet.png">
+                <p  class="button-wrap" ><a class="cbtn cbtn-1 cbtn-1e button button-contact">czytaj więcej</a></p>
+              </div>
+          </div>
+         
+      </div>
+    </div>
+  </section>
+  
 
   <footer class="footer">
     <div class="container">
@@ -90,7 +118,9 @@
           </div>
         </div>
       </div>
-      <div class="footerdown">
+    </div>
+    <div class="footerdown">
+      <div class="container">
         <div class="row">
           <div class="col-md-6 text-left rights">All rights reserved by <span class="link-braces a_wrap"><a href="http://biznesport.pl/">biznesport.pl</a></span></div>
           <div class="col-md-6 text-right socialmedia">
@@ -102,6 +132,7 @@
             </ul>
           </div>
         </div>
+
       </div>
     </div>
   </footer>
@@ -115,6 +146,8 @@
   <script src="/bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
   <!-- build:js scripts/plugins.js -->
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
@@ -131,6 +164,7 @@
   <!-- endbuild -->
   <!-- build:js scripts/main.js -->
   <script src="/scripts/main.js"></script>
+  <script src="/scripts/scrollmagic.js"></script>
   <!-- endbuild -->
 </body>
 

@@ -748,7 +748,7 @@ $(document).ready(function() {
                 $('#g-slider-desriptions').css({ 'transform': 'translate3d(' + prog + 'px,0px, 0px)' })
                 $('#g-slider-images').css({ 'transform': 'translate3d(' + -prog + 'px,0px, 0px)' })
             })
-    }
+   
     var canvas3h = $('#canvas3').height();
     var trigger4 = new ScrollMagic.Scene({
             triggerElement: '#canvas3',
@@ -783,7 +783,7 @@ $(document).ready(function() {
         .on('leave', function(e) {
             $('#jform').fadeOut(400)
         })
-
+        }
 
 
 
@@ -933,38 +933,38 @@ $(document).ready(function() {
     }
 });
 
-$(document).ready(function() {
-    if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
-    window.onmousewheel = document.onmousewheel = wheel;
-    var scrollCanPass = true;
+// $(document).ready(function() {
+//     if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
+//     window.onmousewheel = document.onmousewheel = wheel;
+//     var scrollCanPass = true;
 
-    function wheel(event) {
-        if (scrollCanPass) {
-            var delta = 0;
-            if (event.wheelDelta) delta = event.wheelDelta / Math.abs(event.wheelDelta);
-            else if (event.detail) delta = -event.detail / Math.abs(event.detail);
+//     function wheel(event) {
+//         if (scrollCanPass) {
+//             var delta = 0;
+//             if (event.wheelDelta) delta = event.wheelDelta / Math.abs(event.wheelDelta) * 120 ;
+//             else if (event.detail) delta = -event.detail / Math.abs(event.detail) * 3;
 
-            console.log(scrollCanPass);
+//             console.log(scrollCanPass);
 
-            handle(delta);
-            scrollCanPass = false;
-            setTimeout(function() {
-                scrollCanPass = true;
-            }, 300)
-        }
-        event.preventDefault();
-        event.returnValue = false;
-    }
+//             handle(delta);
+//             scrollCanPass = false;
+//             setTimeout(function() {
+//                 scrollCanPass = true;
+//             }, 300)
+//         }
+//         event.preventDefault();
+//         event.returnValue = false;
+//     }
 
-    function handle(delta) {
-        var time = 500;
-        var distance = $(window).height() * .5;
-        //console.log(delta)
-        $('html, body').stop().animate({
-            scrollTop: $(window).scrollTop() - (distance * delta)
-        }, time);
-    }
-})
+//     function handle(delta) {
+//         var time = 500;
+//         var distance = 100;
+//         //console.log(delta)
+//         $('html, body').stop().animate({
+//             scrollTop: $(window).scrollTop() - (distance * delta)
+//         }, time);
+//     }
+// })
 
 
 // if (window.location.href.indexOf('localhost') !== -1) {
