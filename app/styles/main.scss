@@ -1,5 +1,5 @@
 $icon-font-path: '../fonts/';
- @import "bower_components/sanitize-css/sanitize.css"; // bower:scss
+ // bower:scss
  @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
  // endbower
 @import "mixin.scss";
@@ -19,11 +19,16 @@ $icon-font-path: '../fonts/';
 @import "zasobwiedzy.scss";
 @import "onas.scss";
 @import "services.scss";
+@import "loader.scss";
 @import "contact.scss";
 
 // section {
 // 	border:3px solid red;
 // }
+
+$container-large-desktop: 1200px !default;
+
+
 
 #log {
 	position: fixed;

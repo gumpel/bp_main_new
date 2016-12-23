@@ -1,14 +1,14 @@
 'use strict';
 jQuery(document).ready(function(t) {
     function i(i, e, s) {
-        e = e ;
+        e = e;
         i.attr({
                 width: t(window).width(),
-                height:  e
+                height: e
             }),
             i.css({
                 // 'top': '-' + (s * e).toFixed(2) - 200 + 'px'
-                'top': '-' + e   + 'px'
+                'top': '-' + e + 'px'
             })
     }
 
@@ -40,15 +40,15 @@ jQuery(document).ready(function(t) {
         if (!p.find('div').length) {
             //p.append('<div></div>');
 
-        }  
-        n = n > 100 ? n :100;     
+        }
+        n = n > 100 ? n : 100;
         n = n < t(window).height() ? n : t(window).height();
         //var p1 = p.find('div');
         //var p2 = p.next();
         //console.log(p2)
         //p1.css('background', o.attr('data-color'));
         if (i(o, n, Math.pow(spin, 5)),
-           // p.height(((1 - Math.pow(spin, 5)) * n).toFixed(2)),
+            // p.height(((1 - Math.pow(spin, 5)) * n).toFixed(2)),
             //p.height(n.toFixed(2)),
             //p1.height(p2.offset().top - (o.offset().top + o.height())),
             a.clearRect(0, 0, o.width(), o.height()),
@@ -59,7 +59,7 @@ jQuery(document).ready(function(t) {
             a.lineTo(o.width(), 0),
             a.lineTo(o.width(),
                 t(window).height - 0.8 * n),
-   
+
             a.bezierCurveTo(.9 * (t(window).height() - o.height()), 0, t(window).height() - o.height(), n, .1 * -n, o.height()),
             a.closePath(), 'undefined' != typeof o.data('image')) {
             var h = new Image;
@@ -718,7 +718,7 @@ $(document).ready(function() {
                 $('#wwdh2').css({ 'transform': 'translate3d(0px, ' + (-e.progress.toFixed(2) * 300) + 'px, 0px)' })
                 $('#wwd_slide').css({ 'transform': 'translate3d(0px, ' + (200 - e.progress.toFixed(2) * 600) + 'px, 0px)' })
                 $('#wwb_button').css({ 'transform': 'translate3d(0px, ' + (400 - e.progress.toFixed(2) * 900) + 'px, 0px)' })
-                 $('#wwb_button > a').css({ 'transform': 'scale(' +  (0.5 + (e.progress.toFixed(2) * 0.5)) +  ')' })
+                $('#wwb_button > a').css({ 'transform': 'scale(' + (0.5 + (e.progress.toFixed(2) * 0.5)) + ')' })
             })
             .addTo(wcontroller);
 
@@ -748,42 +748,42 @@ $(document).ready(function() {
                 $('#g-slider-desriptions').css({ 'transform': 'translate3d(' + prog + 'px,0px, 0px)' })
                 $('#g-slider-images').css({ 'transform': 'translate3d(' + -prog + 'px,0px, 0px)' })
             })
-   
-    var canvas3h = $('#canvas3').height();
-    var trigger4 = new ScrollMagic.Scene({
-            triggerElement: '#canvas3',
-            offset: -200,
-            duration: canvas3h - 400
-        })
-        .addIndicators()
-        .addTo(wcontroller)
-        .on('progress', function(e) {
-            var prog = -canvas3h * .15 + (e.progress.toFixed(2) * (.8) * canvas3h);
-            prog = prog < 0 ? prog : 0;
-            $('#phonewrap').css({ 'transform': 'translate3d(0px,' + prog + 'px, 0px)' })
 
-        })
-        .on('enter', function(e) {
-            $('#bp_technology').addClass('realative_mod');
-        })
-        .on('leave', function(e) {
-            $('#bp_technology').removeClass('realative_mod');
-        })
+        var canvas3h = $('#canvas3').height();
+        var trigger4 = new ScrollMagic.Scene({
+                triggerElement: '#canvas3',
+                offset: -200,
+                duration: canvas3h - 400
+            })
+            .addIndicators()
+            .addTo(wcontroller)
+            .on('progress', function(e) {
+                var prog = -canvas3h * .15 + (e.progress.toFixed(2) * (.8) * canvas3h);
+                prog = prog < 0 ? prog : 0;
+                $('#phonewrap').css({ 'transform': 'translate3d(0px,' + prog + 'px, 0px)' })
 
-    var jackTrigger = new ScrollMagic.Scene({
-            triggerElement: '#jack-v',
-            duration: $('#jack-v').height()
-        })
-        .addIndicators()
-        .addTo(wcontroller)
-        .on('enter', function(e) {
-            $('#jform').fadeIn(400);
-            $('input#jname').focus();
-        })
-        .on('leave', function(e) {
-            $('#jform').fadeOut(400)
-        })
-        }
+            })
+            .on('enter', function(e) {
+                $('#bp_technology').addClass('realative_mod');
+            })
+            .on('leave', function(e) {
+                $('#bp_technology').removeClass('realative_mod');
+            })
+
+        var jackTrigger = new ScrollMagic.Scene({
+                triggerElement: '#jack-v',
+                duration: $('#jack-v').height()
+            })
+            .addIndicators()
+            .addTo(wcontroller)
+            .on('enter', function(e) {
+                $('#jform').fadeIn(400);
+                $('input#jname').focus();
+            })
+            .on('leave', function(e) {
+                $('#jform').fadeOut(400)
+            })
+    }
 
 
 
@@ -999,3 +999,86 @@ $(document).ready(function() {
 //    $('#log4').append('$(window).height() : '+ wh)
 // });
 // }
+
+
+/* kontakt */
+
+$(document).ready(function() {
+
+
+    if ($('#map').length) {
+        $('#button-contact').hover(function() {
+                $('#planet_wrap').addClass('active')
+            },
+            function() {
+                $('#planet_wrap').removeClass('active')
+            })
+        $('#button-contact').on('click', function() {          
+            $('html, body').animate({
+                scrollTop: $('#contact-form').offset().top
+            }, 1000);
+        });
+
+
+        var bpmap = new GMaps({
+            div: '#map',
+            zoom: 12,
+            streetViewControl: false,
+            scrollwheel: false,
+            navigationControl: false,
+            mapTypeControl: false,
+            scaleControl: false,
+            draggable: false,
+            zoomControl: false,
+            lat: 53.435196,
+            lng: 14.540546,
+            styles: [{ 'featureType': 'water', 'elementType': 'geometry', 'stylers': [{ 'color': '#202021' }] }, { 'featureType': 'landscape', 'elementType': 'geometry', 'stylers': [{ 'color': '#242425' }] }, { 'featureType': 'road', 'elementType': 'geometry', 'stylers': [{ 'color': '#202021' }, { 'lightness': -0 }] }, { 'featureType': 'poi', 'elementType': 'geometry', 'stylers': [{ 'color': '#202021' }] }, { 'featureType': 'transit', 'elementType': 'geometry', 'stylers': [{ 'color': '#202021' }] }, { 'elementType': 'labels.text.stroke', 'stylers': [{ 'visibility': 'on' }, { 'color': '#3e606f' }, { 'weight': 2 }, { 'gamma': 0.84 }] }, { 'elementType': 'labels.text.fill', 'stylers': [{ 'color': '#ffffff' }] }, { 'featureType': 'administrative', 'elementType': 'geometry', 'stylers': [{ 'weight': 0.6 }, { 'color': '#1a3541' }] }, { 'elementType': 'labels.icon', 'stylers': [{ 'visibility': 'off' }] }, { 'featureType': 'poi.park', 'elementType': 'geometry', 'stylers': [{ 'color': '#242425' }] }]
+        });
+
+        var markericon = 'images/logo_top.png',
+            szczecin = {
+                lat: 53.435196,
+                lng: 14.540546,
+                animation: google.maps.Animation.DROP,
+                icon: markericon,
+                title: 'Biznesport.pl Szczecin ul.Niedziałkowskiego 26A',
+                infoWindow: {
+                    content: '<h3>Biznesport.pl</h3><br>Szczecin<br> ul.Niedziałkowskiego 26A<br><a href="tel:+48888520888">+48 888 520 888</a><br><a href="mailto:contact@biznesport.pl">contact@biznesport.pl</a>'
+                }
+            },
+            warszawa = {
+                lat: 52.243171,
+                lng: 21.084914,
+                icon: markericon,
+                title: 'Biznesport.pl Warszawa Al. Stanów Zjednoczonych 72',
+                infoWindow: {
+                    content: '<h3>Biznesport.pl</h3><br>Warszawa<br>Al. Stanów Zjednoczonych 72<br><a href="tel:+48888520888">+48 888 520 888</a><br><a href="mailto:contact@biznesport.pl">contact@biznesport.pl</a>'
+                }
+            },
+            mszczecin = bpmap.addMarker(szczecin),
+            mwarszawa = bpmap.addMarker(warszawa);
+
+        $('#mwarszawa').on('click', function() {
+            bpmap
+                .setCenter(warszawa.lat, warszawa.lng);
+            bpmap
+                .hideInfoWindows();
+            mwarszawa.setAnimation(google.maps.Animation.DROP)
+        });
+        $('#mszczecin').on('click', function() {
+            bpmap
+                .setCenter(szczecin.lat, szczecin.lng);
+            bpmap
+                .hideInfoWindows();
+            mszczecin.setAnimation(google.maps.Animation.DROP)
+        })
+
+    }
+
+});
+
+$(document).ready(function() {
+    $('#bploader').fadeOut('fast', function() {
+        
+    });
+})

@@ -8,7 +8,8 @@
     "aos": "^2.1.1",
     "parallax.js": "^1.4.2",
     "scrollmagic": "^2.0.5",
-    "hover": "Hover#^2.1.0"
+    "hover": "Hover#^2.1.0",
+    "gmaps": "^0.4.24"
   },
   "overrides": {
     "bootstrap-sass": {
