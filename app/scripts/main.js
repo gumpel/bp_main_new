@@ -684,7 +684,7 @@ function jack20() {
 // O nas;
 
 $(document).ready(function() {
-    if ($('#main_page').length) {
+    if ($('#main_pager').length) {
         var wcontroller = new ScrollMagic.Controller({
             globalSceneOptions: {
                 //duration: 200 wwd_trigger1

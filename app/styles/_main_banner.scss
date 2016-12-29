@@ -1,53 +1,191 @@
 .main_banner {
-    background-color: #09090b;
-    background-position: center center;
-    background-size: auto 100%;
-    font-family: 'BebasNeueRegular';
+  background-color: #09090b;
+  background-position: center center;
+  background-size: auto 100%;
+  font-family: 'BebasNeueRegular';
+  position: relative;
+  height: 500px;
+  .main_banner_inner_wrap {
+    bottom: 30%;
+    position: absolute;
+    width: 100%;
+  }
+  @media (min-width: $screen-md) {
+    min-height: 100vh;
+  }
+  @media (max-width: $screen-md) {
+    * {
+      transform: translate3d(0px, 0px, 0px) !important;
+    }
+  }
+  .mb-slider-count {
+    color: white;
+    display: block;
+    font-size: 5em;
     position: relative;
-    @media (min-width: $screen-md) {
-        min-height: 100vh;
+    
+    .mb-slider-nr-wrap {
+         position: absolute;
+        bottom: 0;
     }
+    .mb-slider-nr {
+      font-family: 'BebasNeueBold';
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: inline-block;
+      vertical-align: top;
+      text-align: top;
+      padding: 0;
+      /* background: rebeccapurple; */
+      line-height: 1;
+    }
+    .mb-slider-of {
+      line-height: 1;
+      font-size: 0.26em;
+      position: absolute;
+      top: 0;
+      display: block;
+      width: 24px;
+      left: 1.67em;
+      padding-top: 0.1em;
+    }
+  }
+  .mb-tittle-wrap {
+    position: absolute;
+    bottom: -1.17em;
     @media (max-width: $screen-md) {
-        * {
-            transform: translate3d(0px, 0px, 0px) !important;
-        }
+        bottom:-1.1em;
     }
-    .mb-slider-count {
-        color: white;
-        display: block;
-        padding-top: 66vh;
-        font-size: 5em;
-        @media (max-width: $screen-md) {
-            display: none;
-        }
-        .mb-slider-nr {
-            font-family: 'BebasNeueBold';
-        }
-        .mb-slider-of {
-            color: white;
-            line-height: 3.6em;
-            font-size: 0.26em;
-            vertical-align: top;
-        }
+  }
+  .mb-tittle {
+    font-family: 'bebas_neuebook';
+    font-size: 2em;
+    line-height: 1em;
+    color: #ffffff;
+    @media (max-width: $screen-md) {
+      font-size: 1.5em
     }
-    .mb-tittle {
-        font-family: 'bebas_neuebook';
-        font-size: 10em;
-        line-height: 1em;
-        color: #ffffff;
-        @media (max-width: $screen-md) {
-            font-size: 5em
+    ul {
+      list-style: none;
+      li {
+        strong {
+          color: #d0a73b;
+          font-family: 'BebasNeueLight';
+          font-weight: 200;
         }
-        ul {
-            list-style: none;
-            margin-top: 20vh;
-            li {
-                strong {
-                    color: #d0a73b;
-                    font-family: 'BebasNeueLight';
-                    font-weight: 200;
-                }
-            }
-        }
+      }
     }
+  }
+}
+
+@-webkit-keyframes ani-mouse {
+    0% {
+    opacity: 1;
+    top: 29%;
+    }
+    15% {
+    opacity: 1;
+    top: 50%;
+    }
+    50% {
+    opacity: 0;
+    top: 50%;
+    }
+    100% {
+    opacity: 0;
+    top: 29%;
+    }
+}
+@-moz-keyframes ani-mouse {
+    0% {
+    opacity: 1;
+    top: 29%;
+    }
+    15% {
+    opacity: 1;
+    top: 50%;
+    }
+    50% {
+    opacity: 0;
+    top: 50%;
+    }
+    100% {
+    opacity: 0;
+    top: 29%;
+    }
+}
+@keyframes ani-mouse {
+    0% {
+    opacity: 1;
+    top: 29%;
+    }
+    15% {
+    opacity: 1;
+    top: 50%;
+    }
+    50% {
+    opacity: 0;
+    top: 50%;
+    }
+    100% {
+    opacity: 0;
+    top: 29%;
+    }
+}
+ .scroll-btn {
+   display: block;
+    position: absolute;
+    left: 70px;
+    /* right: 0; */
+    text-align: center;
+    bottom: 70px;
+}
+.scroll-btn > * {
+    display: inline-block;
+    line-height: 18px;
+    font-size: 13px;
+    font-weight: normal;
+    color: #7f8c8d;
+    color: #ffffff;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 2px;
+}
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *.active {
+    color: #ffffff;
+}
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *:active,
+.scroll-btn > *.active {
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+.scroll-btn .mouse {
+    position: relative;
+    display: block;
+    width: 35px;
+    height: 55px;
+    margin: 0 auto 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 23px;
+}
+.scroll-btn .mouse > * {
+    position: absolute;
+    display: block;
+    top: 29%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    margin: -4px 0 0 -4px;
+    background: white;
+    border-radius: 50%;
+    -webkit-animation: ani-mouse 2.5s linear infinite;
+    -moz-animation: ani-mouse 2.5s linear infinite;
+    animation: ani-mouse 2.5s linear infinite;
 }
