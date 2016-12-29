@@ -1,15 +1,18 @@
-.servies_banner {
-    min-height: 100vh;
+.servies_banner {   
   background-color: #09090b;
   background-position: center center;
   background-size: auto 100%;
   font-family: 'BebasNeueRegular';
+      @media (min-width: $screen-md) {
+        min-height: 100vh;
+    }
 
   .mb-slider-count {
     color: white;
     display: block;
     padding-top: 50vh;
     font-size: 5em;
+
 
     .mb-slider-nr {
       font-family: 'BebasNeueBold';
@@ -28,6 +31,9 @@
     font-size: 10em;
     line-height: 1em;
     color: #ffffff;
+    @media (max-width: $screen-md) {
+            font-size: 5em
+    }
 
     ul {
       list-style: none;
@@ -109,6 +115,12 @@
   .s_details {
     padding: 60px 0;
     min-height: 325px;
+     @media (max-width: $screen-sm) { 
+      .row > div:first-child {
+          text-align: center;
+      }
+
+     }
 
     h3 {
       font-family: 'bebas_neuebook';

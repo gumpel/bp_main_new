@@ -101,9 +101,7 @@ $(document).ready(function() {
 
 // gslider
 $(document).ready(function() {
-
     gSlider();
-
     function gSlider() {
         var gLeft = $('#g-slider-control-left'),
             gRight = $('#g-slider-control-right'),
@@ -116,9 +114,7 @@ $(document).ready(function() {
             haveBeenPoused = false,
             playButton = $('#g-slider-control-play'),
             pauseButton = $('#g-slider-control-pause');
-
         gDescriptionHeight();
-
         $('#g-slider-images > ul > li').each(function() {
             $(this).addClass('g-slider-image-' + $(this).index());
             $(this).attr('g-data-index', $(this).index() + 1);
@@ -127,8 +123,6 @@ $(document).ready(function() {
             $(this).addClass('g-slider-desription-' + $(this).index());
             $(this).attr('g-data-index', $(this).index() + 1);
         })
-
-
         gInterval = setInterval(function() {
             gNext()
         }, 5000);
@@ -136,7 +130,6 @@ $(document).ready(function() {
         gLeft.on('click', function() {
             gPrev();
             clearInterval(gInterval);
-
         });
 
         gRight.on('click', function() {
@@ -166,18 +159,16 @@ $(document).ready(function() {
         });
 
         function gDescriptionHeight() {
-
             var height = 0;
             gDescription.each(function() {
                 $(this).removeAttr('style');
-                $(this).width($('#g-slider-desriptions').width());
+                //s$(this).width($('#g-slider-desriptions').width());
                 if ($(this).height() > height) {
                     height = $(this).height();
                 }
             });
             $('#g-slider-desriptions').height(height);
         }
-
         function playSlider() {
             clearInterval(gInterval);
             gInterval = setInterval(function() {
@@ -676,11 +667,9 @@ function jack20() {
     }
 
     function showNext(e) {
-        var i;
-        //console.log(current)
+        var i;        
         $(current).addClass('stop')
         setTimeout(function() {
-
             $(pathArr[pathArr.length - 2]).removeClass('stop');
             current = e;
         }, 50)
@@ -701,7 +690,9 @@ $(document).ready(function() {
                 //duration: 200 wwd_trigger1
             }
         });
-
+        $(window).resize(function(){
+           
+        });
         var trigger1 = new ScrollMagic.Scene({
                 triggerElement: '#wwd_trigger1',
                 duration: 900,
@@ -780,10 +771,6 @@ $(document).ready(function() {
             })
     }
 
-
-
-
-
     if ($('#aboutpath').length) {
         $('#pathline').height($('#aboutpath').height() - $('#aboutpath .row:last-child').height());
         $('#pathline').css('top', $('#aboutpath .row:first-child').height() / 2 - 11);
@@ -794,9 +781,6 @@ $(document).ready(function() {
             pathTop += $('#abouthpath_inner .row').eq($(this).index()).height() + 1;
             //console.log(pathTop);
         })
-
-
-
         var controller = new ScrollMagic.Controller({
             globalSceneOptions: {
                 //duration: 200
@@ -878,7 +862,6 @@ $('.s_details').each(function() {
 
 $(document).ready(function() {
     if ($('#servies1').length && $('.s_details').length) {
-
         $('.servies_chosen').on('click', function() {
             hObj = [];
             var type = $(this).attr('id');
@@ -900,8 +883,6 @@ $(document).ready(function() {
             for (var i = 0; i < hObj.length; i++) {
                 printServies(i)
             }
-
-
             function printServies(ind) {
                 setTimeout(function() {
                     //console.log(hObj[ind]);
@@ -999,7 +980,6 @@ $(document).ready(function() {
 /* kontakt */
 
 $(document).ready(function() {
-
 
     if ($('#map').length) {
         $('#button-contact').hover(function() {

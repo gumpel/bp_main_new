@@ -1,45 +1,53 @@
 .main_banner {
-  min-height: 100vh;
-  background-color: #09090b;
-  background-position: center center;
-  background-size: auto 100%;
-  font-family: 'BebasNeueRegular';
-
-  .mb-slider-count {
-    color: white;
-    display: block;
-    padding-top: 66vh;
-    font-size: 5em;
-
-    .mb-slider-nr {
-      font-family: 'BebasNeueBold';
+    background-color: #09090b;
+    background-position: center center;
+    background-size: auto 100%;
+    font-family: 'BebasNeueRegular';
+    position: relative;
+    @media (min-width: $screen-md) {
+        min-height: 100vh;
     }
-
-    .mb-slider-of {
-      color: white;
-      line-height: 3.6em;
-      font-size: 0.26em;
-      vertical-align: top;
-    }
-  }
-
-  .mb-tittle {
-    font-family: 'bebas_neuebook';
-    font-size: 10em;
-    line-height: 1em;
-    color: #ffffff;
-
-    ul {
-      list-style: none;
-      margin-top: 20vh;
-
-      li {
-        strong {
-          color: #d0a73b;
-          font-family: 'BebasNeueLight';
-          font-weight: 200;
+    @media (max-width: $screen-md) {
+        * {
+            transform: translate3d(0px, 0px, 0px) !important;
         }
-      }
     }
-  }
+    .mb-slider-count {
+        color: white;
+        display: block;
+        padding-top: 66vh;
+        font-size: 5em;
+        @media (max-width: $screen-md) {
+            display: none;
+        }
+        .mb-slider-nr {
+            font-family: 'BebasNeueBold';
+        }
+        .mb-slider-of {
+            color: white;
+            line-height: 3.6em;
+            font-size: 0.26em;
+            vertical-align: top;
+        }
+    }
+    .mb-tittle {
+        font-family: 'bebas_neuebook';
+        font-size: 10em;
+        line-height: 1em;
+        color: #ffffff;
+        @media (max-width: $screen-md) {
+            font-size: 5em
+        }
+        ul {
+            list-style: none;
+            margin-top: 20vh;
+            li {
+                strong {
+                    color: #d0a73b;
+                    font-family: 'BebasNeueLight';
+                    font-weight: 200;
+                }
+            }
+        }
+    }
 }

@@ -4,6 +4,7 @@
     background: #0c0e11;
     font-size: 20px;
     padding-top: 10vh;
+    padding-bottom:0px !important;
     h2 {
         font-size: 5em;
         color: #fff;
@@ -18,6 +19,7 @@
         min-height: 10.5em;
         background: #13131b;
         padding: 20px 30px;
+        margin-bottom:15px;
         .bp_num_title {
             font-family: 'bebas_neue_regularregular';
             font-size: 1em;
@@ -34,8 +36,18 @@
         }
     }
 }
-
-#bp_diagram {
+.bp_diagram_wrap {
+    .bp_diagram_gradient {       
+        height: 200px;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0e1218+0,0c0e11+100 */
+background: #0e1218; /* Old browsers */
+background: -moz-linear-gradient(-10deg, #0e1218 0%, #0c0e11 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-10deg, #0e1218 0%,#0c0e11 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(170deg, #0e1218 0%,#0c0e11 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e1218', endColorstr='#0c0e11',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+}
+.bp_diagram {
     font-size: 20px;
     height: 350px;
     background: rgba(0, 0, 0, 0) url("../images/diagram.png") no-repeat scroll center 0;
@@ -44,6 +56,13 @@
     margin-top: -30px;
     position: relative;
     overflow: hidden;
+    &:after {
+        position: absolute;
+        width: 100%;
+        content: '';
+        background: red;
+        height: 300px;
+    }
     svg {
         left: -555px;
         position: absolute;

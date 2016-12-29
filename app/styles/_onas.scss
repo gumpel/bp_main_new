@@ -1,12 +1,19 @@
 .about_banner {
-  min-height: 90vh;
+
+  font-family: 'BebasNeueRegular';
+  font-size: 20px;
+  background-color: #09090b;
+    background-position: center center;
+    background-size: auto 100%;
+
+    @media (min-width: $screen-md) {
+           min-height: 90vh;
+
   background-color: #09090b;
   background-position: center center;
   background-size: cover;
   background-size: 100% auto;
-  font-family: 'BebasNeueRegular';
-  font-size: 20px;
-
+    }
   h1 {
     font-family: 'BebasNeueBook';
     font-size: 7.75em;
@@ -22,8 +29,8 @@
   color: #8f8f8f;
   padding-top: 5em;
   padding-bottom: 5em;
-  position: relative;
-
+  position: relative
+;
   &:after {
     content: "";
     opacity: 0.5;

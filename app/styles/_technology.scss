@@ -21,6 +21,9 @@
         .phoneimg {
             position: absolute;
             z-index: 2;
+            @media (max-width: $screen-md) {
+                position: relative;
+            }
             > img {
                 max-width: 100%
             }

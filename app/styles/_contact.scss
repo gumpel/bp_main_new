@@ -9,6 +9,7 @@
     @media (max-width: $screen-md) {
         background-size: auto 100%;
     }
+
     h1 {
         font-family: 'BebasNeueBook';
         font-size: 7.75em;
@@ -16,6 +17,7 @@
         margin-top: 7rem;
         text-align:left;
     }
+
     a {
         color: rgba(255, 255, 255, 0.4);
         display: inline-block;
@@ -188,6 +190,7 @@
                 }
             }
         }
+        
         .button-wrap {
             text-align: center;
             > button {

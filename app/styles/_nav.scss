@@ -1,8 +1,6 @@
-
 $color-main: #FF5252;
 $color-active: #FFF;
 $color-link: #FFF;
-
 $button-height: 27px;
 $button-width: 30px;
 
@@ -13,13 +11,13 @@ $button-width: 30px;
 #logo_top {
   position: fixed;
   top: 5%;
-left: 10%;
+  left: 2%;
 }
 
 .button_container {
   position: fixed;
   top: 5%;
-  right: 10%;
+  right: 2%;
   height: $button-height;
   width: $button-width;
   cursor: pointer;
@@ -130,23 +128,25 @@ left: 10%;
         color: $color-link;
         text-decoration: none;
         overflow: hidden;
+        @include transition(background .17s ease);        
 
-        &:hover:after,
-         &:focus:after,
-         &:active:after {
+        &:hover,
+         &:focus,
+         &:active {
            width: 100%;
+           background: #cda54b;
          }
 
         &:after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          width: 0%;
-          transform: translateX(-50%);
-          height: 3px;
-          background: $color-link;
-          transition: .35s;
+          // content: '';
+          // position: absolute;
+          // bottom: 0;
+          // left: 50%;
+          // width: 0%;
+          // transform: translateX(-50%);
+          // height: 3px;
+          // background: $color-link;
+          // transition: .35s;
         }
       }
     }

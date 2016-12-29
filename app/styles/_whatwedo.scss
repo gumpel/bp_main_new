@@ -1,38 +1,40 @@
-#bp_what_we_do {
-  background: #09090b;
-}
 .bp_what_we_do {
-  background: #09090b;
-  min-height: 100vh;
-  overflow: hidden;
-  .wwd_slide {
-    font-family: 'BebasNeueBook';
-    color:white;
-    list-style: none;
-    padding-left: 0;
-    width: 100%;
-    li {
-
-      img {
-       // transform: scale(0.8);
-        @include transition(transform 0.17s ease-in);
-      }
-      a {
-        text-decoration: none;
-      }
-      &:hover img {
-        transform: scale(1);
-      }
-      width: 25%;
-      display: inline-block;
-      float: left;
-      h4 {
-       // margin-left: 10%;
-        color: #fff;
-      }
-      &:hover h4 {
-
-      }
+    background: #09090b;
+    min-height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    @media (max-width: $screen-md) {
+        * {
+            transform: translate3d(0px, 0px, 0px) !important;
+        }
     }
-  }
+    h2 {
+        @media (max-width: $screen-md) {
+            padding-top: 100px;
+        }
+    }
+    .wwd_slide {
+        font-family: 'BebasNeueBook';
+        color: white;
+        list-style: none;
+        padding-left: 0;
+        width: 100%;
+        .wwd_slidee {
+            img {
+                @include transition(transform 0.17s ease-in);
+            }
+            a {
+                text-decoration: none;
+            }
+            &:hover img {
+                transform: scale(1);
+            }
+            display: inline-block;
+            height: 260px;
+            h4 {
+                color: #fff;
+            }
+            &:hover h4 {}
+        }
+    }
 }

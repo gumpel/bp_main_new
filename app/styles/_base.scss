@@ -70,11 +70,13 @@ section#knowlage_details > canvas,
 }
 
 section.hascanvas > canvas {
- // transition: margin-top 0.01s ease-in-out;
+ @media (max-width: $screen-md) {
+  display: none;
+ }
 }
 
 section.hascanvas > div.canvas_help {
-   //transition:height 0.01s ease-in-out;
+   
 } 
 
 .canvas_help2 {
