@@ -98,6 +98,19 @@ $(document).ready(function() {
     // }
 });
 
+//Nice Scroll 
+var nice = false;
+
+$(document).ready(
+
+  function() { 
+
+    nice = $("html").niceScroll({zindex:100000, cursoropacitymin:0.5, autohidemode: false, cursorborderradius: 0,cursorborder: '1px solid #cda54b', cursorcolor: '#cda54b', scrollspeed:100 });
+
+  }
+
+);
+
 
 // gslider
 $(document).ready(function() {
@@ -684,7 +697,7 @@ function jack20() {
 // O nas;
 
 $(document).ready(function() {
-    if ($('#main_pager').length) {
+    if ($('#main_page').length) {
         var wcontroller = new ScrollMagic.Controller({
             globalSceneOptions: {
                 //duration: 200 wwd_trigger1

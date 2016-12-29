@@ -1,9 +1,14 @@
 
 .bp_clients {
     min-height: 100vh;
-    width: 100%;
-    background: #ceceef;
-    font-size: 20px;
+width: 100%;
+background: #ceceef;
+font-size: 20px;
+background-image: url('../images/main_line_4.png');
+background-repeat: no-repeat;
+background-position-x: center;
+background-position-y: center;
+background-size: 100%;
     @media (max-width: $screen-sm-min) {
         font-size: 3.4vmin;
     }
@@ -14,6 +19,7 @@
         position: relative;
         margin: 10em auto;
         border-radius: 50%;
+        background:#ceceef;
         div.bp_client_list {
             position: absolute;
             width: calc(100% + 12em);

@@ -3,6 +3,11 @@
     min-height: 100vh;
     overflow: hidden;
     text-align: center;
+          background-image: url('../images/main_line_1.png');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100%;
     @media (max-width: $screen-md) {
         * {
             transform: translate3d(0px, 0px, 0px) !important;

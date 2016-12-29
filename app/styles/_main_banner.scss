@@ -140,6 +140,9 @@
     /* right: 0; */
     text-align: center;
     bottom: 70px;
+    @media (max-width: $screen-md) {
+    display:none;
+    }
 }
 .scroll-btn > * {
     display: inline-block;

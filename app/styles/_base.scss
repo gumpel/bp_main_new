@@ -69,6 +69,10 @@ section#knowlage_details > canvas,
   transform: rotateY(180deg);
 }
 
+section#canvas3 > canvas {
+  z-index:12;
+}
+
 section.hascanvas > canvas {
  @media (max-width: $screen-md) {
   display: none;
@@ -111,3 +115,9 @@ section.hascanvas > div.canvas_help {
    }
 
 }
+
+.nicescroll-rails-vr {
+  
+  display: block !important;
+}
+
