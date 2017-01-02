@@ -734,17 +734,23 @@ $(document).ready(function() {
                 $('#mb-tittle, #mb-slider-count').css({ 'transform': 'translate3d(0px, ' + (-e.progress.toFixed(2) * 250) + 'px, 0px)' })
             });
 
-        var gsliderC = $('#g-slider > .container');
+        var gsliderC = '#g-slider > .container';
         console.log(gsliderC);
         var trigger3 = new ScrollMagic.Scene({
-                triggerElement: '#canvas2'
-                
+                triggerElement: '#canvas2',
+                offset: -0.7*$(window).height(),
+                duration: $('#canvas2').height()
             })
             .addIndicators()
             .addTo(wcontroller)
-            .on('progress', function(e) {                
-                //$('#g-slider-desriptions').css({ 'transform': 'translate3d(' + prog + 'px,0px, 0px)' })
-                //$('#g-slider-images').css({ 'transform': 'translate3d(' + -prog + 'px,0px, 0px)' })
+            .on('progress', function(e) {
+
+                var prog = 0.8*(-$(window).height() + $(window).height()*e.progress.toFixed(2));
+                $(gsliderC).css({'transform' : 'translateY(' + prog  + 'px)'})
+                if (e.progress.toFixed(2) < 0.3) $(gsliderC).css({'visibility':'hidden'});
+                else $(gsliderC).css({'visibility':'visible'});
+
+                
             })
 
         var canvas3h = $('#canvas3').height();

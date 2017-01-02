@@ -1,13 +1,15 @@
-.bp_what_we_do {
-    background: #09090b;
-    min-height: 100vh;
-    overflow: hidden;
-    text-align: center;
-          background-image: url('../images/main_line_1.png');
+#bp_what_we_do_section {
+  background: #09090b;    
+  background-image: url('../images/main_line_1.png');
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;
   background-size: 100%;
+  .bp_what_we_do {
+    min-height: 100vh;
+    position: relative;
+    z-index: 12;
+  }
     h2 {
         @media (max-width: $screen-md) {
             padding-top: 100px;
