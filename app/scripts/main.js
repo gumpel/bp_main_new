@@ -102,13 +102,9 @@ $(document).ready(function() {
 var nice = false;
 
 $(document).ready(
-
-  function() { 
-
-    nice = $("html").niceScroll({zindex:100000, cursoropacitymin:0.5, autohidemode: false, cursorborderradius: 0,cursorborder: '1px solid #cda54b', cursorcolor: '#cda54b', scrollspeed:100 });
-
+  function() {
+    nice = $('html').niceScroll({zindex:100000, cursoropacitymin:0.5, autohidemode: false, cursorborderradius: 0,cursorborder: '1px solid #cda54b', cursorcolor: '#cda54b', });
   }
-
 );
 
 
@@ -714,12 +710,16 @@ $(document).ready(function() {
             //.setTween("#wwdh2",0.5,{scale:2.5})
             .addIndicators() // add indicators (requires plugin)           
             .on('progress', function(e) {
+                if ($(window).width() >= 992 ) {
                 $('#wwdh2').css({ 'transform': 'translate3d(0px, ' + (-e.progress.toFixed(2) * 300) + 'px, 0px)' })
                 $('#wwd_slide').css({ 'transform': 'translate3d(0px, ' + (200 - e.progress.toFixed(2) * 600) + 'px, 0px)' })
-                $('#wwb_button').css({ 'transform': 'translate3d(0px, ' + (400 - e.progress.toFixed(2) * 900) + 'px, 0px)' })
-                $('#wwb_button > a').css({ 'transform': 'scale(' + (0.5 + (e.progress.toFixed(2) * 0.5)) + ')' })
+                $('#wwb_button').css({ 'transform': 'translate3d(0px, ' + (400 - e.progress.toFixed(2) * 1000) + 'px, 0px)' })
+            } else {
+                $('#wwdh2,#wwd_slide,#wwb_button ').attr('style','');
+            }                
             })
             .addTo(wcontroller);
+            
 
         var trigger2 = new ScrollMagic.Scene({
                 triggerElement: '#baner_s',
@@ -734,16 +734,15 @@ $(document).ready(function() {
                 $('#mb-tittle, #mb-slider-count').css({ 'transform': 'translate3d(0px, ' + (-e.progress.toFixed(2) * 250) + 'px, 0px)' })
             });
 
-        var gsliderh = $('#canvas2').height();
+        var gsliderC = $('#g-slider > .container');
+        console.log(gsliderC);
         var trigger3 = new ScrollMagic.Scene({
-                triggerElement: '#canvas2',
-                duration: gsliderh
+                triggerElement: '#canvas2'
+                
             })
             .addIndicators()
             .addTo(wcontroller)
-            .on('progress', function(e) {
-                var prog = gsliderh * (-0.3) + (e.progress.toFixed(2) * (.5) * gsliderh);
-                prog = prog < 0 ? prog : 0;
+            .on('progress', function(e) {                
                 //$('#g-slider-desriptions').css({ 'transform': 'translate3d(' + prog + 'px,0px, 0px)' })
                 //$('#g-slider-images').css({ 'transform': 'translate3d(' + -prog + 'px,0px, 0px)' })
             })
@@ -784,7 +783,7 @@ $(document).ready(function() {
             })
     }
 
-    if ($('#aboutpath').length) {
+    if ( $('#aboutpath').length ) {
         $('#pathline').height($('#aboutpath').height() - $('#aboutpath .row:last-child').height());
         $('#pathline').css('top', $('#aboutpath .row:first-child').height() / 2 - 11);
         var pathTop = -6;

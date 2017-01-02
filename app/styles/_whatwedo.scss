@@ -8,11 +8,6 @@
   background-position-x: center;
   background-position-y: center;
   background-size: 100%;
-    @media (max-width: $screen-md) {
-        * {
-            transform: translate3d(0px, 0px, 0px) !important;
-        }
-    }
     h2 {
         @media (max-width: $screen-md) {
             padding-top: 100px;
@@ -41,5 +36,11 @@
             }
             &:hover h4 {}
         }
+    }
+}
+
+@media (max-width: $screen-md) { 
+    #wwb_button .button {
+        margin-bottom: 100px;
     }
 }

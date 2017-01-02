@@ -27,6 +27,9 @@
     .mb-slider-nr-wrap {
          position: absolute;
         bottom: 0;
+        @media (max-width: $screen-md) { 
+            display:none;
+        }
     }
     .mb-slider-nr {
       font-family: 'BebasNeueBold';
@@ -38,9 +41,11 @@
       text-align: top;
       padding: 0;
       /* background: rebeccapurple; */
-      line-height: 1;
+      line-height: 0.8em;
+      
     }
     .mb-slider-of {
+        font-family: 'BebasNeueBold';
       line-height: 1;
       font-size: 0.26em;
       position: absolute;
@@ -169,8 +174,8 @@
 .scroll-btn .mouse {
     position: relative;
     display: block;
-    width: 35px;
-    height: 55px;
+    width: 30px;
+    height: 45px;
     margin: 0 auto 20px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

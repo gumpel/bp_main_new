@@ -115,9 +115,13 @@ section.hascanvas > div.canvas_help {
    }
 
 }
-
 .nicescroll-rails-vr {
-  
+  @media (min-width: $screen-md-min) {  
   display: block !important;
+}
+}
+
+.nicescroll-rails-hr {  
+  display: none !important;
 }
 
