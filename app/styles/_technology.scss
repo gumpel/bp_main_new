@@ -1,14 +1,21 @@
+#canvas3 {
+     background: #2b2c43;
+     background-image: url('../images/main_line_3.png');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%; 
+}
+
+
 #bp_technology {
     width: 100%;
-    min-height: 100vh;
-    background: #2b2c43;
+    min-height: 100vh;   
     font-size: 20px;
     padding-top: 10vh;
-    background-image: url('../images/main_line_3.png');
-background-repeat: no-repeat;
-background-position-x: center;
-background-position-y: center;
-background-size: 100%; 
+    z-index:14;
+    position: relative;
+    padding-bottom: 30vh;   
 
     h2 strong {
         font-weight: 400;
@@ -24,6 +31,9 @@ background-size: 100%;
     }
     .phonewrap {
         position: relative;
+        @media (max-width: $screen-md) {
+            display: none;
+        }
         .phoneimg {
             position: absolute;
             z-index: 2;

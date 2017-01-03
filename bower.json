@@ -11,7 +11,8 @@
     "hover": "Hover#^2.1.0",
     "gmaps": "^0.4.24",
     "responsive-bootstrap-toolkit": "responsive-toolkit#^2.6.3",
-    "jquery.nicescroll": "nicescroll#^3.6.8"
+    "jquery.nicescroll": "nicescroll#^3.6.8",
+    "bootstrap-select": "^1.12.1"
   },
   "overrides": {
     "bootstrap-sass": {

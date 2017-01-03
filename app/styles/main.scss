@@ -21,32 +21,4 @@ $icon-font-path: '../fonts/';
 @import "services.scss";
 @import "loader.scss";
 @import "contact.scss";
-
-// section {
-// 	border:3px solid red;
-// }
-
-
-#log {
-	position: fixed;
-	border:1px solid black;
-	background:white;
-	font-size:10px;
-	min-width: 200px;
-	height: auto;
-	color:black;
-	padding:10px;
-	bottom:5px;
-	right: 5px;
-	z-index: 10000;	
-    font-weight: 300; 
-	#log3 {
-		border-top:1px solid;
-		margin-bottom:5px;
-		
-	}
-	#log4 {
-		border-top:1px solid;
-		font-size:12px;
-	}
-}
+@import "portfolio.scss";

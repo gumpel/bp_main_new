@@ -25,6 +25,11 @@
 .about_2 {
   font-size: 20px;
   background: #09090b;
+    background-image: url('../images/main_line_1.png');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100%;
   font-family: "Roboto Condensed", sans-serif;
   color: #8f8f8f;
   padding-top: 5em;
@@ -98,6 +103,12 @@
     margin-bottom: 5em;
     color: #3d3d49;
     position: relative;
+    @media (max-width: $screen-sm) {
+      .pathline {
+         display: none;
+      }
+     
+    }
 
     .pathdot {
       width: 13px;
@@ -109,7 +120,11 @@
 
       &.hvr-ripple-out-path::before {}
     }
-
+    @media (max-width: $screen-sm) {
+        .about_img, .aboutpath {
+          display: none
+        }
+      }
     .row {
       h3 {
         font-family: 'bebas_neue_regularregular';
