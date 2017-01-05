@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Tworzenie portali internetowych, budowa portali internetowych - Profesjonalne portale w nowoczesnym stylu, które przyciągają użytkowników."/>
+    <meta name="description" content="Tworzenie portali internetowych, budowa portali internetowych - Profesjonalne portale w nowoczesnym stylu, które przyciągają użytkowników." />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tworzenie portali internetowych, budowa portali internetowych - Agencja interaktywna Szczecin</title>
-    <link href="https://fonts.googleapis.com/css?family=Dosis|Roboto+Condensed:subset=latin-ext|Roboto+Mono:100|Source+Code+Pro:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:300,400|Roboto+Condensed:300,400,700|Source+Code+Pro:300,400,500,700" rel="stylesheet"> 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -59,7 +59,7 @@
         <div class="contact_banner" style="background-image:url('images/contact/contact_bg.jpg')" data-parallax="scroll" data-image-src="images/onas/onas_bg.jpg">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-11 col-md-offset-1">
+                    <div class="col-md-12">
                         <h1><span  data-aos="zoom-in-up">Kontakt</h1>
                         <br>
                         <a href="mailto:info@biznesport.pl"><img src="images/contact/mail.png">info@biznesport.pl</a>
@@ -107,33 +107,51 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-form" id="contact-form">
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                            <h2>Skontaktuj się z nami</h2>
-                            <p>Chcesz uzyskać dodatkowe informacje na temat wybranej usługi, albo masz uwagi lub propozycje?</p>
-                            <p>Złóż swoje zapytanie i dane, abyśmy mogli nawiązać z Tobą kontakt.</p>
-                            <form method="POST" action="">
-                                <div class="jinput">
-                                    <input name="name" placeholder="Imię i nazwisko" required="" type="text" autocomplete="off">
-                                </div>
-                                <div class="jinput">
-                                    <input name="email" placeholder="Email" required="" type="email" autocomplete="off">
-                                </div>
-                                <div class="jinput nobefore">
-                                    <textarea rows="6" name="content" placeholder="Treść wiadomości"></textarea>
-                                </div>
-                                <div class="">
-                                    <p class="button-wrap">
-                                        <button type="submit" name="send" class="cbtn cbtn-1 cbtn-1e button">Wyślij</button>
-                                    </p>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
             </div>
     </section>
+        <div class="contact-form-overlayer">
+
+            <div class="container">
+                        <div class="close_container" id="close_contact">
+                            <span class="top"></span>
+                            <span class="middle"></span>
+                            <span class="bottom"></span>
+                        </div>                
+                    <div class="col-md-12">
+                        <h2>Kontakt</h2>
+                    </div>                              
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <input type="text" class="form-control" placeholder="Imię">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <input type="text" class="form-control" placeholder="Nazwisko">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <input type="email" class="form-control" placeholder="E-mail">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <input type="tel" class="form-control" placeholder="Telefon">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <textarea class="form-control" rows="7"></textarea>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="button-wrap" id="wwb_button">
+                            <button type="submit" class="cbtn cbtn-1 cbtn-1e button">wyślij</button>
+                        </p>
+                    </div>                    
+                </form>
+            </div>
+        </div>
     <footer class="footer">
         <div class="container">
             <div class="footerupper">
@@ -154,7 +172,7 @@
                                     <span>Warszawa</span>
                                     <span>Al. Stanów Zjednoczonych 25/12</span>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 ">
                                     <span>Zadzwoń</span>
                                     <span><span class="link-braces a_wrap"><a href="tel:+48888520888">+48 888 520 888</a></span></span>
                                 </div>
@@ -183,24 +201,22 @@
                 </div>
             </div>
         </div>
-        
     </footer>
     <div class="bploader" id="bploader">
-            <div class='loader1'>
+        <div class='loader1'>
+            <div>
                 <div>
                     <div>
                         <div>
                             <div>
-                                <div>
-                                    <div></div>
-                                </div>
+                                <div></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+    </div>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -230,7 +246,7 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>    
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
     <!-- build:js scripts/main.js -->
     <script src="/scripts/main.js"></script>

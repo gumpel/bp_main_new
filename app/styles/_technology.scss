@@ -10,12 +10,17 @@
 
 #bp_technology {
     width: 100%;
-    min-height: 100vh;   
+    min-height: 960px;   
     font-size: 20px;
     padding-top: 10vh;
     z-index:14;
     position: relative;
-    padding-bottom: 30vh;   
+    padding-bottom: 30vh;
+    background: #2b2c43;  
+
+    .showen{
+        @include transition(opacity .3s ease-in);        
+    } 
 
     h2 strong {
         font-weight: 400;

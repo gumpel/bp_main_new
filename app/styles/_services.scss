@@ -3,8 +3,9 @@
   background-position: center center;
   background-size: auto 100%;
   font-family: 'BebasNeueRegular';
+  height: 500px;
       @media (min-width: $screen-md) {
-        min-height: 100vh;
+        height: 960px;
     }
 
   .mb-slider-count {
@@ -43,7 +44,7 @@
         strong {
           color: #d0a73b;
           font-family: 'BebasNeueLight';
-          font-weight: 200;
+          
         }
       }
     }
@@ -87,6 +88,7 @@
 
         > div {
           background: darken(#1d1c24,3);
+
         }
       }
       &.active {
@@ -99,7 +101,9 @@
       @include transition(width 0.23s ease-in-out);
     }
   }
-
+  .mark {
+    background: transparent;
+  }
   .servies_chosen {
     font-family: 'BebasNeueRegular';
     height: 76px;
@@ -108,7 +112,9 @@
     background: #1d1c24;
     text-align: center;
     cursor: pointer;
-
+    &:hover {
+     background: lighten(#1d1c24,10);
+    }
     @include transition(background 0.23s ease-in-out)
   }
 

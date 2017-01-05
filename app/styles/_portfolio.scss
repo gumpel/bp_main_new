@@ -6,10 +6,6 @@
     background-position-x: center;
     background-position-y: 0;
     background-size: 100%;
-     padding-top: 2rem;
-    @media (min-height: 550px) {
-    padding-top: 17rem;
-    }
     h1 {
         font-family: 'BebasNeueBook';
         font-size: 10.7em;
@@ -19,6 +15,7 @@
 
 .portfolioselect,
 .portfolioselect.open {
+  margin-top:107px;
     > button {
         background: #222335 !important;
         border-radius: 0;
@@ -78,11 +75,12 @@
 
 #portfoliogrid {
     margin-top: 50px;
+    margin-bottom:230px;
     .grid-item {
-        height: 318px;
+        //height: 318px;
         margin-bottom: 30px;
         &.double {
-            height: 669px;
+           // height: 669px;
         }
     }
     .grid-content {
@@ -100,7 +98,7 @@
             flex-direction: column;
             justify-content: center;
             resize: none;
-            overflow: auto;
+            overflow: hidden;
             background: rgba(9, 9, 11, 0.8) none repeat scroll 0 0;
             @include opacity(0);
             @include transition(opacity 0.23s ease-in-out);

@@ -11,11 +11,11 @@ $button-width: 30px;
 #logo_top {
   position: fixed;
   top: 50px;
-  left: 64px;
-   right:  $screen-md;
-  @media (max-width: $screen-md) {
+  left: 64px;    
+  @media (max-width: $screen-lg+200) {
     top:5%;
     left:2%;
+
 
   }
 }
@@ -29,7 +29,7 @@ $button-width: 30px;
   cursor: pointer;
   z-index: 100;
   transition: opacity .25s ease;
-    @media (max-width: $screen-md) {
+    @media (max-width: $screen-lg+200) {
     top:5%;
     right:2%;
   }
@@ -113,7 +113,7 @@ $button-width: 30px;
     height: 70%;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 50px;
+    font-size: 7vh;
     font-family: 'BebasNeueBook';
     font-weight: 400;
     text-align: center;
@@ -128,7 +128,7 @@ $button-width: 30px;
 
     li {
       display:block;
-      min-height: 50px;
+      min-height: 7vh;
       position: relative;
       opacity: 0;
 
