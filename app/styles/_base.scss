@@ -4,7 +4,7 @@ body {
 
 .mb-tittle h1 {
     font-family: 'BebasNeueLight';
-    font-size: 150px;
+    font-size: 140px;
     line-height: 1em;
     color: #d0a73b;
      margin-top: 20vh;
@@ -14,13 +14,14 @@ body {
         font-weight: 400;
      }
      span.sub {
-          font-size: 30px;
+          font-size: 32px;
           display: block;
           line-height: 30px;
-          font-family:'Roboto Condensed', sans-serif;
+          font-family: 'bebas_neue_regularregular';
           text-transform: uppercase;
           font-weight: 400;
           color:#aaa;
+          letter-spacing: 3px;
            @media (max-width: $screen-md) {
             font-size: 24px
         }
@@ -33,7 +34,7 @@ body {
             font-size: 100px
     }
         @media (max-width: $screen-sm) {
-            padding: 0 50px;
+            padding: 0 20px 0 50px;
             font-size:16vw;
     }
 
@@ -97,7 +98,8 @@ section > canvas {
   position: absolute;
   top: 2px;
   z-index: 10;
-  margin-top: 1px
+  margin-top: 1px;
+  left:0;
 }
 
 section#canvas2 > canvas,

@@ -1,23 +1,23 @@
-
-
 #bp_what_we_do_section {
-  background: #09090b;    
-  background-image: url('../images/main_line_1.png');
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
-  background-size: 100%;
-  .bp_what_we_do {
-    height: 970px;
-    position: relative;
-    z-index: 12;
-    text-align:center;
-            @media (max-width: $screen-md) {
+    background: #09090b;
+    background-image: url('../images/main_line_1.png');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+    .bp_what_we_do {
+        height: 720px;
+        position: relative;
+        z-index: 12;
+        text-align: center;
+        @media (max-width: $screen-md) {
             padding-top: 100px;
+            min-height: 970px;
+            height: auto;
         }
-  }
+    }
     h2 {
-            letter-spacing: 0.14em;
+        letter-spacing: 0.14em;
     }
     .wwd_slide {
         font-family: 'BebasNeueBook';
@@ -39,14 +39,16 @@
             height: 260px;
             h4 {
                 color: #fff;
-                font-size:30px;
+                font-size: 32px;
+                letter-spacing: 1.5px;
+                line-height: 38px;
             }
             &:hover h4 {}
         }
     }
 }
 
-@media (max-width: $screen-md) { 
+@media (max-width: $screen-md) {
     #wwb_button .button {
         margin-bottom: 100px;
     }

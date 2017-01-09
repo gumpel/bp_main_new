@@ -1,5 +1,5 @@
 #canvas2 {
-    height: 960px;
+    height: 1260px;
     background: #cdcdef;
 }
 
@@ -17,7 +17,7 @@
     z-index: 11;
     //height: 960px;
     .showen {
-        @include transition(opacity .3s  ease-in-out)
+        @include transition(opacity .3s ease-in-out)
     }
     @media (max-width: $screen-md) {
         padding-top: 100px;
@@ -81,30 +81,14 @@
                     p {
                         font-size: 1.41em;
                     }
-                    .button-wrap {
-                        padding: 0;
-                    }
-                    .button {
-                        margin-top: 90px;
-                        $bcolor: #2f303d;
-                        float: left;
-                        color: $bcolor;
-                        border-color: $bcolor;
-                        margin-left: 0;
-                        text-decoration: none;
-                        &:hover {
-                            background: $bcolor;
-                            color: #cdcdef;
-                        }
-                    }
                 }
             }
         }
     }
     .g-slider-images {
         min-height: 400px;
-        @media (min-width: $screen-sm){
-        min-height: 632px;
+        @media (min-width: $screen-sm) {
+            min-height: 632px;
         }
         .g-slider-control {
             .g-slider-control-button {
@@ -218,6 +202,25 @@
                     }
                 }
             }
+        }
+    }
+}
+
+.g-slider {
+    .button-wrap {
+        padding: 0;
+    }
+    .button {
+        margin-top: 90px;
+        $bcolor: #2f303d;
+        float: left;
+        color: $bcolor;
+        border-color: $bcolor;
+        margin-left: 37px;
+        text-decoration: none;
+        &:hover {
+            background: $bcolor;
+            color: #cdcdef;
         }
     }
 }

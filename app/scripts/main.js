@@ -787,13 +787,13 @@ $(document).ready(function() {
         var canvas3h = $('#canvas3').height();
         var trigger4 = new ScrollMagic.Scene({
                 triggerElement: '#canvas3',
-                offset: -0.7 * $(window).height(),
+                offset: -200,
                 duration: canvas3h
             })
-            .addIndicators()
+            //.addIndicators()
             .addTo(wcontroller)
             .on('progress', function(e) {
-                var prog = 0.9 * (-$(window).height() + $(window).height() * e.progress.toFixed(2));
+                var prog = 0.9 * (-$(window).height() + $(window).height() * e.progress.toFixed(2)) + 200;
                 prog = prog < 0 ? prog : 0;
                 if ($(window).width() >= 992) {
                     $('#bp_technology > .container').css({ 'transform': 'translate3d(0px,' + prog + 'px, 0px)' });
