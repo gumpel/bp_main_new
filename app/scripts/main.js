@@ -819,6 +819,10 @@ $(document).ready(function() {
                     $('#bp_technology > .container').css({ 'transform': 'translate3d(0px,' + prog + 'px, 0px)' });
                     if (e.progress.toFixed(2) < 0.15) $('#bp_technology > .container').css({ 'opacity': '0' });
                     else $('#bp_technology > .container').css({ 'opacity': '1' });
+                } else {
+                     $('#bp_technology > .container').css({ 'transform': 'translate3d(0px,0px,0px)' });
+                    $('#bp_technology > .container').css({ 'opacity': '1' });
+                    
                 }
 
             })
