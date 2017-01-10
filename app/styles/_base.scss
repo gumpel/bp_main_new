@@ -227,7 +227,11 @@ section.hascanvas > div.canvas_help {
     left: 70px;
     /* right: 0; */
     text-align: center;
-    top: 90vh;
+    top:870px;
+    @media (max-height:978px){
+      top: 90vh;
+    }
+    
     @media (max-width: $screen-lg) {
     left: 2vw;
     }

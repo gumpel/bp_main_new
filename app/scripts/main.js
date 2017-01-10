@@ -15,7 +15,7 @@ jQuery(document).ready(function(t) {
     function e(i) {
         var e = t('#' + i),
             o = e.height(),
-            a = t(window).scrollTop() + 100,
+            a = t(window).scrollTop(),
             h = e.prev(),
             //wh = t(window).height();
             wh = 800;
@@ -400,7 +400,7 @@ $(document).ready(function() {
         bpHelpObj.href = $(this).find('.bp_client_link').attr('href')
         bpHelpObj.coment = $(this).find('.bp_client_coment').text();
         bpHelpObj.logoSrc = $(this).find('.bp_main_logo_con img').attr('src');
-        bpClientObj[$(this).index()] = bpHelpObj
+        bpClientObj[$(this).index()] = bpHelpObj;
         bpHelpObj = new Object();
         if ($(this).index() === bpClientNumber - 1) {
             printClient($('#bp_client_list > ul > li:nth-child(7)').attr('data-index'))
@@ -446,10 +446,12 @@ $(document).ready(function() {
 
 
     $(bpRight).on('click', function(e) {
+
         if (!$(this).is('.stop')) {
             $('div.bp_client_list ul').prepend($('div.bp_client_list ul li:last-child'));
             $(this).addClass('stop');
             bpIndex = (bpIndex + bpClientNumber + 1) % bpClientNumber;
+            console.log(bpIndex);
             printClient($('#bp_client_list > ul > li:nth-child(7)').attr('data-index'));
             setTimeout(function() {
                 $(bpRight).removeClass('stop');
@@ -470,6 +472,7 @@ $(document).ready(function() {
     });
 
     function printClient(index) {
+        console.log(index);
         $('#bp_client_nr').html(bpClientNumber - parseInt(index));
         $('#bp_client_of').html('/0' + bpClientNumber);
         $('#bp_client_title').html(bpClientObj[index].title);
@@ -760,8 +763,9 @@ $(document).ready(function() {
                 } else {
                     $('#wwdh2,#wwd_slide,#wwb_button ').attr('style', '');
                 }
-            })
+            })            
             .addTo(wcontroller);
+
 
 
         var trigger2 = new ScrollMagic.Scene({
@@ -769,7 +773,7 @@ $(document).ready(function() {
                 duration: $('#baner_s').height(),
                 offset: $(window).height() * .5
             })
-            //.addIndicators()
+            .addIndicators()
             .setClassToggle('#mb-tittle', 'transition-reset')
             .setClassToggle('#mb-slider-count', 'transition-reset')
             .addTo(wcontroller)
@@ -789,13 +793,15 @@ $(document).ready(function() {
             .on('progress', function(e) {
                 if ($(window).width() >= 992) {
                     var prog =  .3 *(- $('#canvas2').height() + ($('#canvas2').height() * e.progress)) ;
-                    $(gsliderC).css({ 'transform': 'translate3d(0px,' +  prog + 'px,0px)' })
+                    //$(gsliderC).css({ 'transform': 'translate3d(0px,' +  prog + 'px,0px)' })
+                    $(gsliderC).css({ 'transform': 'translateY(' +  prog + 'px)' })
                     if (e.progress.toFixed(2) < 0.15) $(gsliderC).hide();
                     else $(gsliderC).show();
                     if (e.progress.toFixed(2) < 0.16) $(gsliderC).css({ 'opacity': '0' });
                     else $(gsliderC).css({ 'opacity': '1' }).show();
                 } else {
-                    $(gsliderC).css({ 'transform': 'translate3d(0px,0px,0px)' });
+                    //$(gsliderC).css({ 'transform': 'translate3d(0px,0px,0px)' });
+                    $(gsliderC).css({ 'transform': 'translateY(0px)' });
                     $(gsliderC).css({ 'opacity': '1' });
                 }
             })
@@ -816,12 +822,14 @@ $(document).ready(function() {
 
                 prog = prog < 0 ? prog : 0;
                 if ($(window).width() >= 992) {
-                    $('#bp_technology > .container').css({ 'transform': 'translate3d(0px,' + prog + 'px, 0px)' });
+                    //$('#bp_technology > .container').css({ 'transform': 'translate3d(0px,' + prog + 'px, 0px)' });
+                    $('#bp_technology > .container').css({ 'transform': 'translateY(' + prog + 'px)' });
                     if (e.progress.toFixed(2) < 0.15) $('#bp_technology > .container').css({ 'opacity': '0' });
                     else $('#bp_technology > .container').css({ 'opacity': '1' });
                 } else {
-                     $('#bp_technology > .container').css({ 'transform': 'translate3d(0px,0px,0px)' });
-                    $('#bp_technology > .container').css({ 'opacity': '1' });
+                     //$('#bp_technology > .container').css({ 'transform': 'translate3d(0px,0px,0px)' });
+                     $('#bp_technology > .container').css({ 'transform': 'translateY(0px)' });
+                     $('#bp_technology > .container').css({ 'opacity': '1' });
                     
                 }
 

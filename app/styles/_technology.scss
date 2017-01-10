@@ -10,13 +10,14 @@
 
 #bp_technology {
     width: 100%;
-    min-height: 960px;   
-    font-size: 20px;
-    padding-top: 10vh;
+    @media (min-width:$screen-md){
+    min-height: 960px;
+    }   
+    font-size: 20px;    
     z-index:14;
-    position: relative;
-    padding-bottom: 30vh;
-    background: #2b2c43;  
+    position: relative;    
+    background: #2b2c43;
+    padding-top:100px;  
 
     .showen{
         @include transition(opacity .3s ease-in);        
@@ -99,5 +100,6 @@
     }
     .button {
         margin-right: 0;
+        margin-bottom: 100px;
     }
 }
