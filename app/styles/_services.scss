@@ -101,6 +101,10 @@
       @include transition(width 0.23s ease-in-out);
     }
   }
+
+  a {
+    text-decoration: none;
+  }
   .mark {
     background: transparent;
   }
@@ -129,9 +133,15 @@
      }
 
     h3 {
+      margin-top: 0;
       font-family: 'bebas_neuebook';
       font-size: 1.5em;
       color: #ffffff;
+    }
+
+    img {
+      max-width: 100%;
+      margin-bottom: 30px;
     }
 
     p {

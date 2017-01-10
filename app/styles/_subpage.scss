@@ -1,0 +1,65 @@
+#subpage {
+    min-height: 100vh;
+    background: #0A0A0C;
+    background-image: url('../images/portfolio/portfolio_bg.jpg');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 0;
+    background-size: 100%;
+    @media (max-width: $screen-md) { 
+        background-size: $screen-md;
+    }
+    h1 {
+        font-family: 'BebasNeueBook';
+        font-size: 140px;
+        line-height: 1em;
+        margin-top:165px;
+        color:#fff;
+
+        @media (max-width: $screen-sm) {
+            font-size:20vw;  
+        }
+
+                span.sub {
+            font-size: 18px;
+            display: block;
+            
+            font-family: "Roboto Condensed", sans-serif;        
+            font-weight: 400;
+            line-height: 24px;
+            color: #aaa;
+            letter-spacing: 1px; 
+            margin-bottom:60px;           
+            @media (max-width: $screen-md) {
+                font-size: 3vw;
+            }
+        }
+
+    }
+
+    h2 {
+        font-size: 70px;
+        margin:30px;
+                @media (max-width: $screen-sm) {
+            font-size:10vw;  
+        }
+    }
+    .content {
+        color: #fff;
+        text-align: left;
+        padding:30px 30px 60px 30px;
+          a {
+        color:#1362e7;
+        font-weight: bold;
+    }
+    }
+
+
+}
+
+.portfoliosubpage {
+    img {
+        max-width: 100%;
+        margin-bottom:70px;
+    }
+}

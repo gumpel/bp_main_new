@@ -129,7 +129,8 @@
     <section id="canvas2" class="hascanvas">
         <canvas id="canvas_next2" height="300" data-color="#CDCDEF"></canvas>
         <div id="g-slider" class="g-slider">
-            <div class="container showen">
+        <div class="showen">
+            <div class="container">
                 <div class="row">
                     <div class="col-md-1">
                         <span id="g-slider-count" class="g-slider-count">
@@ -162,7 +163,7 @@
                                 <li>
                                     <div>
                                         <div class="g-description-logo"><img src="images/slider/logo.png"></div>
-                                        <h3><span>Identyfikacja Wizualna</span> Indygo Children</h3>
+                                        <h3><span>Wizualna</span> Indygo Children</h3>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                                         </p>
                                         <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -192,7 +193,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-7 col-sm-12 col-xs-11" data-aos="fade-in-right">
+                    <div class="col-md-7 col-sm-12 col-xs-11" >
                         <div class="g-slider-images" id="g-slider-images">
                             <div class="g-slider-control">
                                 <div class="g-slider-control-left g-slider-control-button" id="g-slider-control-left"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
@@ -227,6 +228,7 @@
                         <p class="button-wrap"><a href="portfolio.html" class="cbtn cbtn-1 cbtn-1e button button-right">Wszystkie realizacje</a></p>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </section>
@@ -453,9 +455,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h3>
-              <strong>JACK V 2.0</strong><br/>
+              <strong>LEO V 7.2</strong><br/>
                   <span class="jsession">SESSION: 534580</span><br/>
-                  <span class="jsession">USERID: 125344</span>
+                  <span class="jsession">USERID: 125344</span><br/>
+                  <span class="jsession">DURATION: <span id="jtimer">00:00:00</span></span>
                 </h3>
                     </div>
                 </div>
@@ -468,31 +471,31 @@
             </div>
         </div>
     </section>
-    <footer class="footer">
+       <footer class="footer">
         <div class="container">
             <div class="footerupper">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-12">
                         <div class="logobottom">
                             <a href="http://biznesport.pl/"><img src="images/logo_bottom.png"><span>biznes<strong>port.pl</strong></span></a>
                         </div>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-9 col-sm-12">
                         <div class="footer_info">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-3 col-sm-6 col-xs-12">
                                     <span>Szczecin</span>
                                     <span>Ul.Niedziałkowskiego 26a/10</span>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 col-sm-6 col-xs-12">
                                     <span>Warszawa</span>
                                     <span>Al. Stanów Zjednoczonych 25/12</span>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 col-sm-6 col-xs-12">
                                     <span>Zadzwoń</span>
                                     <span><span class="link-braces a_wrap"><a href="tel:+48888520888">+48 888 520 888</a></span></span>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 col-sm-6 col-xs-12">
                                     <span>Napisz</span>
                                     <span><span class="link-braces a_wrap"><a href="mailto:contact@biznesport.pl">contact@biznesport.pl</a></span></span>
                                 </div>
@@ -503,13 +506,13 @@
             </div>
             <div class="footerdown">
                 <div class="row">
-                    <div class="col-md-6 text-left rights">All rights reserved by <span class="link-braces a_wrap"><a href="http://biznesport.pl/">biznesport.pl</a></span></div>
-                    <div class="col-md-6 text-right socialmedia">
+                    <div class="col-md-6 col-sm-6  col-xs-12 text-left rights">All rights reserved by <span class="link-braces a_wrap"><a href="http://biznesport.pl/">biznesport.pl</a></span></div>
+                    <div class="col-md-6  col-sm-6 col-xs-12 text-right socialmedia">
                         <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="skype:robert_butryn?call"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/BiznesportPL"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.facebook.com/BiznesPort"><i class="fa fa-skype"></i></a></li>
+                            <li><a href="https://plus.google.com/110417749083739545987/posts"><i class="fa fa-google"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -535,7 +538,6 @@
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/modernizr/modernizr.js"></script>
     <script src="/bower_components/bxslider-4/dist/jquery.bxslider.js"></script>
     <script src="/bower_components/aos/dist/aos.js"></script>
     <script src="/bower_components/parallax.js/parallax.min.js"></script>

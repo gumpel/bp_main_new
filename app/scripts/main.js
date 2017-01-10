@@ -16,13 +16,15 @@ jQuery(document).ready(function(t) {
         var e = t('#' + i),
             o = e.height(),
             a = t(window).scrollTop() + 100,
-            h = e.prev();
+            h = e.prev(),
+            //wh = t(window).height();
+            wh = 800;
         if (h.is('section') && e.has('canvas')) {
             var r = h.offset().top;
             if (a >= r && r + o >= a) {
                 var c = e.offset().top - a;
                 //console.log(t(window).height() - c);
-                n(i.toString(), t(window).height() - c)
+                n(i.toString(), wh - c)
             }
             1
         }
@@ -34,15 +36,17 @@ jQuery(document).ready(function(t) {
         if (t('#' + e).has('canvas') === !1) return !1;
         var o = t('#' + e + ' canvas:first'),
             a = o.get(0).getContext('2d');
-        var p = t('#' + e + '> .canvas_help');
-        var spin = o.height() / t(window).height() < 1 ? o.height() / t(window).height() : 1;
+        var p = t('#' + e + '> .canvas_help'),
+            //wh = t(window).height();
+            wh = 800;
+        var spin = o.height() / wh < 1 ? o.height() / wh : 1;
 
         if (!p.find('div').length) {
             //p.append('<div></div>');
 
         }
         n = n > 100 ? n : 100;
-        n = n < t(window).height() ? n : t(window).height();
+        n = n < wh ? n : wh;
         //var p1 = p.find('div');
         //var p2 = p.next();
         //console.log(p2)
@@ -60,7 +64,7 @@ jQuery(document).ready(function(t) {
             a.lineTo(o.width(),
                 t(window).height - 0.8 * n),
 
-            a.bezierCurveTo(.9 * (t(window).height() - o.height()), 0, t(window).height() - o.height(), n, .1 * -n, o.height()),
+            a.bezierCurveTo(.9 * (wh - o.height()), 0, wh - o.height(), n, .1 * -n, o.height()),
             a.closePath(), 'undefined' != typeof o.data('image')) {
             var h = new Image;
             h.src = o.data('image');
@@ -72,7 +76,7 @@ jQuery(document).ready(function(t) {
         t.each(t('section.hascanvas'), function() {
             e(t(this).attr('id'));
         })
-        t(window).on('scroll', function() {
+        t(window).on('scroll resize', function() {
             t.each(t('section.hascanvas'), function() {
                 e(t(this).attr('id'));
             })
@@ -608,7 +612,32 @@ function jack20() {
             }
         }
     }
+    jtimer();
+    function jtimer(){ 
+        var hours = 0,
+            minuts = 0,
+            sec = 0,
+            dHours,dMinuts,dSec;
+        
+    setInterval(function(){
+        sec++;
+        if (sec === 60){            
+            minuts++;
+            sec=0;                        
+        }
 
+        if (minuts == 60) {
+            hours++;
+            minuts=0;
+        }
+
+        dHours = hours < 10 ? '0'+hours :hours;
+        dMinuts = minuts < 10 ? '0'+minuts : minuts;
+        dSec = sec < 10 ? '0'+sec :sec;
+        $('#jtimer').text(dHours+':'+dMinuts+':'+dSec);
+
+    },1000)
+    }
 
     var current = '#jform-1',
         pathArr = [current],
@@ -737,7 +766,7 @@ $(document).ready(function() {
 
         var trigger2 = new ScrollMagic.Scene({
                 triggerElement: '#baner_s',
-                duration: $('#baner_s').height() - $(window).height() * .5 + 1,
+                duration: $('#baner_s').height(),
                 offset: $(window).height() * .5
             })
             //.addIndicators()
@@ -745,25 +774,25 @@ $(document).ready(function() {
             .setClassToggle('#mb-slider-count', 'transition-reset')
             .addTo(wcontroller)
             .on('progress', function(e) {
-                $('#mb-tittle, #mb-slider-count').css({ 'transform': 'translate3d(0px, ' + (-e.progress.toFixed(2) * 250) + 'px, 0px)' })
+                $('#mb-tittle, #mb-slider-count').css({ 'transform': 'translate3d(0px, ' + (-e.progress.toFixed(2) *  $('#baner_s').height()) + 'px, 0px)' })
             });
 
-        var gsliderC = '#g-slider > .container';
+        var gsliderC = '#g-slider > .showen';
         console.log(gsliderC);
         var trigger3 = new ScrollMagic.Scene({
                 triggerElement: '#canvas2',
-                offset: -0.7 * $(window).height(),
+                offset: -0.3 * $('#canvas2').height(),
                 duration: $('#canvas2').height()
             })
             //.addIndicators()
             .addTo(wcontroller)
             .on('progress', function(e) {
                 if ($(window).width() >= 992) {
-                    var prog = 0.8 * (-$(window).height() + $(window).height() * e.progress.toFixed(2));
-                    $(gsliderC).css({ 'transform': 'translate3d(0px,' + prog + 'px,0px)' })
-                    if (e.progress.toFixed(2) < 0.28) $(gsliderC).hide();
+                    var prog =  .3 *(- $('#canvas2').height() + ($('#canvas2').height() * e.progress)) ;
+                    $(gsliderC).css({ 'transform': 'translate3d(0px,' +  prog + 'px,0px)' })
+                    if (e.progress.toFixed(2) < 0.15) $(gsliderC).hide();
                     else $(gsliderC).show();
-                    if (e.progress.toFixed(2) < 0.3) $(gsliderC).css({ 'opacity': '0' });
+                    if (e.progress.toFixed(2) < 0.16) $(gsliderC).css({ 'opacity': '0' });
                     else $(gsliderC).css({ 'opacity': '1' }).show();
                 } else {
                     $(gsliderC).css({ 'transform': 'translate3d(0px,0px,0px)' });
@@ -771,33 +800,24 @@ $(document).ready(function() {
                 }
             })
             .on('enter', function() {
-                //console.log('enter');
-                var height = 0;
-                $('.g-slider-desriptions li').each(function() {
-                    $(this).removeAttr('style');
-                    //console.log($(this).height());
-                    //s$(this).width($('#g-slider-desriptions').width());
-                    if ($(this).height() > height) {
-                        height = $(this).height();
-                    }
-                });
-                $('#g-slider-desriptions').height(height)
+               
             })
 
         var canvas3h = $('#canvas3').height();
         var trigger4 = new ScrollMagic.Scene({
                 triggerElement: '#canvas3',
-                offset: -200,
+                offset: -.4*$('#canvas3').height(),
                 duration: canvas3h
             })
             //.addIndicators()
             .addTo(wcontroller)
             .on('progress', function(e) {
-                var prog = 0.9 * (-$(window).height() + $(window).height() * e.progress.toFixed(2)) + 200;
+                var prog = .3 *(- $('#canvas3').height() + ($('#canvas3').height() * e.progress)); 
+
                 prog = prog < 0 ? prog : 0;
                 if ($(window).width() >= 992) {
                     $('#bp_technology > .container').css({ 'transform': 'translate3d(0px,' + prog + 'px, 0px)' });
-                    if (e.progress.toFixed(2) < 0.25) $('#bp_technology > .container').css({ 'opacity': '0' });
+                    if (e.progress.toFixed(2) < 0.15) $('#bp_technology > .container').css({ 'opacity': '0' });
                     else $('#bp_technology > .container').css({ 'opacity': '1' });
                 }
 
