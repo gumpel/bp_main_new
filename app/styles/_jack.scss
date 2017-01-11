@@ -39,6 +39,9 @@
             .jlabel {
                 position: relative;
                 font-size: 18px;
+                @media (min-width:$screen-lg) {
+                    font-size:21px;
+                }
                 font-weight: 300;
                 color: #2e3040;
                 margin-bottom: 20px;

@@ -451,7 +451,7 @@ $(document).ready(function() {
             $('div.bp_client_list ul').prepend($('div.bp_client_list ul li:last-child'));
             $(this).addClass('stop');
             bpIndex = (bpIndex + bpClientNumber + 1) % bpClientNumber;
-            console.log(bpIndex);
+            //console.log(bpIndex);
             printClient($('#bp_client_list > ul > li:nth-child(7)').attr('data-index'));
             setTimeout(function() {
                 $(bpRight).removeClass('stop');
@@ -472,7 +472,7 @@ $(document).ready(function() {
     });
 
     function printClient(index) {
-        console.log(index);
+        //console.log(index);
         $('#bp_client_nr').html(bpClientNumber - parseInt(index));
         $('#bp_client_of').html('/0' + bpClientNumber);
         $('#bp_client_title').html(bpClientObj[index].title);
@@ -508,14 +508,14 @@ function jack20() {
         name: 'Jane',
         field: {
             '#jform-1': {
-                html: '<div class="field" id="jform-1"><div class="jlabel">Cześć, nazywam się Robert i witam Cię na mojej stronie internetowej. Jak masz na Imię ?</div><div class="jinput"><input type="text" name="name" id="jname" autocomplete="off"/></div><div class="jbutton" data-next="#jform-1-1"><span>Zatwierdź</span></div></div>',
+                html: '<div class="field" id="jform-1"><div class="jlabel">Cześć, jestem Leo. Jak masz na Imię ?</div><div class="jinput"><input type="text" name="name" id="jname" autocomplete="off"/></div><div class="jbutton" data-next="#jform-1-1"><span>Zatwierdź</span></div></div>',
                 next: {
                     'jbutton': '#jform-1-1'
                 },
                 nextType: 'jbutton'
             },
             '#jform-1-1': {
-                html: '<div class="field" id="jform-1-1"><div class="jlabel">Miło Cię poznać <span class="jname">Jan</span>. Wybierz kategorię w której chciałbyś abym Ci pomógł.</div><div class="jinput-radio"><input type="radio" name="jinput-radio" value="sites" data-next="#jform-sites" autofocus><label for="jinput-radio">Stworzenie strony internetowej</label></div><div class="jinput-radio"><input type="radio" name="jinput-radio" value="position" data-next="#jform-position" /><label for="jinput-radio">Pozycjonowanie</label></div><div class="jinput-radio"><input type="radio" name="jinput-radio" value="diffrent" data-next="#jform-diffrent" /><label for="jinput-radio">Inne</label></div><div class="jbutton-centred"><div class="jbutton"><span>Zatwierdź</span></div></div></div>',
+                html: '<div class="field" id="jform-1-1"><div class="jlabel">Miło Cię poznać <span class="jname">Jan</span>. Jak mógłbym Ci pomóc ?</div><div class="jinput-radio"><input type="radio" name="jinput-radio" value="sites" data-next="#jform-sites" autofocus><label for="jinput-radio">Stworzenie strony internetowej</label></div><div class="jinput-radio"><input type="radio" name="jinput-radio" value="position" data-next="#jform-position" /><label for="jinput-radio">Pozycjonowanie</label></div><div class="jinput-radio"><input type="radio" name="jinput-radio" value="diffrent" data-next="#jform-diffrent" /><label for="jinput-radio">Inne</label></div><div class="jbutton-centred"><div class="jbutton"><span>Zatwierdź</span></div></div></div>',
                 next: {
                     'sites': '#jform-sites',
                     'position': '#jform-position',
@@ -524,21 +524,21 @@ function jack20() {
                 nextType: 'jinput-radio'
             },
             '#jform-sites': {
-                html: '<div class="field" id="jform-sites"><div class="jlabel">Pomocne dla mnie będzie gdy opiszesz mi troszkę swój pomysł. Możesz także załączyć plik, z chęcią się z nim zapoznam.</div><div class="jinput-textarea"><textarea name="comment"form="jform" cols="30" rows="5"></textarea></div><div class="jinput-file"><input type="file" name="pic"></div><div class="jbutton-centred"><div class="jbutton" data-next="#jform-sites-1"><span>Zatwierdź</span></div></div></div>',
+                html: '<div class="field" id="jform-sites"><div class="jlabel">Pomóż mi proszę opisując swój pomysł. Możesz także załączyć plik.</div><div class="jinput-textarea"><textarea name="comment"form="jform" cols="30" rows="5"></textarea></div><div class="jinput-file"><input type="file" name="pic"></div><div class="jbutton-centred"><div class="jbutton" data-next="#jform-sites-1"><span>Zatwierdź</span></div></div></div>',
                 next: {
                     'jbutton': '#jform-sites-1'
                 },
                 nextType: 'jbutton'
             },
             '#jform-sites-1': {
-                html: '<div class="field" id="jform-sites-1"><div class="jlabel">Zostaw mi do siebie telefon lub e-mail, gdy tylko przeanalizuję Twój pomysł, odezwę się do Ciebie <span class="jname uppercase">JAN</span>!</div><div class="jinput"><input type="text" name="phoneemail"  autocomplete="off"/></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
+                html: '<div class="field" id="jform-sites-1"><div class="jlabel">Zaraz zacznę zastanawiać się nad wszystkim co napisałeś. Zostaw mi proszę do siebie numer telefonu i  e-mail.</div><div class="jinput"><input type="text" name="phoneemail"  autocomplete="off"/></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
                 next: {
                     'jbutton': '#jform-end'
                 },
                 nextType: 'jbutton'
             },
             '#jform-position': {
-                html: '<div class="field" id="jform-position"><div class="jlabel">Czy pozycjonowanie dotyczy istniejącej strony?</div><div class="jinput-radio"><input type="radio" name="jinput-radio" value="tak" data-next="#jform-position-1"/><label for="jinput-radio">Tak</label></div><div class="jinput-radio"><input type="radio" name="jinput-radio" value="nie" data-next="#jform-position-2"/><label for="jinput-radio">Nie</label></div></div>',
+                html: '<div class="field" id="jform-position"><div class="jlabel">Pozycjonowanie dotyczy twojej istniejącej strony?</div><div class="jinput-radio"><input type="radio" name="jinput-radio" value="tak" data-next="#jform-position-1"/><label for="jinput-radio">Tak</label></div><div class="jinput-radio"><input type="radio" name="jinput-radio" value="nie" data-next="#jform-position-2"/><label for="jinput-radio">Nie</label></div></div>',
                 next: {
                     'tak': '#jform-position-1',
                     'nie': '#jform-position-2'
@@ -546,14 +546,14 @@ function jack20() {
                 nextType: 'jinput-radio'
             },
             '#jform-position-1': {
-                html: '<div class="field" id="jform-position-1"><div class="jlabel">Podaj adres strony / domeny:</div><div class="jinput"><input type="text" name="name"  autocomplete="off"/></div><div class="jbutton" data-next="#jform-position-2"><span>Zatwierdź</span></div></div>',
+                html: '<div class="field" id="jform-position-1"><div class="jlabel">Wymień je proszę:</div><div class="jinput"><input type="text" name="name"  autocomplete="off"/></div><div class="jbutton" data-next="#jform-position-2"><span>Zatwierdź</span></div></div>',
                 next: {
                     'jbutton': '#jform-position-2'
                 },
                 nextType: 'jbutton'
             },
             '#jform-position-2': {
-                html: '<div class="field" id="jform-position-2"><div class="jlabel">Czy masz słowa kluczowe na jakie chcesz pozycjonować lub liki stron Twojej konkurencji? </div><div class="jinput-radio"><input type="radio" name="jinput-radio" value="tak" data-next="#jform-position-2-1"/><label for="jinput-radio">Tak</label></div><div class="jinput-radio"><label for="jinput-radio">Nie</label><input type="radio" name="jinput-radio" value="nie" data-next="#jform-position-2-2"/></div></div>',
+                html: '<div class="field" id="jform-position-2"><div class="jlabel">Czy masz słowa kluczowe na jakie chcesz pozycjonować ?  </div><div class="jinput-radio"><input type="radio" name="jinput-radio" value="tak" data-next="#jform-position-2-1"/><label for="jinput-radio">Tak</label></div><div class="jinput-radio"><label for="jinput-radio">Nie</label><input type="radio" name="jinput-radio" value="nie" data-next="#jform-position-2-2"/></div></div>',
                 next: {
                     'tak': '#jform-position-2-1',
                     'nie': '#jform-position-2-2'
@@ -568,14 +568,14 @@ function jack20() {
                 nextType: 'jbutton'
             },
             '#jform-position-2-1-2': {
-                html: '<div class="field" id="jform-position-2-1-2"><div class="jlabel">Zostaw telefon lub e-mail do siebie abym mógł się z Tobą skontaktować w tej sprawie</div><div class="jinput"><input type="text" name="phoneemail" autocomplete="off"/></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
+                html: '<div class="field" id="jform-position-2-1-2"><div class="jlabel">Zostaw mi proszę do siebie numer telefonu i  e-mail.</div><div class="jinput"><input type="text" name="phoneemail" autocomplete="off"/></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
                 next: {
                     'jbutton': '#jform-end'
                 },
                 nextType: 'jbutton'
             },
             '#jform-position-2-2': {
-                html: '<div class="field" id="jform-position-2-2"><div class="jlabel">W takim razie zostaw telefon lub e-mail do siebie abym mógł się z Tobą skontaktować w tej sprawie</div><div class="jinput"><input type="text" name="phoneemail" autocomplete="off" /></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
+                html: '<div class="field" id="jform-position-2-2"><div class="jlabel">Zostaw mi proszę do siebie numer telefonu i  e-mail.</div><div class="jinput"><input type="text" name="phoneemail" autocomplete="off" /></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
                 next: {
                     'jbutton': '#jform-end'
                 },
@@ -590,21 +590,21 @@ function jack20() {
                 nextType: 'jinput-radio'
             },
             '#jform-diffrent-1': {
-                html: '<div class="field" id="jform-diffrent-1"><div class="jlabel">Pomocne dla mnie będzie gdy opiszesz mi troszkę swój pomysł. Możesz także załączyć plik, z chęcią się z nim zapoznam.</div><div class="jinput-textarea"><textarea name="comment" form="jform" cols="30" rows="5"></textarea></div><div class="jbutton-centred"><div class="jbutton" data-next="#jform-diffrent-1-1"><span>Zatwierdź</span></div></div></div>',
+                html: '<div class="field" id="jform-diffrent-1"><div class="jlabel">Więc jak mógłbym Ci pomóc ? Możesz teraz napisać cokolwiek ?</div><div class="jinput-textarea"><textarea name="comment" form="jform" cols="30" rows="5"></textarea></div><div class="jbutton-centred"><div class="jbutton" data-next="#jform-diffrent-1-1"><span>Zatwierdź</span></div></div></div>',
                 next: {
                     'jbutton': '#jform-diffrent-1-1'
                 },
                 nextType: 'jbutton'
             },
             '#jform-diffrent-1-1': {
-                html: '<div class="field" id="jform-diffrent-1-1"><div class="jlabel">Zostaw telefon lub e-mail do siebie abym mógł się z Tobą skontaktować w tej sprawie</div><div class="jinput"><input type="text" name="phoneemail" autocomplete="off" /></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
+                html: '<div class="field" id="jform-diffrent-1-1"><div class="jlabel">Zostaw mi proszę do siebie numer telefonu i  e-mail.</div><div class="jinput"><input type="text" name="phoneemail" autocomplete="off" /></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
                 next: {
                     'jbutton': '#jform-end'
                 },
                 nextType: 'jbutton'
             },
             '#jform-diffrent-2': {
-                html: '<div class="field" id="jform-diffrent-2"><div class="jlabel">W takim razie zostaw telefon lub e-mail do siebie abym mógł się z Tobą skontaktować w tej sprawie</div><div class="jinput"><input type="text" name="phoneemail" autocomplete="off"/></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
+                html: '<div class="field" id="jform-diffrent-2"><div class="jlabel">Zostaw mi proszę do siebie numer telefonu i  e-mail.</div><div class="jinput"><input type="text" name="phoneemail" autocomplete="off"/></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
                 next: {
                     'jbutton': '#jform-end'
                 },
@@ -616,30 +616,31 @@ function jack20() {
         }
     }
     jtimer();
-    function jtimer(){ 
+
+    function jtimer() {
         var hours = 0,
             minuts = 0,
             sec = 0,
-            dHours,dMinuts,dSec;
-        
-    setInterval(function(){
-        sec++;
-        if (sec === 60){            
-            minuts++;
-            sec=0;                        
-        }
+            dHours, dMinuts, dSec;
 
-        if (minuts == 60) {
-            hours++;
-            minuts=0;
-        }
+        setInterval(function() {
+            sec++;
+            if (sec === 60) {
+                minuts++;
+                sec = 0;
+            }
 
-        dHours = hours < 10 ? '0'+hours :hours;
-        dMinuts = minuts < 10 ? '0'+minuts : minuts;
-        dSec = sec < 10 ? '0'+sec :sec;
-        $('#jtimer').text(dHours+':'+dMinuts+':'+dSec);
+            if (minuts == 60) {
+                hours++;
+                minuts = 0;
+            }
 
-    },1000)
+            dHours = hours < 10 ? '0' + hours : hours;
+            dMinuts = minuts < 10 ? '0' + minuts : minuts;
+            dSec = sec < 10 ? '0' + sec : sec;
+            $('#jtimer').text(dHours + ':' + dMinuts + ':' + dSec);
+
+        }, 1000)
     }
 
     var current = '#jform-1',
@@ -677,12 +678,23 @@ function jack20() {
         }
 
         $('#jform .jname').html(jformObj.name);
-
+        $('#jform').on('keyup keypress', function(e) {
+            var keyCode = e.keyCode || e.which;
+            if (keyCode === 13) {
+                 
+                if ($('.jack-v .jform .field .jack-v .jform .field .jbutton.activate').length != -1) {
+                    $(button).click();  
+                }
+                e.preventDefault();
+                return false;
+            }
+        });
         button = $(current).find('div.jbutton').length > 0 ? $(current).find('div.jbutton') : $(current).find('div.jbutton');
 
         $(button).on('click', function() {
             //console.log(dataNext);
             if (dataNext === '#jform-end') {
+                alert('end')
                 //$('#jform').submit();
             }
             showNext(dataNext);
@@ -692,6 +704,9 @@ function jack20() {
 
             };
         });
+
+
+
 
         function dataNext(current) {
             if (jformObj.field[current].nextType === 'jbutton') {
@@ -757,13 +772,13 @@ $(document).ready(function() {
                     // $('#wwd_slide').css({ 'transform': 'translate3d(0px, ' + (200 - e.progress.toFixed(2) * 600) + 'px, 0px)' })
                     // $('#wwb_button').css({ 'transform': 'translate3d(0px, ' + (400 - e.progress.toFixed(2) * 1000) + 'px, 0px)' })
                     $('#wwdh2').css({ 'transform': 'translateY(' + (-e.progress.toFixed(2) * 300) + 'px)' });
-                    console.log((-e.progress.toFixed(2) * 300))
+                    //console.log((-e.progress.toFixed(2) * 300))
                     $('#wwd_slide').css({ 'transform': 'translateY(' + (200 - e.progress.toFixed(2) * 600) + 'px)' });
                     $('#wwb_button').css({ 'transform': 'translateY(' + (400 - e.progress.toFixed(2) * 1000) + 'px)' });
                 } else {
                     $('#wwdh2,#wwd_slide,#wwb_button ').attr('style', '');
                 }
-            })            
+            })
             .addTo(wcontroller);
 
 
@@ -778,11 +793,11 @@ $(document).ready(function() {
             .setClassToggle('#mb-slider-count', 'transition-reset')
             .addTo(wcontroller)
             .on('progress', function(e) {
-                $('#mb-tittle, #mb-slider-count').css({ 'transform': 'translate3d(0px, ' + (-e.progress.toFixed(2) *  $('#baner_s').height()) + 'px, 0px)' })
+                $('#mb-tittle, #mb-slider-count').css({ 'transform': 'translate3d(0px, ' + (-e.progress.toFixed(2) * $('#baner_s').height()) + 'px, 0px)' })
             });
 
         var gsliderC = '#g-slider > .showen';
-        console.log(gsliderC);
+        //console.log(gsliderC);
         var trigger3 = new ScrollMagic.Scene({
                 triggerElement: '#canvas2',
                 offset: -0.3 * $('#canvas2').height(),
@@ -792,9 +807,9 @@ $(document).ready(function() {
             .addTo(wcontroller)
             .on('progress', function(e) {
                 if ($(window).width() >= 992) {
-                    var prog =  .3 *(- $('#canvas2').height() + ($('#canvas2').height() * e.progress)) ;
+                    var prog = .3 * (-$('#canvas2').height() + ($('#canvas2').height() * e.progress));
                     //$(gsliderC).css({ 'transform': 'translate3d(0px,' +  prog + 'px,0px)' })
-                    $(gsliderC).css({ 'transform': 'translateY(' +  prog + 'px)' })
+                    $(gsliderC).css({ 'transform': 'translateY(' + prog + 'px)' })
                     if (e.progress.toFixed(2) < 0.15) $(gsliderC).hide();
                     else $(gsliderC).show();
                     if (e.progress.toFixed(2) < 0.16) $(gsliderC).css({ 'opacity': '0' });
@@ -806,19 +821,19 @@ $(document).ready(function() {
                 }
             })
             .on('enter', function() {
-               
+
             })
 
         var canvas3h = $('#canvas3').height();
         var trigger4 = new ScrollMagic.Scene({
                 triggerElement: '#canvas3',
-                offset: -.4*$('#canvas3').height(),
+                offset: -.4 * $('#canvas3').height(),
                 duration: canvas3h
             })
             //.addIndicators()
             .addTo(wcontroller)
             .on('progress', function(e) {
-                var prog = .3 *(- $('#canvas3').height() + ($('#canvas3').height() * e.progress)); 
+                var prog = .3 * (-$('#canvas3').height() + ($('#canvas3').height() * e.progress));
 
                 prog = prog < 0 ? prog : 0;
                 if ($(window).width() >= 992) {
@@ -827,10 +842,10 @@ $(document).ready(function() {
                     if (e.progress.toFixed(2) < 0.15) $('#bp_technology > .container').css({ 'opacity': '0' });
                     else $('#bp_technology > .container').css({ 'opacity': '1' });
                 } else {
-                     //$('#bp_technology > .container').css({ 'transform': 'translate3d(0px,0px,0px)' });
-                     $('#bp_technology > .container').css({ 'transform': 'translateY(0px)' });
-                     $('#bp_technology > .container').css({ 'opacity': '1' });
-                    
+                    //$('#bp_technology > .container').css({ 'transform': 'translate3d(0px,0px,0px)' });
+                    $('#bp_technology > .container').css({ 'transform': 'translateY(0px)' });
+                    $('#bp_technology > .container').css({ 'opacity': '1' });
+
                 }
 
             })
@@ -1119,7 +1134,7 @@ $(document).ready(function() {
 
         // $grid.isotope({ filter: '.portale' });
         $('.portfolioselect').on('changed.bs.select', function() {
-            console.log('.' + $('.portfolioselect').selectpicker('val'))
+            //console.log('.' + $('.portfolioselect').selectpicker('val'))
             $grid.isotope({ filter: '.' + $('.portfolioselect').selectpicker('val') });
         });
     }
@@ -1131,20 +1146,20 @@ $(document).ready(function() {
                 columnWidth: '.grid-sizer',
                 percentPosition: true,
             }
-        });       
+        });
 
         // $grid.isotope({ filter: '.portale' });
         $('.servies_chosen').on('click', function() {
-            console.log($(this).attr('data-pick'));            
+            //console.log($(this).attr('data-pick'));
             $grid.isotope({ filter: $(this).attr('data-pick') });
         });
     }
 
 })
 
-$(document).ready(function() { 
+$(document).ready(function() {
     if ($('body#portfolio').length) {
-        $('.grid-item[data-href]').on('click', function(){
+        $('.grid-item[data-href]').on('click', function() {
             document.location.href = $(this).attr('data-href');
         })
     }
