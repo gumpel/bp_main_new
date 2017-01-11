@@ -393,6 +393,9 @@ select.selectpicker {
 #portfoliogrid {
     margin-top: 50px;
     margin-bottom: 230px;
+    .grid-item[data-href] {
+      cursor: pointer;
+    }
     .grid-item {
         //height: 318px;
         margin-bottom: 30px;

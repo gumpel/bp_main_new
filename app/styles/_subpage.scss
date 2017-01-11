@@ -35,6 +35,10 @@
             }
         }
 
+
+    }
+    div.row:not(:first-child) > div {
+        text-align: center;
     }
 
     h2 {

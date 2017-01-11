@@ -773,7 +773,7 @@ $(document).ready(function() {
                 duration: $('#baner_s').height(),
                 offset: $(window).height() * .5
             })
-            .addIndicators()
+            //.addIndicators()
             .setClassToggle('#mb-tittle', 'transition-reset')
             .setClassToggle('#mb-slider-count', 'transition-reset')
             .addTo(wcontroller)
@@ -1140,4 +1140,12 @@ $(document).ready(function() {
         });
     }
 
+})
+
+$(document).ready(function() { 
+    if ($('body#portfolio').length) {
+        $('.grid-item[data-href]').on('click', function(){
+            document.location.href = $(this).attr('data-href');
+        })
+    }
 })
