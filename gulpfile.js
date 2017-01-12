@@ -58,7 +58,7 @@ gulp.task('html', ['styles', 'scripts'], () => {
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     //.pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
-    .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
+    //.pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
     .pipe(gulp.dest('dist'));
 });
 
@@ -163,7 +163,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'images',  'extras','video'], () => {
+gulp.task('build', ['lint', 'html',  'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

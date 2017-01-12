@@ -13,18 +13,22 @@ body {
         font-family: 'bebas_neuebook';
         color:#fff;
         font-weight: 400;
+        &.thin {
+          font-family: 'BebasNeueLight';
+        }
      }
      span.sub {
-          font-size: 32px;
+          font-size: 40px;
           display: block;
-          line-height: 30px;
+          line-height: 50px;
           font-family: 'bebas_neue_regularregular';
           text-transform: uppercase;
           font-weight: 400;
-          color:#aaa;
+          color:#fff;
           letter-spacing: 3px;
            @media (max-width: $screen-md) {
-            font-size: 24px
+            font-size: 30px;
+            line-height:37px;
         }
          @media (max-width: $screen-md) { 
           font-size:4vw;

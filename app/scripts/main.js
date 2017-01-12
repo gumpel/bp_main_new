@@ -694,8 +694,14 @@ function jack20() {
         $(button).on('click', function() {
             //console.log(dataNext);
             if (dataNext === '#jform-end') {
-                alert('end')
-                //$('#jform').submit();
+                $.ajax({
+                        url: 'mailer.php',
+                        type: 'post',
+                        data: $(this).serialize(),
+                        success: function(d) {
+                            alert(d);
+                        }
+                    });
             }
             showNext(dataNext);
             $(this).unbind('click');
