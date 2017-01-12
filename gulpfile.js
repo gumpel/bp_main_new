@@ -68,6 +68,12 @@ gulp.task('images', () => {
     .pipe(gulp.dest('dist/images'));
 });
 
+gulp.task('video', () => {
+  return gulp.src('app/video/**/*')  
+    .pipe(gulp.dest('dist/video'));
+});
+
+
 gulp.task('fonts', () => {
   return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
     .concat('app/fonts/**/*'))
@@ -157,7 +163,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'images',  'extras'], () => {
+gulp.task('build', ['lint', 'html', 'images',  'extras','video'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
