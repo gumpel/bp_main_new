@@ -84,7 +84,8 @@
                         outline: none;
                     }
                     &[type="text"],
-                    &[type="email"] {
+                    &[type="email"],
+                    &[type="tel"] {
                         border: none;
                         border-bottom: solid 1px rgba(211, 51, 47, 0.5);
                         position: relative;

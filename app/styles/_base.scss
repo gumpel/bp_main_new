@@ -1,5 +1,7 @@
 body {
   overflow-x: hidden;
+  background: #09090b;
+
 }
 
 .mb-tittle h1 {
@@ -97,6 +99,9 @@ p {
 
 section {
   position: relative;
+    @media (max-width:$screen-sm) {
+    overflow: hidden;
+  }
 }
 
 section > canvas {

@@ -1,161 +1,172 @@
 #canvas4 > canvas {
-    z-index:25;
+  z-index: 25;
 }
 
 .bp_num {
-    width: 100%;
-    min-height: 900px;
-    background: #0c0e11;
-    font-size: 20px;
-    padding-top: 100px;
-    padding-bottom:0px !important;
-    h2 {
-        font-size: 5em;
-        color: #fff;
-        text-align: center;
-        margin-bottom: 1em;
-        font-family: 'bebas_neuelight';
-        strong {
-            font-family: 'bebas_neuebook'
-        }
+  width: 100%;
+  min-height: 900px;
+  background: #0c0e11;
+  font-size: 20px;
+  padding-top: 100px;
+  padding-bottom: 0px !important;
+  h2 {
+    font-size: 5em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1em;
+    font-family: 'bebas_neuelight';
+    strong {
+      font-family: 'bebas_neuebook'
     }
-    .bp_num_box {
-        min-height: 10.5em;
-        background: #13131b;
-        padding: 20px 30px;
-        margin-bottom:15px;
-        .bp_num_title {
-            font-family: 'bebas_neue_regularregular';
-            font-size: 1em;
-            color: #fff;
-        }
-        .bp_num_percente {
-            color: #5479eb;
-            font-size: 4.25em;
-            text-align: center;
-            font-family: 'bebas_neuelight';
-            width: 100%;
-            display: inline-block;
-            line-height: 1.2em;
-        }
+  }
+  .bp_num_box {
+    min-height: 10.5em;
+    background: #13131b;
+    padding: 20px 30px;
+    margin-bottom: 15px;
+    .bp_num_title {
+      font-family: 'bebas_neue_regularregular';
+      font-size: 1em;
+      color: #fff;
     }
+    .bp_num_percente {
+      color: #5479eb;
+      font-size: 4.25em;
+      text-align: center;
+      font-family: 'bebas_neuelight';
+      width: 100%;
+      display: inline-block;
+      line-height: 1.2em;
+    }
+  }
 }
-.bp_diagram_wrap {
-    .bp_diagram_gradient {       
-        height: 200px;
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0e1218+0,0c0e11+100 */
-background: #0e1218; /* Old browsers */
-background: -moz-linear-gradient(-10deg, #0e1218 0%, #0c0e11 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(-10deg, #0e1218 0%,#0c0e11 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(170deg, #0e1218 0%,#0c0e11 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e1218', endColorstr='#0c0e11',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-    }
-}
-.bp_diagram {
-    font-size: 20px;
-    height: 350px;
-    background: rgba(0, 0, 0, 0) url("../images/diagram.png") no-repeat scroll center 0;
-    width: 100%;
-    z-index: 10;
-    margin-top: -30px;
-    position: relative;
-    overflow: hidden;
-    &:after {
-        position: absolute;
-        width: 100%;
-        content: '';
-        background: red;
-        height: 300px;
-    }
-    svg {
-        left: -555px;
-        position: absolute;
-        top: 0;
-            z-index: -1;
-         @media (max-width: $screen-lg) {
-           left: -653px;
-        }
 
+.bp_diagram_wrap {
+  .bp_diagram_gradient {
+    height: 200px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0e1218+0,0c0e11+100 */
+    background: #0e1218;
+    /* Old browsers */
+    background: -moz-linear-gradient(260deg, #0e1218 0%, #0c0e11 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(260deg, #0e1218 0%, #0c0e11 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(190deg, #0e1218 0%, #0c0e11 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+     @media (max-width:$screen-md){
+    display:none;
+  }
+
+  }
+}
+
+.bp_diagram {
+  font-size: 20px;
+  height: 350px;
+  background: rgba(0, 0, 0, 0) url("../images/diagram.png") no-repeat scroll center 0;
+  width: 100%;
+  z-index: 10;
+  margin-top: -30px;
+  position: relative;
+  overflow: hidden;
+  @media (max-width:$screen-md){
+    display:none;
+  }
+  &:after {
+    position: absolute;
+    width: 100%;
+    content: '';
+    background: red;
+    height: 300px;
+  }
+  svg {
+    left: -555px;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    @media (max-width: $screen-lg) {
+      left: -653px;
     }
-    .bp_dot_area {
-        min-height: 400px;
-        position: relative;
-        .bp_dot {
-            width: 0.75em;
-            height: 0.75em;
-            border-radius: 50%;
-            background: #042bf7;
-            border: 3px solid #fff;
-            position: absolute;
-            &.hvr-ripple-out::before {
-                border: 2px solid #fff;
-                border-radius: 50%;
-                left: -2px;
-                right: -2px;
-                bottom: -2px;
-                top: -2px;
-                animation-duration: 0.5s;
-            }
-            &#bp_dot_1 {
-                left: 0%;
-                top: 16px;
-                @media (max-width: $screen-lg) {
-                    top: 93px;
-                }
-            }
-            &#bp_dot_2 {
-                left: 25%;
-                top: 112px;
-                @media (max-width: $screen-lg) {
-                    top: 57px;
-                }
-            }
-            &#bp_dot_3 {
-                left: 50%;
-                top: 167px;
-                @media (max-width: $screen-lg) {
-                    top: 167px;
-                }
-            }
-            &#bp_dot_4 {
-                left: 75%;
-                top: 191px;
-                @media (max-width: $screen-lg) {
-                    top: 88px;
-                }
-            }
-            &#bp_dot_5 {
-                right: 0%;
-                margin-right: -5px;
-                top: 150px;
-                @media (max-width: $screen-lg) {
-                    top: 220px;
-                }
-            }
-            &+ .tooltip > .tooltip-inner {
-                font-family: 'bebas_neue_regularregular';
-                background-color: #fff;
-                color: #14151b;
-                font-size: 17px;
-                padding: 1em 2em;
-                border-radius: 0.2em;
-            }
-            /* Tooltip on top */
-            &+ .tooltip.top > .tooltip-arrow {
-                border-top: 5px solid #fff;
-            }
-            /* Tooltip on bottom */
-            &+ .tooltip.bottom > .tooltip-arrow {
-                border-bottom: 5px solid #fff;
-            }
-            /* Tooltip on left */
-            &+ .tooltip.left > .tooltip-arrow {
-                border-left: 5px solid #fff;
-            }
-            /* Tooltip on right */
-            &+ .tooltip.right > .tooltip-arrow {
-                border-right: 5px solid #fff;
-            }
+  }
+  .bp_dot_area {
+    min-height: 400px;
+    position: relative;
+    .bp_dot {
+      width: 0.75em;
+      height: 0.75em;
+      border-radius: 50%;
+      background: #042bf7;
+      border: 3px solid #fff;
+      position: absolute;
+      &.hvr-ripple-out::before {
+        border: 2px solid #fff;
+        border-radius: 50%;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        top: -2px;
+        animation-duration: 0.5s;
+      }
+      &#bp_dot_1 {
+        left: 0%;
+        top: 150px;
+        @media (max-width: $screen-lg) {
+          top: 220px;
         }
+      }
+      &#bp_dot_2 {
+        left: 25%;
+        top: 157px;
+        @media (max-width: $screen-lg) {
+          top: 71px;
+        }
+      }
+      &#bp_dot_3 {
+        left: 50%;
+        top: 167px;
+        @media (max-width: $screen-lg) {
+          top: 167px;
+        }
+      }
+      &#bp_dot_4 {
+        left: 75%;
+        top: 130px;
+        @media (max-width: $screen-lg) {
+          top: 66px;
+        }
+      }
+      &#bp_dot_5 {
+        right: 0%;
+        margin-right: -5px;
+        top: 16px;
+        @media (max-width: $screen-lg) {
+          top: 93px;
+        }
+      }
+      &+ .tooltip > .tooltip-inner {
+        font-family: 'bebas_neue_regularregular';
+        background-color: #fff;
+        color: #14151b;
+        font-size: 17px;
+        padding: 1em 2em;
+        border-radius: 0.2em;
+      }
+      /* Tooltip on top */
+      &+ .tooltip.top > .tooltip-arrow {
+        border-top: 5px solid #fff;
+      }
+      /* Tooltip on bottom */
+      &+ .tooltip.bottom > .tooltip-arrow {
+        border-bottom: 5px solid #fff;
+      }
+      /* Tooltip on left */
+      &+ .tooltip.left > .tooltip-arrow {
+        border-left: 5px solid #fff;
+      }
+      /* Tooltip on right */
+      &+ .tooltip.right > .tooltip-arrow {
+        border-right: 5px solid #fff;
+      }
     }
+  }
 }

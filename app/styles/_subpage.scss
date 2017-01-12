@@ -1,69 +1,91 @@
 #subpage {
-    min-height: 100vh;
-    background: #0A0A0C;
-    background-image: url('../images/portfolio/portfolio_bg.jpg');
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: 0;
-    background-size: 100%;
-    @media (max-width: $screen-md) { 
-        background-size: $screen-md;
+  min-height: 100vh;
+  background: #0A0A0C;
+  background-image: url('../images/subpage_bg.jpg');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 0;
+  background-size: 100%;
+  @media (max-width: $screen-md) {
+    background-size: $screen-md;
+  }
+  h1 {
+    font-family: 'BebasNeueBook';
+    font-size: 140px;
+    line-height: 1em;
+    margin-top: 165px;
+    color: #fff;
+    letter-spacing: 10px;
+    @media (max-width: $screen-sm) {
+      font-size: 20vw;
     }
-    h1 {
-        font-family: 'BebasNeueBook';
-        font-size: 140px;
-        line-height: 1em;
-        margin-top:165px;
-        color:#fff;
-
-        @media (max-width: $screen-sm) {
-            font-size:20vw;  
-        }
-
-                span.sub {
-            font-size: 18px;
-            display: block;
-            
-            font-family: "Roboto Condensed", sans-serif;        
-            font-weight: 400;
-            line-height: 24px;
-            color: #aaa;
-            letter-spacing: 1px; 
-            margin-bottom:60px;           
-            @media (max-width: $screen-md) {
-                font-size: 3vw;
-            }
-        }
-
-
+    span.sub {
+      font-size: 18px;
+      display: block;
+      font-family: "Roboto Condensed", sans-serif;
+      font-weight: 400;
+      line-height: 24px;
+      color: #aaa;
+      letter-spacing: 1px;
+      margin-bottom: 60px;
+      @media (max-width: $screen-md) {
+        font-size: 3vw;
+      }
     }
-    div.row:not(:first-child) > div {
-        text-align: center;
+  }
+  .subpageimage {
+    text-align: left;
+    @media (min-width: $screen-md) {
+      text-align: right;
+      margin-top: 165px;
+    }
+  }
+  div.row:not(:first-child) > div {
+    text-align: center;
+  }
+  h2 {
+    font-family: 'BebasNeueBook';
+    font-size: 100px;
+    margin: 200px 0 60px;
+    text-align: left;
+    color:#fff;
+    position:relative;
+    &:not(:first-child):before {
+        content: " ";
+        width: 300%;
+        height: 1px;
+        background: #222224;
+        position: absolute;
+        top: - 100px;
+        left:-100%;
     }
 
-    h2 {
-        font-size: 70px;
-        margin:30px;
-                @media (max-width: $screen-sm) {
-            font-size:10vw;  
-        }
+    @media (max-width: $screen-sm) {
+      font-size: 10vw;
     }
-    .content {
-        color: #fff;
+  }
+  .content {
+    color: rgba(255,255,255,.7);
+    text-align: left !important;
+    padding: 30px 0px 320px 0px;
+    font-size:24px;
+    p {
         text-align: left;
-        padding:30px 30px 60px 30px;
-          a {
-        color:#1362e7;
-        font-weight: bold;
-    }
     }
 
-
+    a {
+      color: #1362e7;
+      font-weight: bold;
+    }
+    ul {
+        text-align: left;
+    }
+  }
 }
 
 .portfoliosubpage {
-    img {
-        max-width: 100%;
-        margin-bottom:70px;
-    }
+  img {
+    max-width: 100%;
+    margin-bottom: 70px;
+  }
 }

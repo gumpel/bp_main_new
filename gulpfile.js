@@ -63,8 +63,8 @@ gulp.task('html', ['styles', 'scripts'], () => {
 });
 
 gulp.task('images', () => {
-  return gulp.src('app/images/**/*')
-    //.pipe($.cache($.imagemin()))
+  return gulp.src(['!app/images/portfolio','!app/images/portfolio/**/*','app/images/**/*'])
+    .pipe($.cache($.imagemin()))
     .pipe(gulp.dest('dist/images'));
 });
 
@@ -163,7 +163,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html',  'extras'], () => {
+gulp.task('build', ['lint', 'html',  'extras','images'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

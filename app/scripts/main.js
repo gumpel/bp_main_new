@@ -84,6 +84,134 @@ jQuery(document).ready(function(t) {
     })
 });
 
+// fog generator 
+$(document).ready(function() {
+    if ($(window).width() >= 992 && $('#fog').length != -1) {
+        var canvasWidth = 1600,
+            canvasHeight = 200,
+            pCount = 0,
+            pCollection = new Array();
+
+        var puffs = 1;
+        var particlesPerPuff = 2000;
+        var img = '../images/smoke2.png';
+
+        var smokeImage = new Image();
+        smokeImage.src = img;
+
+        for (var i1 = 0; i1 < puffs; i1++) {
+            var puffDelay = i1 * 1500; //300 ms between puffs
+
+            for (var i2 = 0; i2 < particlesPerPuff; i2++) {
+                addNewParticle((i2 * 50) + puffDelay);
+            }
+        }
+
+
+        draw(new Date().getTime(), 3000)
+
+
+
+        function addNewParticle(delay) {
+
+            var p = {};
+            p.top = canvasHeight;
+            p.left = randBetween(-200, 800);
+
+            p.start = new Date().getTime() + delay;
+            p.life = 8000;
+            p.speedUp = 30;
+
+
+            p.speedRight = randBetween(0, 20);
+
+            p.rot = randBetween(-1, 1);
+            p.red = Math.floor(randBetween(0, 255));
+            p.blue = Math.floor(randBetween(0, 255));
+            p.green = Math.floor(randBetween(0, 255));
+
+
+            p.startOpacity = .3
+            p.newTop = p.top;
+            p.newLeft = p.left;
+            p.size = 200;
+            p.growth = 10;
+
+            pCollection[pCount] = p;
+            pCount++;
+
+
+        }
+
+        function draw(startT, totalT) {
+            //Timing
+            var timeDelta = new Date().getTime() - startT;
+            var stillAlive = false;
+
+            //Grab and clear the canvas
+            var c = document.getElementById('fog');
+            var ctx = c.getContext('2d');
+            ctx.clearRect(0, 0, c.width, c.height);
+            c.width = c.width;
+
+            //Loop through particles
+            for (var i = 0; i < pCount; i++) {
+                //Grab the particle
+                var p = pCollection[i];
+
+                //Timing
+                var td = new Date().getTime() - p.start;
+                var frac = td / p.life
+
+                if (td > 0) {
+                    if (td <= p.life) { stillAlive = true; }
+
+                    //attributes that change over time
+                    var newTop = p.top - (p.speedUp * (td / 1000));
+                    var newLeft = p.left + (p.speedRight * (td / 1000));
+                    var newOpacity = Math.max(p.startOpacity * (1 - frac), 0);
+
+                    var newSize = p.size + (p.growth * (td / 1000));
+                    p.newTop = newTop;
+                    p.newLeft = newLeft;
+
+                    //Draw!
+                    ctx.fillStyle = 'rgba(150,150,150,' + newOpacity + ')';
+                    ctx.globalAlpha = newOpacity;
+                    ctx.drawImage(smokeImage, newLeft, newTop, newSize, newSize);
+                }
+            }
+
+
+
+            //Repeat if there's still a living particle
+            if (stillAlive) {
+                requestAnimationFrame(function() { draw(startT, totalT); });
+            } else {
+                clog(timeDelta + ': stopped');
+            }
+        }
+
+        function randBetween(n1, n2) {
+            var r = (Math.random() * (n2 - n1)) + n1;
+            return r;
+        }
+
+        function randOffset(n, variance) {
+            //e.g. variance could be 0.1 to go between 0.9 and 1.1
+            var max = 1 + variance;
+            var min = 1 - variance;
+            var r = Math.random() * (max - min) + min;
+            return n * r;
+        }
+
+        function clog(s) {
+            console.log(s);
+        }
+    }
+})
+
+
 $(document).ready(function() {
     //css Animation scroll
     AOS.init({
@@ -113,7 +241,7 @@ var nice = false;
 
 $(document).ready(
     function() {
-        nice = $('html').niceScroll({ zindex: 100000, cursoropacitymin: 0.5, autohidemode: false, cursorborderradius: 0, cursorborder: '1px solid #cda54b', cursorcolor: '#cda54b', cursorwidth: 10, mousescrollstep: 80, scrollspeed: 100 });
+        //nice = $('html').niceScroll({ zindex: 100000, cursoropacitymin: 0.5, autohidemode: false, cursorborderradius: 0, cursorborder: '1px solid #cda54b', cursorcolor: '#cda54b', cursorwidth: 10, mousescrollstep: 80, scrollspeed: 100 });
     }
 );
 
@@ -261,7 +389,7 @@ $(document).ready(function() {
             'bp_num_box_3': {
                 title: 'JavaSript',
                 num: 34,
-                symbol: 'kmm'
+                symbol: 'km'
             }
         },
         bp_dot_2: {
@@ -334,11 +462,29 @@ $(document).ready(function() {
         }
     }
 
+    var p = !1;
+    var k = $('#bp_num').length ? $('#bp_num') : !1;
+    if (k)
+        $(window).on('scroll load', function(i) {
+            //console.log(s, e);
+            if (p) $(this).unbind(i);
+            else {
+                var s = $(this).height() + $(this).scrollTop(),
+                    e = k.offset().top;
+                if (s >= e) {
+                    p = !0;
+                    printBox('bp_dot_1');
+                }
+            }
+        });
+
+
     $('.bp_dot').tooltip();
     $('.bp_dot').on('click', function() {
         var objKey = $(this).attr('id');
         $(this).addClass('hvr-ripple-out');
         printBox(objKey);
+        alert(objKey);
     });
     $('.bp_dot').on('mouseleave', function() {
         $(this).removeClass('hvr-ripple-out');
@@ -531,7 +677,7 @@ function jack20() {
                 nextType: 'jbutton'
             },
             '#jform-sites-1': {
-                html: '<div class="field" id="jform-sites-1"><div class="jlabel">Zaraz zacznę zastanawiać się nad wszystkim co napisałeś. Zostaw mi proszę do siebie numer telefonu i  e-mail.</div><div class="jinput"><input type="text" name="phoneemail"  autocomplete="off"/></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
+                html: '<div class="field" id="jform-sites-1"><div class="jlabel">Zaraz zacznę zastanawiać się nad wszystkim co napisałeś. Zostaw mi proszę do siebie numer telefonu i  e-mail.</div><div class="jinput"><input type="email" name="email" placeholder="email" autocomplete="off" /></div><div class="jinput"><input type="tel" name="tel" placeholder="telefon" autocomplete="off" /></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
                 next: {
                     'jbutton': '#jform-end'
                 },
@@ -568,14 +714,14 @@ function jack20() {
                 nextType: 'jbutton'
             },
             '#jform-position-2-1-2': {
-                html: '<div class="field" id="jform-position-2-1-2"><div class="jlabel">Zostaw mi proszę do siebie numer telefonu i  e-mail.</div><div class="jinput"><input type="text" name="phoneemail" autocomplete="off"/></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
+                html: '<div class="field" id="jform-position-2-1-2"><div class="jlabel">Zostaw mi proszę do siebie numer telefonu i  e-mail.</div><div class="jinput"><input type="email" name="email" placeholder="email" autocomplete="off" /></div><div class="jinput"><input type="tel" name="tel" placeholder="telefon" autocomplete="off" /></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
                 next: {
                     'jbutton': '#jform-end'
                 },
                 nextType: 'jbutton'
             },
             '#jform-position-2-2': {
-                html: '<div class="field" id="jform-position-2-2"><div class="jlabel">Zostaw mi proszę do siebie numer telefonu i  e-mail.</div><div class="jinput"><input type="text" name="phoneemail" autocomplete="off" /></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
+                html: '<div class="field" id="jform-position-2-2"><div class="jlabel">Zostaw mi proszę do siebie numer telefonu i  e-mail.</div><div class="jinput"><input type="email" name="email" placeholder="email" autocomplete="off" /></div><div class="jinput"><input type="tel" name="tel" placeholder="telefon" autocomplete="off" /></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
                 next: {
                     'jbutton': '#jform-end'
                 },
@@ -597,14 +743,14 @@ function jack20() {
                 nextType: 'jbutton'
             },
             '#jform-diffrent-1-1': {
-                html: '<div class="field" id="jform-diffrent-1-1"><div class="jlabel">Zostaw mi proszę do siebie numer telefonu i  e-mail.</div><div class="jinput"><input type="text" name="phoneemail" autocomplete="off" /></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
+                html: '<div class="field" id="jform-diffrent-1-1"><div class="jlabel">Zostaw mi proszę do siebie numer telefonu i  e-mail.</div><div class="jinput"><input type="email" name="email" placeholder="email" autocomplete="off" /></div><div class="jinput"><input type="tel" name="tel" placeholder="telefon" autocomplete="off" /></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
                 next: {
                     'jbutton': '#jform-end'
                 },
                 nextType: 'jbutton'
             },
             '#jform-diffrent-2': {
-                html: '<div class="field" id="jform-diffrent-2"><div class="jlabel">Zostaw mi proszę do siebie numer telefonu i  e-mail.</div><div class="jinput"><input type="text" name="phoneemail" autocomplete="off"/></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
+                html: '<div class="field" id="jform-diffrent-2"><div class="jlabel">Zostaw mi proszę do siebie numer telefonu i  e-mail.</div><div class="jinput"><input type="email" name="email" placeholder="email" autocomplete="off" /></div><div class="jinput"><input type="tel" name="tel" placeholder="telefon" autocomplete="off" /></div><div class="jbutton" data-next="#jform-end"><span>Zatwierdź</span></div></div>',
                 next: {
                     'jbutton': '#jform-end'
                 },
@@ -681,9 +827,9 @@ function jack20() {
         $('#jform').on('keyup keypress', function(e) {
             var keyCode = e.keyCode || e.which;
             if (keyCode === 13) {
-                 
+
                 if ($('.jack-v .jform .field .jack-v .jform .field .jbutton.activate').length != -1) {
-                    $(button).click();  
+                    $(button).click();
                 }
                 e.preventDefault();
                 return false;
@@ -695,13 +841,13 @@ function jack20() {
             //console.log(dataNext);
             if (dataNext === '#jform-end') {
                 $.ajax({
-                        url: 'mailer.php',
-                        type: 'post',
-                        data: $(this).serialize(),
-                        success: function(d) {
-                            alert(d);
-                        }
-                    });
+                    url: 'mailer.php',
+                    type: 'post',
+                    data: $('#jform').serialize(),
+                    success: function(d) {
+                        alert(d);
+                    }
+                });
             }
             showNext(dataNext);
             $(this).unbind('click');
@@ -844,9 +990,12 @@ $(document).ready(function() {
                 prog = prog < 0 ? prog : 0;
                 if ($(window).width() >= 992) {
                     //$('#bp_technology > .container').css({ 'transform': 'translate3d(0px,' + prog + 'px, 0px)' });
-                    $('#bp_technology > .container').css({ 'transform': 'translateY(' + prog + 'px)' });
+
                     if (e.progress.toFixed(2) < 0.15) $('#bp_technology > .container').css({ 'opacity': '0' });
-                    else $('#bp_technology > .container').css({ 'opacity': '1' });
+                    else {
+                        $('#bp_technology > .container').css({ 'opacity': '1' });
+                        $('#bp_technology > .container').css({ 'transform': 'translateY(' + prog + 'px)' });
+                    }
                 } else {
                     //$('#bp_technology > .container').css({ 'transform': 'translate3d(0px,0px,0px)' });
                     $('#bp_technology > .container').css({ 'transform': 'translateY(0px)' });
@@ -1049,13 +1198,31 @@ $(document).ready(function() {
             })
         $('#button-contact').on('click', function() {
             $('.contact-form-overlayer').fadeIn(330);
-            $('h1').hide()
+            $('h1').hide();
+            $('body').css({ 'overflow': 'hidden' })
         });
         $('#close_contact').on('click', function() {
             $('.contact-form-overlayer').fadeOut(330);
-            $('h1').show()
+            $('h1').show();
+            $('body').attr('style', '');
         })
 
+        $('#contact-form button').on('click', function(e) {
+            //e.preventDefault();
+            $.ajax({
+                url: 'mailer.php',
+                type: 'post',
+                data: $('#jform').serialize(),
+                success: function(d) {
+                    $('.contact-form textarea').after('<div style="color:green">dziękujemy wiadomość została wysłana</div>');
+                    $('#contact-form button').unbind('click');
+                },
+                error: function() {
+                    $('.contact-form textarea').after('<div style="color:red">Nie udało się wysłać wiadomości</div>');
+                    $('#contact-form button').unbind('click');
+                }
+            });
+        })
 
 
         var bpmap = new GMaps({
@@ -1125,14 +1292,27 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     if ($('#portfoliogrid').length) {
-        var $grid = $('#portfoliogrid').isotope({
+        var $grid = $('#portfoliogrid')
+        $grid.isotope({
             // options
             itemSelector: '.grid-item',
             masonry: {
                 columnWidth: '.grid-sizer',
                 percentPosition: true,
             }
+        }).imagesLoaded(function() {
+            // trigger again after images have loaded
+            $grid.isotope('reLayout');
         });
+        $(window).load(function() {
+            // trigger again after everything has loaded
+            $grid.isotope('reLayout');
+        });
+
+
+
+
+
         $('.pull-down').each(function() {
             var $this = $(this);
             $this.css('margin-top', $this.parent().height() - $this.height())
@@ -1152,6 +1332,13 @@ $(document).ready(function() {
                 columnWidth: '.grid-sizer',
                 percentPosition: true,
             }
+        }).imagesLoaded(function() {
+            // trigger again after images have loaded
+            $grid.isotope('reLayout');
+        });
+        $(window).load(function() {
+            // trigger again after everything has loaded
+            $grid.isotope('reLayout');
         });
 
         // $grid.isotope({ filter: '.portale' });

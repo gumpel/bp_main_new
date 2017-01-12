@@ -70,7 +70,7 @@
         &.active {
             img {
                 @include transform(scale(1.05));
-                filter: drop-shadow(-12px 17px 9px rgba(0, 0, 0, 0.7)) brightness(120.43);
+                filter: drop-shadow(-12px 17px 9px rgba(0, 0, 0, 0.7)) brightness(7.43);
             }
         }
         .button-wrap {
@@ -125,7 +125,7 @@
         > span {
             display: inline-block;
             color: #fff;
-            padding: 30px 20px 30px 20px;
+            padding: 30px 18px 30px 18px;
             vertical-align: middle;
 
             @media (min-width: $screen-lg) {
@@ -266,6 +266,12 @@
             color: #fff;
             border-color: #30303a;
             color: rgba(255, 255, 255, .5);
+            &~div {
+                padding-top:20px;
+                text-align: center;
+                font-size:19px;
+                font-family: 'Roboto Condensed', sans-serif;
+            }
             &:focus {
                 border-color: #cda54b;
                 box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(205, 165, 75, 0.6);
