@@ -16,7 +16,10 @@
   background-position-y: center;
   background-size: 100%;
   position: relative;
+ 
+
   z-index: 11;
+
   //height: 960px;
   .showen {
     @include transition(opacity .3s ease-in-out)
@@ -44,7 +47,10 @@
     }
   }
   .g-slider-desriptions-wrap {
-    z-index: 6;
+    @media(min-width:$screen-md){
+      z-index: 6;
+    }
+    
   }
   .g-slider-desriptions {
     @media (max-width: $screen-md) {
@@ -223,12 +229,14 @@
 .g-slider {
   .button-wrap {
     padding: 0;
-    @media(max-width:$screen-xs) {
+    @media (max-width: $screen-xs) {
       padding-top:50px;
     }
   }
   .button {
-    margin-top: 90px;
+    margin-top:60px;
+
+    
     $bcolor: #2f303d;
     float: left;
     color: $bcolor;
@@ -236,6 +244,12 @@
     margin-left: 37px;
     text-decoration: none;
     margin-bottom: 100px;
+        @media ( min-width: $screen-xs ){
+      margin-top:160px;
+    }    
+    @media ( min-width: $screen-md ){
+      margin-top: 90px;
+    }
     &:hover {
       background: $bcolor;
       color: #cdcdef;
