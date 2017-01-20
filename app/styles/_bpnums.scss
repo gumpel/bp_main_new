@@ -1,7 +1,9 @@
 #canvas4 > canvas {
   z-index: 25;
 }
-
+#canvas4 {
+  z-index: 13;
+}
 .bp_num {
   width: 100%;
   min-height: 900px;
@@ -9,95 +11,31 @@
   font-size: 20px;
   padding-top: 100px;
   padding-bottom: 0px !important;
-  h2 {
-    font-size: 5em;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 1em;
-    font-family: 'bebas_neuelight';
-    strong {
-      font-family: 'bebas_neuebook'
-    }
-  }
-  .bp_num_box {
-    min-height: 10.5em;
-    background: #13131b;
-    padding: 20px 30px;
-    margin-bottom: 15px;
-    .bp_num_title {
-      font-family: 'bebas_neue_regularregular';
-      font-size: 1em;
-      color: #fff;
-    }
-    .bp_num_percente {
-      color: #5479eb;
-      font-size: 4.25em;
-      text-align: center;
-      font-family: 'bebas_neuelight';
-      width: 100%;
-      display: inline-block;
-      line-height: 1.2em;
-    }
-  }
-}
-
-.bp_diagram_wrap {
-  .bp_diagram_gradient {
-    height: 200px;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0e1218+0,0c0e11+100 */
-    background: #0e1218;
-    /* Old browsers */
-    background: -moz-linear-gradient(260deg, #0e1218 0%, #0c0e11 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(260deg, #0e1218 0%, #0c0e11 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(190deg, #0e1218 0%, #0c0e11 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-     @media (max-width:$screen-md){
-    display:none;
-  }
-
-  }
-}
-
-.bp_diagram {
-  font-size: 20px;
-  height: 350px;
-  background: rgba(0, 0, 0, 0) url("../images/diagram.png") no-repeat scroll center 0;
-  width: 100%;
-  z-index: 10;
-  margin-top: -30px;
-  position: relative;
-  overflow: hidden;
-  @media (max-width:$screen-md){
-    display:none;
-  }
-  &:after {
-    position: absolute;
-    width: 100%;
-    content: '';
-    background: red;
-    height: 300px;
-  }
-  svg {
-    left: -555px;
-    position: absolute;
-    top: 0;
-    z-index: -1;
-    @media (max-width: $screen-lg) {
-      left: -653px;
-    }
-  }
-  .bp_dot_area {
-    min-height: 400px;
+    .bp_dot_area {
+    margin-top:-30px;
     position: relative;
+    z-index: 11;
+    .bp_dot::after {
+      position:absolute;
+        width:1px;
+        height: 500px;
+        top:13px;
+        height: 500px;
+        border-right:1px dashed rgba(#fff,.2);
+        content: " ";
+        left:6px;
+    }
+
     .bp_dot {
-      width: 0.75em;
-      height: 0.75em;
+      width: 1em;
+      height: 1em;
       border-radius: 50%;
       background: #042bf7;
       border: 3px solid #fff;
       position: absolute;
+     
+   
+      
       &.hvr-ripple-out::before {
         border: 2px solid #fff;
         border-radius: 50%;
@@ -169,4 +107,78 @@
       }
     }
   }
+  h2 {
+    font-size: 5em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1em;
+    font-family: 'bebas_neuelight';
+    strong {
+      font-family: 'bebas_neuebook'
+    }
+  }
+  .bp_num_box {
+    min-height: 10.5em;
+    background: #13131b;
+    padding: 20px 30px;
+    margin-bottom: 15px;
+
+    .bp_num_title {
+      font-family: 'bebas_neue_regularregular';
+      font-size: 1em;
+      color: #fff;
+    }
+    .bp_num_percente {
+      color: #5479eb;
+      font-size: 4.25em;
+      text-align: center;
+      font-family: 'bebas_neuelight';
+      width: 100%;
+      display: inline-block;
+      line-height: 1.2em;
+    }
+  }
+}
+
+.bp_diagram_wrap {
+  .bp_diagram_gradient {
+    height: 200px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0e1218+0,0c0e11+100 */
+    background: #0e1218;
+    /* Old browsers */
+    background: -moz-linear-gradient(260deg, #0e1218 0%, #0c0e11 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(260deg, #0e1218 0%, #0c0e11 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(190deg, #0e1218 0%, #0c0e11 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+     @media (max-width:$screen-md){
+    display:none;
+  }
+
+  }
+}
+
+.bp_diagram {
+  font-size: 20px;
+  height: 350px;
+  background: rgba(0, 0, 0, 0) url("../images/diagram.png") no-repeat scroll center 0;
+  width: 100%;
+  z-index: 10;
+  margin-top: -30px;
+  position: relative;
+  overflow: hidden;
+  @media (max-width:$screen-md){
+    display:none;
+  }
+  svg {
+    left: -555px;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    @media (max-width: $screen-lg) {
+      left: -653px;
+    }
+  }
+
 }

@@ -360,7 +360,7 @@ $(document).ready(function() {
         var objKey = $(this).attr('id');
         $(this).addClass('hvr-ripple-out');
         printBox(objKey);
-        alert(objKey);
+        //alert(objKey);
     });
     $('.bp_dot').on('mouseleave', function() {
         $(this).removeClass('hvr-ripple-out');
@@ -425,7 +425,7 @@ $(document).ready(function() {
         bpClientObj[$(this).index()] = bpHelpObj;
         bpHelpObj = new Object();
         if ($(this).index() === bpClientNumber - 1) {
-            printClient($('#bp_client_list > ul > li:nth-child(7)').attr('data-index'))
+            printClient($('#bp_client_list > ul > li:last-child').attr('data-index'))
             bpRotate = setInterval(function() {
                 bpClientRorate()
             }, 5000);
@@ -435,7 +435,7 @@ $(document).ready(function() {
     function bpClientRorate() {
         $('div.bp_client_list ul').prepend($('div.bp_client_list ul li:last-child'));
         bpIndex = (bpIndex + bpClientNumber + 1) % bpClientNumber;
-        printClient($('#bp_client_list > ul > li:nth-child(7)').attr('data-index'));
+        printClient($('#bp_client_list > ul > li:last-child').attr('data-index'));
         $(bpLeft).addClass('stop');
         $(bpRight).addClass('stop');
 
@@ -474,7 +474,7 @@ $(document).ready(function() {
             $(this).addClass('stop');
             bpIndex = (bpIndex + bpClientNumber + 1) % bpClientNumber;
             //console.log(bpIndex);
-            printClient($('#bp_client_list > ul > li:nth-child(7)').attr('data-index'));
+            printClient($('#bp_client_list > ul > li:last-child').attr('data-index'));
             setTimeout(function() {
                 $(bpRight).removeClass('stop');
             }, 600);
@@ -486,7 +486,7 @@ $(document).ready(function() {
             $('div.bp_client_list ul').append($('div.bp_client_list ul li:first-child'));
             $(this).addClass('stop');
             bpIndex = (bpIndex + bpClientNumber - 1) % bpClientNumber;
-            printClient($('#bp_client_list > ul > li:nth-child(7)').attr('data-index'));
+            printClient($('#bp_client_list > ul > li:last-child').attr('data-index'));
             setTimeout(function() {
                 $(bpLeft).removeClass('stop');
             }, 600);
@@ -721,7 +721,7 @@ function jack20() {
                     type: 'post',
                     data: $('#jform').serialize(),
                     success: function(d) {
-                        alert(d);
+                        //alert(d);
                     }
                 });
             }
