@@ -568,7 +568,7 @@ function jack20() {
                 nextType: 'jinput-radio'
             },
             '#jform-position-1': {
-                html: '<div class="field" id="jform-position-1"><div class="jlabel">Wymień je proszę:</div><div class="jinput"><input type="text" name="name"  autocomplete="off"/></div><div class="jbutton" data-next="#jform-position-2"><span>Zatwierdź</span></div></div>',
+                html: '<div class="field" id="jform-position-1"><div class="jlabel">Podaj mi adres strony / domeny:</div><div class="jinput"><input type="text" name="name"  autocomplete="off"/></div><div class="jbutton" data-next="#jform-position-2"><span>Zatwierdź</span></div></div>',
                 next: {
                     'jbutton': '#jform-position-2'
                 },
@@ -633,7 +633,7 @@ function jack20() {
                 nextType: 'jbutton'
             },
             '#jform-end': {
-                html: '<div class="field" id="jform-end"><div class="jlabel">Dziękuję <span class="jname uppercase">JAN</span>, odezwę się w najbliższym możliwym czasie.</div></div>'
+                html: '<div class="field" id="jform-end"><div class="jlabel">Dziękuję za rozmowę, do usłyszenia.</div></div>'
             }
         }
     }

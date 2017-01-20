@@ -105,6 +105,8 @@
   a {
     text-decoration: none;
   }
+
+
   .mark {
     background: transparent;
   }
@@ -121,10 +123,25 @@
     }
     @include transition(background 0.23s ease-in-out)
   }
+  .grid-item {
+    @media (min-width: $screen-md) {
+      height: 564px;      
+      > * {
+        height: 414px;
+      }
+    }
 
+    @media (min-width: $screen-lg) {
+      height: 414px;     
+      > * {
+        height: 414px;
+      }
+    }
+  }
   .s_details {
     padding: 60px 0;
     min-height: 325px;
+
      @media (max-width: $screen-sm) { 
       .row > div:first-child {
           text-align: center;

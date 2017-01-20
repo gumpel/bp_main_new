@@ -2,8 +2,9 @@
     height: 650px;
     background-color: #09090b;
     background-position: center center;
-    background-size: cover;
     background-size: 100% auto;
+    background-size: cover;
+    
     font-family: 'BebasNeueRegular';
     font-size: 20px;
     @media (max-width: $screen-md) {
@@ -179,8 +180,8 @@
                 position: absolute;
                 top: 80px;
                 right: 80px;
-                height: $button-height;
-                width: $button-width;
+                height: 27px;
+                width: 30px;
                 cursor: pointer;
                 z-index: 100;
                 transition: opacity .25s ease;

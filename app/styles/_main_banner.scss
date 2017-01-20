@@ -6,16 +6,7 @@
         height: 970px;
     }
 }
-#fog
-{
-  height:200px;
-  width:100%;  
-  min-width:800px;
-  position:absolute;
-  top:0;
-  @include transform(scaleY(-1));
-  z-index: 1;  
-}
+
 
 .main_banner {
     background-color: #09090b;
@@ -23,23 +14,58 @@
     background-size: auto 100%;
     font-family: 'BebasNeueRegular';
     position: relative;
-    height: 500px;
-    @media (min-width: $screen-md) {
-        height: 970px;
+    height: 970px;
+    
+    @media (max-width: $screen-md) {
+        height: 500px;
     }
     video {
-        position: absolute;
-        height: 100%;
-        right: -5%;
+        position: absolute;        
+        left: -20%;
+        top:0;
+         min-width: 100%;
+        min-height: 100%;              
+
+        @media (min-width:$screen-md){
+        height: 100%;        
+       
+        width:1723px;
+        }
+        @media (min-width:$screen-lg){
+            left:-15%;
+            height: 105%;
+            width:1896px;
+        }  
+           @media (min-width:1513px) {
+            left:-10%;
+            height: 110%;
+            
+        }
+
+
+        @media (min-width:1772px) {            
+            height: 115%;
+            width: 1982px;
+            left:-5%;
+        }
+     
+
+        @media (min-width:1895px) {
+            height: 125%;
+            left:0%;
+            width:2154px;
+        }
+
+        @media (min-width:2158px) {
+            height: 140%;
+            width: 2413px;
+        }    
+
         @media (max-width: $screen-md) {
             left: auto;
             height: 600px;
             @include transform (scaleX(-1));
-            right: -10%;
-        }
-        @media (min-width:$screen-lg + 320) {
-            width: 110%;
-            height: auto;
+            right: -7%;
         }
     }
     .videooverlayer {

@@ -21,6 +21,9 @@
     }
     h2 {
         letter-spacing: 0.14em;
+        @media (min-width: $screen-md) {
+        font-size:100px;
+    }
     }
     .wwd_slide {
         font-family: 'BebasNeueBook';
